@@ -31,9 +31,11 @@ domain: sumukhprasad.github.io       # if you want to force HTTPS, specify the d
 url: http://sumukhprasad.github.io
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+
+sass:
+  sass_dir: _sass
 
 # Exclude from processing.
 # The following items will not be processed, by default.
