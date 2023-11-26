@@ -27,6 +27,14 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 github_username:  sumukhprasad
 
+permalink: /:collection/:title.html
+collections_dir: sources
+collections:
+  blog:
+    output: true
+  misc:
+    output: true
+
 domain: sumukhprasad.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: http://sumukhprasad.github.io
 
