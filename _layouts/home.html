@@ -2,9 +2,13 @@
 <html lang="en-us">
 	{% include head.html %}
 
-	<body>
+	<body class="home-body">
+		<header class="home-header">
+			{{ content }} 
+		</header>
+		
 		<main>
-			{{ content }} {% if site.paginate %} {% assign posts = paginator.blog %}
+			{% if site.paginate %} {% assign posts = paginator.blog %}
 			{% else %} {% assign posts = site.blog %} {% endif %} {%- if posts.size >
 			0 -%} {%- if page.list_title -%}
 			<h2 class="post-list-heading">{{ page.list_title }}</h2>
