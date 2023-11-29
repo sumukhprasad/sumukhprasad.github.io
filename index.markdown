@@ -4,5 +4,7 @@
 
 layout: home
 title: Home
+content_title: Hey! I'm Sumukh Prasad!
+content_subtitle: Developer by default.
+showpages: true
 ---
-Hey! I'm Sumukh Prasad!

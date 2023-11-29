@@ -4,13 +4,30 @@
 
 	<body class="home-body">
 		<header class="home-header">
-			<div class="home-header-content">
-				{{ content }} 
+			<div class="home-header-wrapper">
+				<div class="home-header-content">
+					<img onmouseover="hover(this);" onmouseout="unhover(this);" src="/images/me.png" alt="Sumukh Prasad's Memoji character behind a computer">
+					<div class="title">{{ page.content_title }}</div>
+					<p class="about-mini"> {{ page.content_subtitle }} </p>
+				</div>
+				<div class="home-header-navigation">
+					<ul>
+						<li><a class="top" href="/">🏠</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/404.html">Projects</a></li>
+						<li><a href="/404.html">Miscellaneous</a></li>
+					</ul>
+				</div>
 			</div>
 		</header>
 		
 		<main>
-			{% if site.paginate %} {% assign posts = paginator.blog %}
+
+			<div class="home-content">
+				{{content}}
+			</div>
+
+			{% if page.showpages %} {% if site.paginate %} {% assign posts = paginator.blog %}
 			{% else %} {% assign posts = site.blog %} {% endif %} {%- if posts.size >
 			0 -%} {%- if page.list_title -%}
 			<h2 class="post-list-heading">{{ page.list_title }}</h2>
@@ -58,7 +75,17 @@
 					{%- endif %}
 				</ul>
 			</div>
-			{%- endif %} {%- endif -%}
+			{%- endif %} {%- endif -%} {%- endif -%}
 		</main>
 	</body>
+
+	<script>
+		function hover(element) {
+			element.setAttribute('src', '/images/me2.png');
+		}
+
+		function unhover(element) {
+			element.setAttribute('src', '/images/me.png');
+		}
+	</script>
 </html>
