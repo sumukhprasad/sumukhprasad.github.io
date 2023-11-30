@@ -4,8 +4,8 @@
 
 layout: home
 title: Home
-content_title: Hey! I'm Sumukh Prasad!
-content_subtitle: Developer by default.
+content_title: Odds & ends
+content_subtitle: Mostly musings.
 showpages: true
-pagescollection: blog
+pagescollection: misc
 ---

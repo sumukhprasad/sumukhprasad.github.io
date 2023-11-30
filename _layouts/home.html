@@ -15,7 +15,7 @@
 						<li><a class="top" href="/">🏠</a></li>
 						<li><a {% if page.url contains "/about" %} class="active"{% endif %} href="/about">📝 About</a></li>
 						<li><a {% if page.url contains "/projects" %} class="active"{% endif %} href="/404.html">📦 Projects</a></li>
-						<li><a {% if page.url contains "/misc" %} class="active"{% endif %} href="/404.html">🫧 Miscellaneous</a></li>
+						<li><a {% if page.url contains "/miscellaneous" %} class="active"{% endif %} href="/miscellaneous">🫧 Miscellaneous</a></li>
 					</ul>
 				</div>
 			</div>
@@ -27,8 +27,8 @@
 				{{content}}
 			</div>
 
-			{% if page.showpages %} {% if site.paginate %} {% assign posts = paginator.blog %}
-			{% else %} {% assign posts = site.blog %} {% endif %} {%- if posts.size >
+			{% if page.showpages %} {% if site.paginate %} {% assign posts = paginator[page.pagescollection] %}
+			{% else %} {% assign posts = site[page.pagescollection] %} {% endif %} {%- if posts.size >
 			0 -%} {%- if page.list_title -%}
 			<h2 class="post-list-heading">{{ page.list_title }}</h2>
 			{%- endif -%}
