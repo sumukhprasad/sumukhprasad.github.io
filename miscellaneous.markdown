@@ -4,7 +4,7 @@
 
 layout: home
 title: Home
-content_title: Odds & ends
+content_title: Odds & ends.
 content_subtitle: Mostly musings.
 showpages: true
 pagescollection: misc

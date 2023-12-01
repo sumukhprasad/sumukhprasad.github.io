@@ -34,6 +34,7 @@ collections:
     output: true
   misc:
     output: true
+show_excerpts: true
 
 domain: sumukhprasad.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: http://sumukhprasad.github.io
