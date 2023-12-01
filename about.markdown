@@ -14,7 +14,9 @@ I'm constantly learning how I can change user experience by making boring things
 
 <span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span>
 
+---
 
-Interested in learning more about my work?<br>
+<span style="font-size: 18px; font-weight: 300">Interested in learning more about my work?</span><br>
+
 [See my projects →](/projects)
 

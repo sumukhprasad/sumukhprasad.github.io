@@ -14,8 +14,12 @@
 					<ul>
 						<li><a class="top" href="/">🏠</a></li>
 						<li><a {% if page.url contains "/about" %} class="active"{% endif %} href="/about">📝 About</a></li>
-						<li><a {% if page.url contains "/projects" %} class="active"{% endif %} href="/404.html">📦 Projects</a></li>
+						<li><a {% if page.url contains "/projects" %} class="active"{% endif %} href="/projects">📦 Projects</a></li>
 						<li><a {% if page.url contains "/miscellaneous" %} class="active"{% endif %} href="/miscellaneous">🫧 Miscellaneous</a></li>
+						<li style="margin-top: 1em;">
+							<a href="https://github.com/sumukhprasad"><img src="/images/logos/github-mark.png" alt="github logo"></a>
+							<a href="https://www.linkedin.com/in/sumukhprasad/"><img src="/images/logos/linkedin-mark.png" alt="linkedin logo"></a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -28,7 +32,7 @@
 			</div>
 
 			{% if page.showpages %} {% if site.paginate %} {% assign posts = paginator[page.pagescollection] %}
-			{% else %} {% assign posts = site[page.pagescollection] %} {% endif %} {%- if posts.size >
+			{% else %} {% assign posts = site[page.pagescollection] | sort: 'date' | reverse  %} {% endif %} {%- if posts.size >
 			0 -%} {%- if page.list_title -%}
 			<h2 class="post-list-heading">{{ page.list_title }}</h2>
 			{%- endif -%}
@@ -75,6 +79,8 @@
 			</div>
 			{%- endif %} {%- endif -%} {%- endif -%}
 		</main>
+
+		{% include envsash.html %}
 	</body>
 
 	<script>
