@@ -6,7 +6,7 @@ categories: blockjam block-coding blockly kids
 excerpt: On creating interactive, engaging tools that inspire a lifelong love for learning and technology.
 ---
 
-Just last Monday (20th November '23), we wrapped up this year’s block coding competition, BlockJam, at DPS Bangalore South. Writing the software and infrastructure for this event was an insightful experience. Designing software for kids requires careful consideration of their unique needs, abilities, and interests, and here’s what I learnt from the experience:
+> Just last Monday (20th November '23), we wrapped up this year’s block coding competition, BlockJam, at DPS Bangalore South. Writing the software and infrastructure for this event was an insightful experience. Designing software for kids requires careful consideration of their unique needs, abilities, and interests, and here’s what I learnt from the experience:
 
 ## Intuition 
 User interfaces should be simple and intuitive. Interfaces should be understandable at first glance, and need to be unobtrusive to the task at hand. As Dieter Rams might put it: “Good design Involves as little design as possible.”
