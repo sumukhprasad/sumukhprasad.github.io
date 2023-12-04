@@ -1,3 +1,9 @@
 [submodule "sources/_proj/Grapher"]
 	path = sources/_proj/Grapher
 	url = https://github.com/SumukhPrasad/Grapher
+[submodule "sources/_trunk/Frequency-Addition-Demo"]
+	path = sources/_trunk/Frequency-Addition-Demo
+	url = https://github.com/SumukhPrasad/Frequency-Addition-Demo
+[submodule "sources/_trunk/indic-language-transliteration-gui"]
+	path = sources/_trunk/indic-language-transliteration-gui
+	url = https://github.com/SumukhPrasad/indic-language-transliteration-gui

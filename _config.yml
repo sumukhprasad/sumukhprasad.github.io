@@ -34,7 +34,7 @@ collections:
     output: true
   misc:
     output: true
-  proj:
+  projects:
     output: true
 show_excerpts: true
 
