@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Home
+title: Odds & ends
 content_title: Odds & ends.
 content_subtitle: Mostly musings.
 showpages: true
