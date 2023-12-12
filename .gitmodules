@@ -7,3 +7,6 @@
 [submodule "sources/_projects/indic-language-transliteration-gui"]
 	path = sources/_projects/indic-language-transliteration-gui
 	url = https://github.com/SumukhPrasad/indic-language-transliteration-gui
+[submodule "sources/_projects/Conways-Game-of-Life"]
+	path = sources/_projects/Conways-Game-of-Life
+	url = https://github.com/SumukhPrasad/Conways-Game-of-Life
