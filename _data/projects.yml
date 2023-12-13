@@ -1,0 +1,15 @@
+- name: grapher
+  url: /projects/Grapher
+  excerpt: 2-d equation grapher I built years ago
+
+- name: indic-language-transliteration
+  url: /projects/indic-language-transliteration-gui/public
+  excerpt: Indic language transliteration engine
+
+- name: Frequency (wave) addition demo
+  url: /projects/Frequency-Addition-Demo
+  excerpt: A small tool to simulate and animate waves being added
+
+- name: Game of Life
+  url: /projects/Conways-Game-of-Life/gol-web
+  excerpt: Conway's Game of Life!

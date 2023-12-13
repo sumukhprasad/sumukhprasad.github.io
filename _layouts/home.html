@@ -31,7 +31,8 @@
 				{{content}}
 			</div>
 
-			{% include postlist.html %}
+			{% if page.showpages %} {% include postlist.html %} {%- endif -%}
+			{% if page.showitems %} {% include list.html %} {%- endif -%}
 
 		</main>
 

@@ -1,0 +1,17 @@
+{%- if page.list_title -%}
+<h2 class="post-list-heading">{{ page.list_title }}</h2>
+{%- endif -%}
+{% assign items = site.data[page.items] %}
+
+<div class="post-list">
+	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+	-%} {%- for item in items -%}
+		<div class="item">
+			<a class="post-link" href="{{ item.url | relative_url }}">
+				<!-- <div class="post-meta">{{ post.date | date: date_format }}</div> -->
+				<div class="post-title">{{ item.name | escape }}</div>
+				{%- if site.show_excerpts -%} <div class="post-excerpt">{{ item.excerpt }}</div> {%- endif -%}
+			</a>
+		</div>
+	{%- endfor -%}
+</div>

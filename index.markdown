@@ -9,3 +9,13 @@ content_subtitle: Developer by default.
 showpages: true
 pagescollection: blog
 ---
+
+Welp, this is the famed "home on the internet," I suppose.
+
+[Who is this guy... →](/about)
+
+[See my projects →](/projects)
+
+---
+
+## Random thoughts:

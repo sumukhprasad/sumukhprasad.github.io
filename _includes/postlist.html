@@ -1,4 +1,4 @@
-{% if page.showpages %} {% if site.paginate %} {% assign posts = paginator[page.pagescollection] %}
+{% if site.paginate %} {% assign posts = paginator[page.pagescollection] %}
 {% else %} {% assign posts = site[page.pagescollection] | sort: 'date' | reverse  %} {% endif %} {%- if posts.size >
 0 -%} {%- if page.list_title -%}
 <h2 class="post-list-heading">{{ page.list_title }}</h2>
@@ -44,4 +44,4 @@
 		{%- endif %}
 	</ul>
 </div>
-{%- endif %} {%- endif -%} {%- endif -%}
+{%- endif %} {%- endif -%}
