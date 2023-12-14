@@ -16,6 +16,5 @@ Welp, this is the famed "home on the internet," I suppose.
 
 [See my projects →](/projects)
 
----
 
 ## Random thoughts:
