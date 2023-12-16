@@ -1,3 +1,11 @@
+- name: CodeJam 2023
+  url: https://github.com/SumukhPrasad/DiPS-CodeJam-2023
+  excerpt: DiPS CodeJam 2022
+  
+- name: CodeJam 2022
+  url: https://github.com/SumukhPrasad/DiPS-CodeJam-2022
+  excerpt: DiPS CodeJam 2022
+  
 - name: grapher
   url: /projects/Grapher
   excerpt: 2-d equation grapher I built years ago
