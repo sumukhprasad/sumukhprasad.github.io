@@ -1,3 +1,7 @@
+- name: BlockJam
+  url: https://github.com/SumukhPrasad/blockjam
+  excerpt: Block-based coding competition for kids.
+  
 - name: CodeJam 2023
   url: https://github.com/SumukhPrasad/DiPS-CodeJam-2023
   excerpt: DiPS CodeJam 2022
