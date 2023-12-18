@@ -1,0 +1,22 @@
+<header class="home-header">
+     <div class="home-header-wrapper">
+          <div class="home-header-content">
+               <img onmouseover="hover(this);" onmouseout="unhover(this);" src="/images/me.png" alt="Sumukh Prasad's Memoji character behind a computer">
+               <div class="title">{{ page.content_title }}</div>
+               <p class="about-mini"> {{ page.content_subtitle }} </p>
+          </div>
+          <div class="home-header-navigation">
+               <ul>
+                    <li><a class="top" href="/">🏠</a></li>
+                    <li><a {% if page.url contains "/about" %} class="active"{% endif %} href="/about">📝 About</a></li>
+                    <li><a {% if page.url contains "/projects" %} class="active"{% endif %} href="/projects">📦 Projects</a></li>
+                    <li><a {% if page.url contains "/work" %} class="active"{% endif %} href="/work">💻 Work</a></li>
+                    <li><a {% if page.url contains "/miscellaneous" %} class="active"{% endif %} href="/miscellaneous">🫧 Miscellaneous</a></li>
+                    <li style="margin-top: 1em;">
+                         <a href="https://github.com/sumukhprasad" target="_blank"><img src="/images/logos/github-mark.png" alt="github logo"></a>
+                         <a href="https://www.linkedin.com/in/sumukhprasad/" target="_blank"><img src="/images/logos/linkedin-mark.png" alt="linkedin logo"></a>
+                    </li>
+               </ul>
+          </div>
+     </div>
+</header>
