@@ -1,3 +1,7 @@
 - name: Code-Slinging Sapiens
   url: /work/code-slinging-sapiens
   excerpt: Creating accessible devices for humans
+
+- name: BlockJam
+  url: https://github.com/SumukhPrasad/blockjam
+  excerpt: Block-based coding competition for kids.
