@@ -1,8 +1,8 @@
 ---
 layout: home
 title: Work
-content_title: Doing things that pique my interest.
-content_subtitle: Here's some things that I've made.
+content_title: Professional Highlights
+content_subtitle: Allegedly professional.
 permalink: /work/
 showpages: false
 pagescollection: work
