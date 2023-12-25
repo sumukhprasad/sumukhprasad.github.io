@@ -1,3 +1,7 @@
+- name: xmas-23
+  url: https://github.com/SumukhPrasad/xmas-23/
+  excerpt: Tree-shaped C can do wonderful things.
+
 - name: Code Playgrounds
   url: https://github.com/SumukhPrasad/Code-Playgrounds
   excerpt: Ephemeral code playgrounds for Mac.
