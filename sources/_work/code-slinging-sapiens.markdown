@@ -6,3 +6,4 @@ categories: code-slinging-sapiens aac accessibility
 excerpt: Creating accessible devices for humans
 ---
 
+[View on Linkedin >](https://www.linkedin.com/company/code-slinging-sapiens/)
