@@ -14,10 +14,35 @@ body
 	font-family: $sansFont
 	margin: 0
 
-.content
+.content, nav
 	max-width: 640px
 	margin: auto
 	padding: 20px
+	
+nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	div
+		display: flex
+		column-gap: 20px
+		align-items: center
+	
+	a
+		color: rgba(0, 0, 0, 0.5)
+		text-decoration: none
+		transition: all 0.2s
+		&:hover
+			color: rgba(0, 0, 0, 1)
+			text-decoration: underline
+		
+.svg-icon
+	width: 16px
+	height: 16px
+	fill: rgba(0, 0, 0, 0.5)
+	transition: all 0.2s
+	&:hover
+		fill: rgba(0, 0, 0, 1)
 
 h1, h2, h3, h4, h5, h6
 	font-family: $serifFont
