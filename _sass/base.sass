@@ -23,6 +23,7 @@ nav
 	display: flex
 	justify-content: space-between
 	align-items: center
+	text-transform: lowercase
 	div
 		display: flex
 		column-gap: 20px
@@ -31,11 +32,22 @@ nav
 	a
 		color: rgba(0, 0, 0, 0.5)
 		text-decoration: none
-		transition: all 0.2s
+		font-weight: normal
 		&:hover
 			color: rgba(0, 0, 0, 1)
 			text-decoration: underline
+			background-color: transparent
 		
+a
+	color: teal
+	font-weight: bold
+	text-decoration: underline 2px red
+	transition: all 0.2s
+	&:hover
+		background-color: teal
+		text-decoration: none
+		color: white
+
 .svg-icon
 	width: 16px
 	height: 16px
