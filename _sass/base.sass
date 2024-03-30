@@ -13,6 +13,9 @@ body
 	color: $bodyColor
 	font-family: $sansFont
 	margin: 0
+	
+::selection
+	background-color: rgba(0, 128, 128, 0.3) !important
 
 .content, nav
 	max-width: 640px
@@ -33,6 +36,8 @@ nav
 		color: rgba(0, 0, 0, 0.5)
 		text-decoration: none
 		font-weight: normal
+		text-decoration-color: black
+		-webkit-text-decoration-color: black
 		&:hover
 			color: rgba(0, 0, 0, 1)
 			text-decoration: underline
@@ -41,7 +46,10 @@ nav
 a
 	color: teal
 	font-weight: bold
-	text-decoration: underline 2px red
+	text-decoration: underline
+	text-decoration-color: rgba(0, 128, 128, 0.5)
+	-webkit-text-decoration-color: rgba(0, 128, 128, 0.5)
+	text-decoration-thickness: 2px
 	transition: all 0.2s
 	&:hover
 		background-color: teal

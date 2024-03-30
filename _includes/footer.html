@@ -24,7 +24,7 @@
 			const time = calcTime('Bombay', '+5.5');
 			
 			
-			document.getElementById('blr-time').innerText = `${time.getHours()}:${time.getMinutes()}`;
+			document.getElementById('blr-time').innerText = `${String(time.getHours()).padStart(2, '0')}:${String(time.getMinutes()).padStart(2, '0')}`;
 		</script>
 	</div>
 	

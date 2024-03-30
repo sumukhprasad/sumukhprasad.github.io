@@ -18,6 +18,18 @@ title: "Hey there!"
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
 <div class="content" id="content">
+	
+	<img src="/assets/me-behind-a-computer.png" height="200px" onmouseover="hover(this)" onmouseout="unhover(this);" style="margin-top: 100px">
+	<script>
+		function hover(element) {
+			element.setAttribute('src', '/assets/me-waving-hi.png');
+		}
+
+		function unhover(element) {
+			element.setAttribute('src', '/assets/me-behind-a-computer.png');
+		}
+	</script>
+		
 	<h1>Hey! I'm Sumukh Prasad.</h1>
 	
 	<p>I'm a self-taught hobbyist developer who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.
