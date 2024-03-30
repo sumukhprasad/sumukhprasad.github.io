@@ -17,7 +17,7 @@ title: "Hey there!"
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-<div class="content">
+<div class="content" id="content">
 	<h1>Hey! I'm Sumukh Prasad.</h1>
 	
 	<p>I'm a self-taught hobbyist developer who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.
@@ -25,6 +25,8 @@ title: "Hey there!"
 	<p>I'm constantly learning how I can change user experience by making boring things fun to do. 
 
 	<p><span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span>
+		
+	<p><span style="font-size: 10px; font-style: italic; opacity: 0.5;">Something cool with p5: (inspired by a page from Fibery I saw long ago)</span>
 </div>
 
 <script>
@@ -51,6 +53,7 @@ title: "Hey there!"
 
 	function setup() {
 	    canvas = createCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
+	    canvas.parent("content")
 	    canvas.position(0, 0);
 
 	    frameRate(30);
