@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>{{ page.title }} - writing - {{ site.title }}</title>
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+	</head>
+	<body>
+		{% include nav.html %}
+		
+		<div class="content" id="content">
+ 		
+			<h1>{{ page.title }}</h1>
+ 			<h3 style="opacity: 0.3; font-style: italic;">{{ page.date | date: "%e %b %Y" }}</h1>
+ 			<br>
+ 			<br>
+ 			<br>
+			<div class="writing-content">
+ 				{{ content }}
+			</div>
+ 			<br>
+ 			<br>
+ 			<center>···</center>
+ 			<br>
+ 			<br>
+ 			<br>
+      		
+			<hr />
+				
+			<h3>Read more —</h3>
+			{% assign writing = site.writing | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
+			{% for piece in writing limit: 3 %}
+			<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}</span><br>
+			<a href="{{piece.url}}">{{piece.title}}</a><br>
+
+			<span style="font-style: italic; opacity: 0.3;">{{piece.desc}}</span><br><br>
+			{% endfor %}
+ 		
+			<a href="/writing" style="opacity: 0.5;"><i>< back to all writing</i></a>
+		
+		</div>
+		{% include footer.html %}
+	</body>
+</html>

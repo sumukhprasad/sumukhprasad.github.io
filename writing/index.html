@@ -1,0 +1,36 @@
+---
+layout: default
+title: "writing"
+---
+
+<style>
+	.p5Canvas {
+		position: relative !important;
+		display: block;
+		margin: auto;
+		border-radius: 16px;
+	}
+	body {
+		margin-bottom: 50px;
+	}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+<div class="content" id="content">
+	
+	<h1>Writing</h1>
+	
+	<p>Musings and things, maybe.</p>
+	
+	
+	{% assign writing = site.writing | sort: 'date' | reverse %}
+	{% for piece in writing %}
+	<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}</span><br>
+	<a href="{{piece.url}}">{{piece.title}}</a><br>
+
+	<span style="font-style: italic; opacity: 0.3;">{{piece.desc}}</span><br><br>
+	{% endfor %}
+
+	
+</div>
