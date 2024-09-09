@@ -14,6 +14,16 @@ title: "Hey there!"
 		margin-bottom: 50px;
 	}
 </style>
+<script>
+	var islocked = false;
+	function touchMoved(event) {
+		if (event.target.id=="defaultCanvas0") {
+			mouseMoved();
+			return !islocked;
+		}
+		return true;
+	}
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
@@ -40,7 +50,7 @@ title: "Hey there!"
 	<p><span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span> 
 		
 		
-	<p><span style="font-size: 10px; font-style: italic;" class="translucent">Something cool with p5: (inspired by a page from Fibery I saw long ago)</span>
+	<p><span style="font-size: 10px; font-style: italic;" class="translucent">Something cool with p5: (inspired by a page from Fibery I saw long ago) (on mobile and want to fiddle? click the canvas to lock the page, click again to unlock)</span>
 </div>
 
 <script>
@@ -70,6 +80,10 @@ title: "Hey there!"
 	    canvas.parent("content")
 	    canvas.position(0, 0);
 
+	    document.getElementById("defaultCanvas0").onclick = function () {
+		    islocked = !islocked
+	    }
+
 	    frameRate(30);
 	    cell = 100;
 	    l = 10;
@@ -91,7 +105,7 @@ title: "Hey there!"
 
 
 	function draw() {
-
+ 	    background(colorBack);
 	    stroke(255);
 	    strokeWeight(7);
 	    for (let i = 0; i <= count; i++) {
