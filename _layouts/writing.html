@@ -15,7 +15,8 @@
 		<div class="content" id="content">
  		
 			<h1>{{ page.title }}</h1>
- 			<h3 style="opacity: 0.3; font-style: italic;">{{ page.date | date: "%e %b %Y" }}</h1>
+ 			<h3 style="opacity: 0.3; font-style: italic;">~{{ content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read · {{ page.date | date: "%e %b %Y" }}</h1>
+				
  			<br>
  			<br>
  			<br>
@@ -34,7 +35,7 @@
 			<h3>Read more —</h3>
 			{% assign writing = site.writing | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
 			{% for piece in writing limit: 3 %}
-			<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}</span><br>
+			<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
 			<a href="{{piece.url}}">{{piece.title}}</a><br>
 
 			<span style="font-style: italic; opacity: 0.3;">{{piece.desc}}</span><br><br>
