@@ -1,0 +1,39 @@
+---
+layout: writing
+title: "The Ambitious Headmaster"
+type: "story"
+date: 2024-09-22
+desc: "A school headmaster in a small town has what can only be described as an indomitable ambition."
+---
+
+In the quaint town of Vallipuram, tucked away between the Kaveri river and the Western Ghats, stood the Bishop’s High School, a relic of the British Raj with its crumbling walls, creaky wooden desks, and dusty blackboards. At the helm of this ancient institution was a man of unshakable conviction and lofty dreams — Mr. Venkataraman, the headmaster.
+
+Mr. Venkataraman was a short, stout man with a face that glistened perpetually with sweat, his large glasses magnifying his eyes to an alarming degree, most of his hair having fallen off his head many years ago. He had been the headmaster for nearly a decade and fully believed that it was his sacred duty to mold the minds of Vallipuram’s future. He was, however, burdened by a singular ambition, a golden trophy at the end of the marathon he had been running for the past decade: to make Bishop’s High the most prestigious institution in all of South India.
+
+To the outside world, Venkataraman was the epitome of a dedicated educator. At 8 o’clock sharp in the morning, he would be on his rounds of inspection, dhoti pressed to perfection, cane in hand. But to those who knew him well — his wife, his hapless teachers, and the unfortunate students — were all well aware of the headmaster’s penchant for grandiose schemes.
+
+One hot afternoon, as the headmaster sat in his office, fanning himself with an old exam paper, a thought struck him. He decided the time had come to leave his mark on Vallipuram. "Why should only the big cities have famous schools?" he mused aloud. “Bishop’s High shall be known far and wide!" His plan, however, was as vague as the syllabus of the fourth-standard geography class. But this was a minor detail for Venkataraman. He was a man of action — impulsive, misguided action — but action nonetheless.
+
+The first step, he decided, was to organize a Grand Annual Day Celebration. Invitations would be sent to all the town’s dignitaries, and the District Collector would be coerced into attending — Venkataraman would personally see to it. Venkataraman envisioned himself delivering a speech that would rival Nehru’s Tryst with Destiny, followed by a cultural extravaganza so magnificent it would leave the audience speechless.
+
+He summoned his beleaguered staff to announce his plan. The teachers, who had seen many of Venkataraman’s schemes collapse under their own weight or the weight of his expectations, began to exchange weary glances. But there was no escaping his enthusiasm. “This will be a revolution!” he declared, wiping sweat from his brow. “Our school will become the pride of Vallipuram!”
+
+He assigned tasks with military precision: Mr. Shastri, the timid mathematics teacher, was put in charge of the cultural program despite his complete lack of interest in the arts. Miss Lakshmi, the stern English teacher, was tasked with writing a play that would “showcase the glory of Indian culture,” though she secretly preferred reading Agatha Christie. The science teacher, Mr. Raman, was ordered to create an exhibit that would “stun the minds of the young and old alike.” The fact that the school’s laboratory was equipped with little more than dusty test tubes and a solitary Bunsen burner did not deter Venkataraman.
+
+Preparations for the big event went off the rails fast. Students, previously content with their daily routine of boredom, were now subjected to endless rehearsals, puzzling lectures about Indian culture, and science experiments that seemed to end either in minor explosions or total disasters—despite the teachers' desperate pleas to every deity, human, and house pet in existence. 
+
+Mr. Shastri, out of length, width, and depth, decided that the cultural program should include a Bharatanatyam dance. Unfortunately, the only student who volunteered was Ramu, a lanky chap whose coordination was on par with a marionette controlled by a slightly drunk puppeteer. Ramu’s attempt at dancing was so disastrous that Mr. Shastri was forced to reconsider his entire approach, eventually settling on a group recital of patriotic poems—an endeavor only slightly less disastrous.
+
+Miss Lakshmi, after several sleepless nights, penned a play titled “The Greatness of Ancient India,” a heavy-handed allegory featuring characters named Bharat, Dharma, and Progress. The dialogue was so stilted and unnatural that even the most patriotic student found it hard to deliver lines without cringing. The climax of the play, in which Progress triumphantly declares, “Let us march forward with the wisdom of the ancients and the technology of the moderns!” was met with puzzled silence during rehearsals.
+
+Mr. Raman's science exhibit, eagerly anticipated by the headmaster, became the subject of much discussion at the school, though not for the reasons Venkataraman had hoped. His attempt to demonstrate a volcano using baking soda and vinegar resulted in a foamy eruption that drenched half the lab that his students nicknamed "Mount Raman." But the pièce de résistance: he tried to launch a homemade rocket, which went only 2 feet before (fortunately) narrowly avoiding Venkataraman's prized roses.
+
+Having decided to remain strangely calm under the mounting chaos, Venkataraman remained undeterred. The day of the Annual Day celebration arrived, and the school grounds were transformed with garlands, banners, and a makeshift stage that creaked ominously under its own weight.
+
+The event began with Venkataraman’s much-anticipated speech. Venkataraman went on stage wearing his crisp white dhoti and a blazer, smiling larger than anyone had ever seen him smile. Unfortunately, his grandiloquent address was marred by the malfunctioning microphone, which alternated between amplifying his voice to thunderous levels and then cutting out entirely. The result was a speech that sounded like a series of divine proclamations interspersed with mysterious silences — leaving the audience baffled and the headmaster red-faced.
+
+Next came the cultural program, which proceeded exactly as rehearsals had foretold. Ramu’s poetry recital was punctuated by forgotten lines and awkward pauses. After sufficiently embarrassing himself by singing what could only be called a strange hybrid of unrelated movie songs, he declared that India was the greatest world in all of the nations. Ramu having been safely sent back home, the show moved on. Miss Lakshmi’s play, with its ponderous dialogue and bewildering symbolism, left the audience more confused than enlightened. The only saving grace was the science exhibit, which provided unintended comic relief when “Mount Raman” erupted prematurely, sending a plume of foam into the air and eliciting cheers from the delighted students.
+
+As the evening drew to a close, Venkataraman invited the bemused District Collector to speak. He rose to the podium, cleared his throat, and delivered a brief, noncommittal address that contained not a single mention of Bishop High’s newly attained “prestige.”
+
+Students, teachers, and guests poured out of the gates as Venkataraman stood on stage, crestfallen — his hopes and dreams, once grand, were now gone. Life Bishop's High slowly returned to its usual pace. Venkataraman, still sulking, trudged back to his office to resume his daily rounds, rather begrudgingly this time around. Perhaps Bishop's High was best left as it had been—a modest school in a sleepy town, perfectly happy to remain a fixture in the ever-unchanging scenery of Vallipuram.
