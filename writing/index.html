@@ -10,13 +10,15 @@ title: "writing"
 	<p>Musings and things, maybe.</p>
 	
 	
-	{% assign writing = site.writing | sort: 'date' | reverse %}
-	{% for piece in writing %}
-	<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
-	<a href="{{piece.url}}">{{piece.title}}</a><br>
+	<div class="large-list">
+		{% assign writing = site.writing | sort: 'date' | reverse %}
+		{% for piece in writing %}
+		<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
+		<a href="{{piece.url}}">{{piece.title}}</a><br>
 
-	<span style="font-style: italic; opacity: 0.3;">{{piece.desc}}</span><br><br>
-	{% endfor %}
+		<span class="description">{{piece.desc}}</span><br><br>
+		{% endfor %}
+	</div>
 
 	
 </div>

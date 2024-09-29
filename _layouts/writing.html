@@ -12,10 +12,10 @@
 	<body>
 		{% include nav.html %}
 		
-		<div class="content" id="content">
+		<div class="content writing-page" id="content">
  		
 			<h1>{{ page.title }}</h1>
- 			<h3 style="opacity: 0.3; font-style: italic;">~{{ content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read · {{ page.date | date: "%e %b %Y" }}</h1>
+ 			<h3 class="date">~{{ content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read · {{ page.date | date: "%e %b %Y" }}</h1>
 				
  			<br>
  			<br>
@@ -33,15 +33,19 @@
 			<hr />
 				
 			<h3>Read more —</h3>
-			{% assign writing = site.writing | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
-			{% for piece in writing limit: 3 %}
-			<span style="font-style: italic; opacity: 0.3; font-weight: bold; font-size: 12px">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
-			<a href="{{piece.url}}">{{piece.title}}</a><br>
+			<div class="small-list">
+				{% assign writing = site.writing | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
+				{% for piece in writing limit: 3 %}
+				<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
+				<a href="{{piece.url}}">{{piece.title}}</a><br>
 
-			<span style="font-style: italic; opacity: 0.3;">{{piece.desc}}</span><br><br>
-			{% endfor %}
+				<span class="description">{{piece.desc}}</span><br><br>
+				{% endfor %}
+				
  		
-			<a href="/writing" style="opacity: 0.5;"><i>< back to all writing</i></a>
+				<a href="/writing" style="opacity: 0.3;"><i>< all writing</i></a>
+			</div>
+ 		
 		
 		</div>
 		{% include footer.html %}
