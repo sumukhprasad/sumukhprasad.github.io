@@ -16,6 +16,7 @@ title: "Hey there!"
 </style>
 <script>
 	var islocked = false;
+	var noticeIsShown = false;
 	function touchMoved(event) {
 		if (event.target.id=="defaultCanvas0") {
 			mouseMoved();
@@ -50,9 +51,123 @@ title: "Hey there!"
 	<p><span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span> 
 		
 		
-	<p><span style="font-size: 10px; font-style: italic;" class="translucent">Something cool with p5: (inspired by a page from Fibery I saw long ago) (on mobile and want to fiddle? click the canvas to lock the page, click again to unlock)</span>
+	<p><span style="font-style: italic;" class="translucent">Something cool with p5.<br>On a touchscreen but want to fiddle? Tap to lock the screen.</span>
 </div>
 
+<script>
+	let cell, l, a, x, y, count, canvas, colorBack;
+	let mods = [];
+
+	function windowResized() {
+		resizeCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
+		renderDots();
+	}
+
+	function renderDots() {
+		let highCount = height / 20;
+		let wideCount = width / 20;
+		count = int(highCount * wideCount);
+		let i = 0;
+		for (let xc = 0; xc < wideCount; xc++) {
+			for (let yc = 0; yc < highCount; yc++) {
+				mods[i++] = new Module(int(xc) * cell, int(yc) * cell);
+			}
+		}
+	}
+
+	function showLockStatus(status) {
+		if (noticeIsShown) return;
+		const lockNotice = document.createElement('div');
+		lockNotice.classList.add('locked-notice');
+		lockNotice.innerHTML = islocked ? '<div><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20.459 19.6777" height="100px"><g><rect height="19.6387" opacity="0" width="20.459" x="0" y="0"/><path d="M2.19727 19.1406L11.1328 19.1406C12.5684 19.1406 13.3301 18.3594 13.3301 16.8164L13.3301 10.0879C13.3301 8.55469 12.5684 7.77344 11.1328 7.77344L2.19727 7.77344C0.761719 7.77344 0 8.55469 0 10.0879L0 16.8164C0 18.3594 0.761719 19.1406 2.19727 19.1406ZM10.1855 8.53516L11.7285 8.53516L11.7285 5.24414C11.7285 2.77344 13.3105 1.47461 15.1367 1.47461C16.9629 1.47461 18.5449 2.77344 18.5449 5.24414L18.5449 7.41211C18.5449 7.98828 18.8867 8.28125 19.3262 8.28125C19.7461 8.28125 20.0977 8.01758 20.0977 7.41211L20.0977 5.44922C20.0977 1.77734 17.6855 0 15.1367 0C12.5781 0 10.1855 1.77734 10.1855 5.44922Z" fill="#000000" fill-opacity="0.7"/></g></svg><br><br>tap to lock</div>' : '<div><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 13.6914 19.6777" height="100px"><g><rect height="19.6777" opacity="0" width="13.6914" x="0" y="0"/><path d="M2.19727 19.1602L11.1328 19.1602C12.5684 19.1602 13.3301 18.3789 13.3301 16.8359L13.3301 10.1074C13.3301 8.56445 12.5684 7.79297 11.1328 7.79297L2.19727 7.79297C0.761719 7.79297 0 8.56445 0 10.1074L0 16.8359C0 18.3789 0.761719 19.1602 2.19727 19.1602ZM1.70898 8.54492L3.26172 8.54492L3.26172 5.24414C3.26172 2.7832 4.83398 1.47461 6.66016 1.47461C8.48633 1.47461 10.0781 2.7832 10.0781 5.24414L10.0781 8.54492L11.6211 8.54492L11.6211 5.45898C11.6211 1.78711 9.21875 0 6.66016 0C4.11133 0 1.70898 1.78711 1.70898 5.45898Z" fill="#000000" fill-opacity="0.7"/></g></svg><br><br>tap again to unlock</div>';
+		noticeIsShown = true;
+		document.body.appendChild(lockNotice);
+		setTimeout(() => {
+			lockNotice.style.opacity = '0';
+			setTimeout(() => {
+				lockNotice.remove();
+				noticeIsShown = false;
+			}, 500);
+		}, 2000);
+	}
+
+	function setup() {
+		canvas = createCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
+		canvas.parent("content")
+		canvas.position(0, 0);
+		
+		document.getElementById("defaultCanvas0").addEventListener("touchstart", handleTouchStart);
+		document.getElementById("defaultCanvas0").addEventListener("touchend", handleTouchEnd);
+		let touchStartTime, startX, startY;
+		const MAX_TOUCH_DURATION = 300;
+		const MAX_MOVE_THRESHOLD = 10;
+
+		function handleTouchStart(ev) {
+			if (ev.touches.length === 1) {
+				const touch = ev.touches[0];
+				touchStartTime = Date.now();
+				startX = touch.clientX;
+				startY = touch.clientY;
+			}
+		}
+
+		function handleTouchEnd(ev) {
+			if (ev.changedTouches.length === 1) {
+				const touch = ev.changedTouches[0];
+				const touchDuration = Date.now() - touchStartTime;
+				const moveX = Math.abs(touch.clientX - startX);
+				const moveY = Math.abs(touch.clientY - startY);
+				if (touchDuration < MAX_TOUCH_DURATION && moveX < MAX_MOVE_THRESHOLD && moveY < MAX_MOVE_THRESHOLD) {
+					showLockStatus(!islocked);
+					islocked = !islocked;
+				}
+			}
+		}
+		
+		frameRate(30);
+		cell = 40;
+		l = 10;
+		colorBack = "teal";
+		background(colorBack);
+		renderDots();
+	}
+
+	function mouseMoved() {
+		background(colorBack);
+		strokeWeight(7);
+		for (let i = 0; i <= count; i++) {
+			mods[i].update();
+			mods[i].draw2();
+		}
+	}
+
+	function draw() {
+		background(colorBack);
+		stroke(255);
+		strokeWeight(7);
+		for (let i = 0; i <= count; i++) {
+			mods[i].update();
+			mods[i].draw2();
+		}
+		noLoop();
+	}
+
+	function Module(_x, _y) {
+		this.x = _x;
+		this.y = _y;
+		this.a = 0;
+	}
+	Module.prototype.update = function() {
+		this.a = 0.1 * (sqrt((mouseY - this.y) ** 2 + (mouseX - this.x) ** 2));
+	}
+	Module.prototype.draw2 = function() {
+		push();
+		circle(this.x, this.y, this.a);
+		pop();
+	}
+</script>
+
+<!--
 <script>
 	let cell, l, a, x, y, count, canvas, colorBack;
 	let mods = [];
@@ -134,3 +249,5 @@ title: "Hey there!"
 	}
 	
 </script>
+
+ -->
