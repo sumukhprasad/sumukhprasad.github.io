@@ -13,7 +13,7 @@ title: "writing"
 	<div class="large-list">
 		{% assign writing = site.writing | sort: 'date' | reverse %}
 		{% for piece in writing %}
-		<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read</span><br>
+		<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}{% if piece.type != "poetry" %} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read {% endif %}</span><br>
 		<a href="{{piece.url}}">{{piece.title}}</a><br>
 
 		<span class="description">{{piece.desc}}</span><br><br>
