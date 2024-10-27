@@ -24,7 +24,7 @@ The priesthood of the village was, however, unsettled by this. They attempted to
 
 > It is said that she immediately improvised a drape, knotting her sari in a way that has become a hallmark of the Sankethi community.
 
-Outraged, she cursed the gathering of priests — they would have no children to continue their lineage. The youngest priest fell to her feet, begging for forgiveness. Nacharamma, moved by this act, forgave him on the condition that Nacharamma and her family would leave Sengottai in peace. Around a hundred families joined her in protest.
+Outraged, she cursed the gathering of priests — they would have no children to continue their lineage. The youngest priest fell to her feet, begging for forgiveness. Nacharamma, moved by this act, forgave him on the condition that Nacharamma and her family would leave Sengottai in pease. Around a hundred families joined her in protest.
 
 The route they took is not yet completely known, but looking at the dialect, one may assume a rough route through the Ghats into Kerala, up through Kodagu, settling in Kowshika, and further moving to settle in villages such as Periyapatna, Basavapatna, and Chilkunda. The dialect and cuisine bear traces of this migration. Having established a community, Nacharamma passed away, leaving her body on the banks of the Kaveri. 
 
