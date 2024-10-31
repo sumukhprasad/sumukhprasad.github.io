@@ -28,33 +28,30 @@ title: "Hey there!"
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-<div class="content" id="content">
+<div class="content index-section-flex" style="margin-top: 100px">
+	<div>
+		<h1>Hey! I'm Sumukh Prasad.</h1>
+		<span class="translucent">sʊmʊk prəsɑːð</span>
+		<br>
+		<span class="translucent">People hate Mondays; I was born on one.</span>
+		
+		<p>This is, somehow, my quaint little corner of the web. I'm a self-taught hobbyist developer who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.
+     	
+		<p>I'm constantly learning how I can change user experience by making boring things fun to do. 
+     	
+		<p><span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span>	
+	</div>
 	
-	<img src="/assets/me-behind-a-computer.png" height="200px" onmouseover="hover(this)" onmouseout="unhover(this);" style="margin-top: 100px">
-	<script>
-		function hover(element) {
-			element.setAttribute('src', '/assets/me-waving-hi.png');
-		}
 
-		function unhover(element) {
-			element.setAttribute('src', '/assets/me-behind-a-computer.png');
-		}
-	</script>
-		
-	<h1>Hey! I'm Sumukh Prasad.</h1>
-	<span class="translucent">sʊmʊk prəsɑːð</span>
-	<br>
-	<span class="translucent">People hate Mondays; I was born on one.</span>
-	
-	<p>This is, somehow, my quaint little corner of the web. I'm a self-taught hobbyist developer who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.
+	<div>
+		<img src="/assets/just-me.png" height="400px">
+	</div>
+</div>
 
-	<p>I'm constantly learning how I can change user experience by making boring things fun to do. 
-
-	<p><span style="font-size: 10px">And maybe making hilariously overkill solutions to problems that probably don't exist.</span> 
-		
-		
+<div class="content" id="canvas-container">
 	<p><span style="font-style: italic;" class="translucent">Something cool with p5.<br>On a touchscreen but want to fiddle? Tap to lock the screen.</span>
 </div>
+
 
 <script>
 	let cell, l, a, x, y, count, canvas, colorBack;
@@ -94,7 +91,7 @@ title: "Hey there!"
 
 	function setup() {
 		canvas = createCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
-		canvas.parent("content")
+		canvas.parent("canvas-container")
 		canvas.position(0, 0);
 		
 		document.getElementById("defaultCanvas0").addEventListener("touchstart", handleTouchStart);

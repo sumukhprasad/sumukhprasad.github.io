@@ -24,7 +24,19 @@ body
 	max-width: 640px
 	margin: auto
 	padding: 20px
+
+.index-section-flex
+	display: flex
+	justify-content: space-between
+	align-items: start
+	column-gap: 20px
 	
+@media screen and (max-width: 400px)
+	.index-section-flex
+		flex-direction: column-reverse
+		align-items: center
+		row-gap: 20px
+
 nav
 	display: flex
 	justify-content: space-between
@@ -78,6 +90,7 @@ footer
 	height: 16px
 	fill: rgba(0, 0, 0, 0.5)
 	transition: all 0.2s
+	margin-bottom: -4px
 	&:hover
 		fill: rgba(0, 0, 0, 1)
 	
