@@ -44,7 +44,7 @@ let touchStartTime, startX, startY;
 let lastTouchTime = 0;
 let consecutiveTouches = 0;
 const MAX_TOUCH_DURATION = 300;
-const MAX_MOVE_THRESHOLD = 10;
+const MAX_MOVE_THRESHOLD = 100;
 const MAX_TIME_BETWEEN_TOUCHES = 500;
 const REQUIRED_TOUCHES = 10;
 
