@@ -10,7 +10,6 @@ function handleKeyPress(event) {
         sequenceProgress.fill(0);
     }
 
-    let matchedSequence = false;
     for (let i = 0; i < sequences.length; i++) {
         const sequence = sequences[i].code;
         const progress = sequenceProgress[i];
@@ -22,12 +21,12 @@ function handleKeyPress(event) {
                 sequences[i].callback();
                 sequenceProgress[i] = 0;
             }
-            matchedSequence = true;
-            break; 
         } else {
             sequenceProgress[i] = 0; 
         }
     }
+
+    console.log(sequenceProgress)
 
     lastKeyTime = currentTime;
 }
@@ -73,7 +72,7 @@ function handleTouchEnd(ev) {
 
 			lastTouchTime = currentTime;
 			if (consecutiveTouches >= REQUIRED_TOUCHES) {
-				enableSM();
+				xmas();
 			}
 		}
 	}
@@ -120,6 +119,10 @@ function enableSM() {
 		}, 500);
 	}, 2000);
 }
-
-
 addSequence(['KeyS', 'KeyA', 'KeyT', 'KeyY', 'KeyA', 'KeyM', 'KeyO', 'KeyD', 'KeyE'], () => {enableSM()});
+
+
+function xmas() {
+	alert("but it's not christmas yet...")
+}
+addSequence(['KeyX', 'KeyM', 'KeyA', 'KeyS'], () => {xmas()});
