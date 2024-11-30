@@ -123,6 +123,6 @@ addSequence(['KeyS', 'KeyA', 'KeyT', 'KeyY', 'KeyA', 'KeyM', 'KeyO', 'KeyD', 'Ke
 
 
 function xmas() {
-	alert("but it's not christmas yet...")
+	window.location.href = "/xmas/index.html";
 }
 addSequence(['KeyX', 'KeyM', 'KeyA', 'KeyS'], () => {xmas()});

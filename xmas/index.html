@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Merry Christmas!</title>
+	<meta name="theme-color" content="#110033" />
+	<link rel="icon" type="image/png" href="/assets/favicon.ico" />
+	<script src="./p5.min.js"></script>
+	<script src="./stars.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<style>
+		body {
+			color: white;
+			margin: 0;
+			padding: 0;
+			font-family: 'Inter';
+			overflow: hidden;
+		}
+
+		.scene {
+			position: absolute;
+			z-index: 999;
+			width: 100vw;
+			height: 100%;
+			background-image: url("./scene.png");
+			background-size: contain;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			opacity: 0.5;
+		}
+
+		main {
+			position: absolute;
+			z-index: 9999;
+			width: 100vw;
+			height: 100%;
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+		main h1 {
+			font-weight: 100;
+			font-size: 60px;
+		}
+
+		@media screen and (max-width: 80rem) {
+			main h1 {
+				font-weight: 100;
+				font-size: 50px;
+			}
+		}
+
+		button {
+			border-radius: 16px;
+			background-color: #753bbe;
+			color: white;
+			font-family: 'Inter';
+			font-weight: 300;
+			font-size: 18px;
+			border: 0;
+			padding: 5px 20px;
+			animation: breathEffect 3s infinite ease-in-out;
+			filter: brightness(1);
+			transition: filter 1s;
+		}
+
+		@keyframes breathEffect {
+			0% {
+				background-color: #753bbe;
+				box-shadow: 0 0 10px rgba(117, 59, 190, 0.5);
+			}
+
+			50% {
+				background-color: #996bd2;
+				box-shadow: 0 0 20px rgba(153, 107, 210, 0.7);
+			}
+
+			100% {
+				background-color: #753bbe;
+				box-shadow: 0 0 10px rgba(117, 59, 190, 0.5);
+			}
+		}
+
+		button:hover {
+			filter: brightness(1.2);
+		}
+
+		button:active {
+			filter: brightness(0.8);
+		}
+		
+		button:disabled {
+			animation: none;
+			filter: brightness(0.3);
+		}
+
+		.content {
+			opacity: 1;
+			text-align: center;
+			transition: opacity 1s;
+		}
+		
+		.title {
+			opacity: 1;
+			transition: opacity 1s;
+		}
+
+		.hidden {
+			opacity: 0;
+		}
+
+		.puzzleboard {
+			display: grid;
+			width: 310px;
+			height: 310px;
+			grid-template-columns: repeat(3, 100px);
+			grid-template-rows: repeat(3, 100px);
+			gap: 5px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			transition: all 1s ease;
+			padding: 10px;
+			background-image: linear-gradient(160deg, #5d2222, rgb(101, 43, 43) 43.7%, rgb(63, 23, 23) 44.54%, #2a0a0a);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 -4px 3px rgba(0, 0, 0, 0.5) inset, 0 2px 2px rgba(255, 255, 255, 0.35) inset;
+			border-radius: 18px;
+		}
+
+		.tile {
+			width: 100px;
+			height: 100px;
+			background-size: 300px;
+
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: transform 0.2s ease;
+		}
+
+		.tile:not(.empty):before {
+			width: 100px;
+			height: 100px;
+			content: "";
+			background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.44) 35.71%, rgba(255, 255, 255, 0.1) 38.66%, rgba(255, 255, 255, 0.03));
+			content: "";
+			border-radius: 8px;
+			box-shadow: 0 2px 2px rgba(255, 255, 255, 0.5) inset, 0 -2px 2px rgba(0, 0, 0, 0.5) inset, 0 2px 2px rgba(0, 0, 0, 0.5);
+			opacity: 0.5;
+		}
+
+		.tile.empty {
+			background-color: transparent;
+		}
+
+		.tile img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="scene"></div>
+
+	<main>
+
+		<div id="content" class="content">
+			<h1>Merry Christmas!</h1><br><br><br>
+			<button id="play">will you play a slide puzzle?</button>
+		</div>
+
+	</main>
+
+	<script src="./puzzle.js"></script>
+</body>
+
+</html>
