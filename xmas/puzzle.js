@@ -36,9 +36,9 @@ function setupPuzzle() {
 
 function share() {
 	var shareData = {
-				text: "Christmas Slide Puzzle",
-				url: window.location.href
-			}
+		text: window.location.href,
+		url: window.location.href
+	}
 	if (navigator.share && navigator.canShare(shareData)) {
 		navigator.share(shareData);
 	} else {
