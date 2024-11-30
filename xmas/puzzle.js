@@ -1,5 +1,5 @@
 const content = document.getElementById('content');
-const puzzleImages = ['a.jpg'];
+const puzzleImages = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg'];
 let puzzleBoard = [];
 let emptyTileIndex = 8; // The index of the empty tile (last tile in a 3x3 grid)
 let cannotClick = false;
@@ -34,11 +34,12 @@ function setupPuzzle() {
 }
 
 function share() {
-	if (navigator.share && navigator.canShare(shareData)) {
-		navigator.share({
+	shareData = {
 				text: "Christmas Slide Puzzle",
 				url: window.location.href
-			});
+			}
+	if (navigator.share && navigator.canShare(shareData)) {
+		navigator.share(shareData);
 	} else {
 		navigator.clipboard.writeText(window.location.href);
 		alert("Copied to clipboard.")
