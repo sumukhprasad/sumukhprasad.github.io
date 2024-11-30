@@ -80,7 +80,7 @@ function createPuzzleGrid(image) {
 }
 
 function shufflePuzzle() {
-    let shuffleCount = 72; // Number of valid moves to shuffle
+    let shuffleCount = 36; // Number of valid moves to shuffle
     while (shuffleCount--) {
         const validMoves = getValidMoves(emptyTileIndex);
         const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
