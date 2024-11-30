@@ -34,7 +34,7 @@ function setupPuzzle() {
 }
 
 function share() {
-	shareData = {
+	var shareData = {
 				text: "Christmas Slide Puzzle",
 				url: window.location.href
 			}
