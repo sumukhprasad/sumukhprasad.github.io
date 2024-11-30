@@ -1,5 +1,6 @@
 const content = document.getElementById('content');
 const puzzleImages = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg'];
+const selectedImage = puzzleImages[Math.floor(Math.random() * puzzleImages.length)];
 let puzzleBoard = [];
 let emptyTileIndex = 8; // The index of the empty tile (last tile in a 3x3 grid)
 let cannotClick = false;
@@ -48,7 +49,6 @@ function share() {
 
 function init() {
     // Randomize the image and split it into tiles
-    const selectedImage = puzzleImages[Math.floor(Math.random() * puzzleImages.length)];
     const puzzleData = createPuzzleGrid(selectedImage);
 
     // Generate puzzle tiles
@@ -80,7 +80,7 @@ function createPuzzleGrid(image) {
 }
 
 function shufflePuzzle() {
-    let shuffleCount = 36; // Number of valid moves to shuffle
+    let shuffleCount = 72; // Number of valid moves to shuffle
     while (shuffleCount--) {
         const validMoves = getValidMoves(emptyTileIndex);
         const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
@@ -131,7 +131,7 @@ function renderPuzzle() {
         if (tile === null) {
             tileElement.classList.add('empty');
         } else {
-            tileElement.style.backgroundImage = `url(${puzzleImages[0]})`;
+            tileElement.style.backgroundImage = `url(${selectedImage})`;
             tileElement.style.backgroundPosition = `${-tile.x * 100}px ${-tile.y * 100}px`;
         }
         tileElement.dataset.index = index;
