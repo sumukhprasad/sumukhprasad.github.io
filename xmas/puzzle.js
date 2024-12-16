@@ -2,8 +2,9 @@ const content = document.getElementById('content');
 const puzzleImages = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg'];
 const selectedImage = puzzleImages[Math.floor(Math.random() * puzzleImages.length)];
 let puzzleBoard = [];
-let emptyTileIndex = 8; // The index of the empty tile (last tile in a 3x3 grid)
+let emptyTileIndex = 8;
 let cannotClick = false;
+let moves = 0;
 document.getElementById('play').onclick = function() {
 	content.classList.add('hidden');
 	setTimeout(() => {
@@ -23,20 +24,66 @@ function setupPuzzle() {
 	h.classList.add("title");
 	h.innerText = "Finish the slide puzzle!"
 	content.appendChild(h)
-	sb = document.createElement('button');
-	sb.disabled = true;
-	sb.id = 'share';
-	sb.innerText = "tap to share";
-	content.appendChild(sb);
 	puzzle.id = "puzzleboard";
 	puzzle.classList.add('puzzleboard');
 	content.appendChild(puzzle);
+	
+
+	nextbutton = document.createElement('button');
+	nextbutton.disabled = true;
+	nextbutton.id = 'next';
+	nextbutton.innerText = "next";
+	nextbutton.classList.add('hidden');
+	nextbutton.style = "margin-top: 25px;"
+	content.appendChild(nextbutton);
+	
 	init();
+}
+
+function showSharePage() {
+	content.classList.add('hidden');
+
+	setTimeout(() => {
+		while (content.firstChild) {
+			content.removeChild(content.lastChild);
+		}
+		
+
+		h = document.createElement('h1');
+		h.id = "title";
+		h.classList.add("title");
+		h.innerText = "You solved the puzzle!"
+		content.appendChild(h);
+
+		const puzzle = document.createElement('div');
+		puzzle.id = "puzzleboard";
+		puzzle.classList.add('puzzleboard');
+		content.appendChild(puzzle);
+		
+
+		movesElement = document.createElement('h3');
+		movesElement.innerText = `solved in ${moves} move${moves>1 ? "s" : ""}`
+		content.appendChild(movesElement);
+		
+		shareDiv = document.createElement("div");
+		shareDiv.style = "margin-top: 25px;"
+		
+		shareButton = document.createElement('button');
+		shareButton.innerText = "share this";
+		shareButton.onclick = share;
+		
+		shareDiv.appendChild(shareButton)
+		
+		content.appendChild(shareDiv);
+	
+		content.classList.remove('hidden');
+		renderPuzzle();
+	}, 1000);
 }
 
 function share() {
 	var shareData = {
-		text: window.location.href,
+		text: generateRandomSharePhrase(),
 		url: window.location.href
 	}
 	if (navigator.share && navigator.canShare(shareData)) {
@@ -45,6 +92,26 @@ function share() {
 		navigator.clipboard.writeText(window.location.href);
 		alert("Copied to clipboard.")
 	}
+}
+
+function generateRandomSharePhrase() {
+	let phrases = [
+		`feeling festive af... solved this in ${moves} move${moves>1 ? "s" : ""} ⛄🎄`, 
+		`sleighed this in ${moves} 🎄`, 
+		`slid into christmas like a pro... ${moves} move${moves>1 ? "s" : ""}!!! 💪🎄`, 
+		`merry slidemas to me 😌🎄 ${moves} move${moves>1 ? "s" : ""}, u in? 👀`, 
+		`elves could never... solved this in ${moves} ✨🎅`, 
+		`main character energy solving this 🎄 in ${moves}, no big deal ✨`, 
+		`speed-running christmas, 1 puzzle at a time 🎄`, 
+		`i'snow big deal, just crushed this in ${moves} move${moves>1 ? "s" : ""} ❄️💪`, 
+		`santa's not the only one working magic this season 🎅 ${moves} move${moves>1 ? "s" : ""} ✨`, 
+		`puzzle didn’t stand a chance 🎄 ${moves} move${moves>1 ? "s" : ""}, who's next? 👀`,
+		`call me santa bc I just delivered in ${moves} move${moves>1 ? "s" : ""} 🎅💨`,
+		`unwrapping W’s this holiday season 🎁 ${moves} move${moves>1 ? "s" : ""} 🔥`,
+		`certified festive genius 🎄 ${moves} move${moves>1 ? "s" : ""}, try me 😏`
+	]
+	
+	return phrases[Math.floor(Math.random() * phrases.length)]
 }
 
 function init() {
@@ -80,7 +147,7 @@ function createPuzzleGrid(image) {
 }
 
 function shufflePuzzle() {
-	let shuffleCount = 36; // Number of valid moves to shuffle
+	let shuffleCount = 1; // Number of valid moves to shuffle
 	while (shuffleCount--) {
 		const validMoves = getValidMoves(emptyTileIndex);
 		const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
@@ -147,9 +214,9 @@ function handleTileClick(e) {
 
 	const validMoves = getValidMoves(emptyTileIndex);
 	if (validMoves.includes(clickedTileIndex)) {
-		// Start the swap with animation
 		animateTileSwap(clickedTile, clickedTileIndex, emptyTileIndex);
-		emptyTileIndex = clickedTileIndex; // Update empty tile position
+		emptyTileIndex = clickedTileIndex;
+		moves++;
 	}
 }
 
@@ -195,10 +262,11 @@ function checkIfSolved() {
 		cannotClick = true;
 		document.getElementById('title').classList.add("hidden");
 		setTimeout(() => {
-				document.getElementById('title').innerText = "You solved the puzzle!";
-				document.getElementById('share').disabled = false;
-			document.getElementById('share').onclick = share;
-			  document.getElementById('title').classList.remove('hidden');
+			document.getElementById('title').innerText = "You solved the puzzle!";
+			document.getElementById('title').classList.remove('hidden');
+			document.getElementById('next').onclick = showSharePage;
+			document.getElementById('next').disabled = false;
+			document.getElementById('next').classList.remove('hidden');
 		}, 1000);
 	}
 }
