@@ -32,7 +32,7 @@ function setupPuzzle() {
 	nextbutton = document.createElement('button');
 	nextbutton.disabled = true;
 	nextbutton.id = 'next';
-	nextbutton.innerText = "next";
+	nextbutton.innerText = "→";
 	nextbutton.classList.add('hidden');
 	nextbutton.style = "margin-top: 25px;"
 	content.appendChild(nextbutton);
@@ -52,15 +52,18 @@ function showSharePage() {
 		h = document.createElement('h1');
 		h.id = "title";
 		h.classList.add("title");
-		h.innerText = "You solved the puzzle!"
+		h.innerText = "You got a badge!";
 		content.appendChild(h);
-
-		const puzzle = document.createElement('div');
-		puzzle.id = "puzzleboard";
-		puzzle.classList.add('puzzleboard');
-		content.appendChild(puzzle);
 		
-
+		img = document.createElement('img');
+		img.src = "./award.png";
+		img.style = "width: 256px; height: 256px;"
+		content.appendChild(img);
+		
+		movesElement = document.createElement('h2');
+		movesElement.innerText = "Christmas Puzzle Wizard"
+		content.appendChild(movesElement);
+		
 		movesElement = document.createElement('h3');
 		movesElement.innerText = `solved in ${moves} move${moves>1 ? "s" : ""}`
 		content.appendChild(movesElement);
@@ -69,7 +72,7 @@ function showSharePage() {
 		shareDiv.style = "margin-top: 25px;"
 		
 		shareButton = document.createElement('button');
-		shareButton.innerText = "share this";
+		shareButton.innerText = "share the puzzle!";
 		shareButton.onclick = share;
 		
 		shareDiv.appendChild(shareButton)
@@ -77,7 +80,6 @@ function showSharePage() {
 		content.appendChild(shareDiv);
 	
 		content.classList.remove('hidden');
-		renderPuzzle();
 	}, 1000);
 }
 
