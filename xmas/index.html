@@ -49,13 +49,6 @@
 			font-weight: 100;
 			font-size: 60px;
 		}
-
-		@media screen and (max-width: 80rem) {
-			main h1 {
-				font-weight: 100;
-				font-size: 50px;
-			}
-		}
 		
 		h2 {
 			font-family: "Marcellus SC";
@@ -70,6 +63,27 @@
 		h3 {
 			font-family: "Marcellus SC";
 			font-size: 24px; 
+		}
+
+		@media screen and (max-width: 80rem) {
+			main h1 {
+				font-weight: 100;
+				font-size: 50px;
+			}
+			
+			h2 {
+				font-family: "Marcellus SC";
+				font-size: 24px;
+				background-color: rgb(255, 190, 0);
+				border-top: 1px rgba(0, 0, 0, 0.5) dashed;
+				border-bottom: 1px rgba(0, 0, 0, 0.5) dashed;
+				color: rgb(148, 54, 54);
+				box-shadow: 0 2px 4px #000, 0 2px 4px rgba(255, 255, 255, 0.3) inset;
+			}
+		
+			h3 {
+				font-size: 18px; 
+			}
 		}
 
 		button {

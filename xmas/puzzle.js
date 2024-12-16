@@ -32,7 +32,7 @@ function setupPuzzle() {
 	nextbutton = document.createElement('button');
 	nextbutton.disabled = true;
 	nextbutton.id = 'next';
-	nextbutton.innerText = "→";
+	nextbutton.innerText = "you got a badge!";
 	nextbutton.classList.add('hidden');
 	nextbutton.style = "margin-top: 25px;"
 	content.appendChild(nextbutton);
@@ -149,7 +149,7 @@ function createPuzzleGrid(image) {
 }
 
 function shufflePuzzle() {
-	let shuffleCount = 1; // Number of valid moves to shuffle
+	let shuffleCount = 36; // Number of valid moves to shuffle
 	while (shuffleCount--) {
 		const validMoves = getValidMoves(emptyTileIndex);
 		const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
