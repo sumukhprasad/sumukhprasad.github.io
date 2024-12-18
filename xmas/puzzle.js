@@ -62,7 +62,7 @@ function showSharePage() {
 		
 		badgeElement = document.createElement('h2');
 		badgeElement.innerText = "Christmas Puzzle Wizard"
-		content.appendChild	badgeElement);
+		content.appendChild(badgeElement);
 		
 		movesElement = document.createElement('h3');
 		movesElement.innerText = `solved in ${moves} move${moves>1 ? "s" : ""}`
