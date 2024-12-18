@@ -88,6 +88,14 @@ function share() {
 		text: generateRandomSharePhrase(),
 		url: window.location.href
 	};
+	
+	var sharingIframe     = document.createElement("iframe");
+	var sharingIframeBlob = new Blob([`<!DOCTYPE html><html>`],{type:"text/html"});
+	sharingIframe.src     = URL.createObjectURL(sharingIframeBlob);
+
+	sharingIframe.style.display = "none"; // make it so that it is hidden
+
+	document.documentElement.appendChild(sharingIframe);
 
 	// Fetch the image from local file system (assuming it's in the same directory)
 	fetch("./share.png")
@@ -99,8 +107,8 @@ function share() {
 			];
 
 			// Attempt to share with the image
-			if (navigator.share && navigator.canShare(shareData)) {
-				navigator.share(shareData);
+			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
+				sharingIframe.contentWindow.navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
@@ -109,8 +117,8 @@ function share() {
 		.catch(error => {
 			console.error("Error fetching image:", error);
 			// Fallback to sharing without the image if fetching fails
-			if (navigator.share && navigator.canShare(shareData)) {
-				navigator.share(shareData);
+			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
+				sharingIframe.contentWindow.navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
