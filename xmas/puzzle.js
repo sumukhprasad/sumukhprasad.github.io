@@ -87,13 +87,35 @@ function share() {
 	var shareData = {
 		text: generateRandomSharePhrase(),
 		url: window.location.href
-	}
-	if (navigator.share && navigator.canShare(shareData)) {
-		navigator.share(shareData);
-	} else {
-		navigator.clipboard.writeText(window.location.href);
-		alert("Copied to clipboard.")
-	}
+	};
+
+	// Fetch the image from local file system (assuming it's in the same directory)
+	fetch("./share.png")
+		.then(response => response.blob())
+		.then(imageBlob => {
+			// Add the image Blob to the shareData
+			shareData.files = [
+				new File([imageBlob], "share.png", { type: imageBlob.type })
+			];
+
+			// Attempt to share with the image
+			if (navigator.share && navigator.canShare(shareData)) {
+				navigator.share(shareData);
+			} else {
+				navigator.clipboard.writeText(window.location.href);
+				alert("Copied to clipboard.");
+			}
+		})
+		.catch(error => {
+			console.error("Error fetching image:", error);
+			// Fallback to sharing without the image if fetching fails
+			if (navigator.share && navigator.canShare(shareData)) {
+				navigator.share(shareData);
+			} else {
+				navigator.clipboard.writeText(window.location.href);
+				alert("Copied to clipboard.");
+			}
+		});
 }
 
 function generateRandomSharePhrase() {
@@ -149,7 +171,7 @@ function createPuzzleGrid(image) {
 }
 
 function shufflePuzzle() {
-	let shuffleCount = 36; // Number of valid moves to shuffle
+	let shuffleCount = 1; // Number of valid moves to shuffle
 	while (shuffleCount--) {
 		const validMoves = getValidMoves(emptyTileIndex);
 		const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
@@ -165,10 +187,10 @@ function getValidMoves(emptyIndex) {
 	const moves = [];
 
 	const directions = [
-		[row + 1, col],  // Down
-		[row - 1, col],  // Up
-		[row, col + 1],  // Right
-		[row, col - 1],  // Left
+		[row + 1, col],	// Down
+		[row - 1, col],	// Up
+		[row, col + 1],	// Right
+		[row, col - 1],	// Left
 	];
 
 	directions.forEach(([r, c]) => {
