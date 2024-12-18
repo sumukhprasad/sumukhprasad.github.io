@@ -60,9 +60,9 @@ function showSharePage() {
 		img.style = "width: 256px; height: 256px;"
 		content.appendChild(img);
 		
-		movesElement = document.createElement('h2');
-		movesElement.innerText = "Christmas Puzzle Wizard"
-		content.appendChild(movesElement);
+		badgeElement = document.createElement('h2');
+		badgeElement.innerText = "Christmas Puzzle Wizard"
+		content.appendChild	badgeElement);
 		
 		movesElement = document.createElement('h3');
 		movesElement.innerText = `solved in ${moves} move${moves>1 ? "s" : ""}`
@@ -88,16 +88,7 @@ function share() {
 		text: generateRandomSharePhrase(),
 		url: window.location.href
 	};
-	
-	var sharingIframe     = document.createElement("iframe");
-	var sharingIframeBlob = new Blob([`<!DOCTYPE html><html>`],{type:"text/html"});
-	sharingIframe.src     = URL.createObjectURL(sharingIframeBlob);
 
-	sharingIframe.style.display = "none"; // make it so that it is hidden
-
-	document.documentElement.appendChild(sharingIframe);
-
-	// Fetch the image from local file system (assuming it's in the same directory)
 	fetch("./share.png")
 		.then(response => response.blob())
 		.then(imageBlob => {
@@ -107,8 +98,8 @@ function share() {
 			];
 
 			// Attempt to share with the image
-			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
-				sharingIframe.contentWindow.navigator.share(shareData);
+			if (navigator.share && navigator.canShare(shareData)) {
+				navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
@@ -117,8 +108,8 @@ function share() {
 		.catch(error => {
 			console.error("Error fetching image:", error);
 			// Fallback to sharing without the image if fetching fails
-			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
-				sharingIframe.contentWindow.navigator.share(shareData);
+			if (navigator.share && navigator.canShare(shareData)) {
+				navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
