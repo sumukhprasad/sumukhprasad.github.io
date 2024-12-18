@@ -13,6 +13,16 @@ document.getElementById('play').onclick = function() {
 	}, 1000);
 };
 
+// Because on mobile, when shares are cancelled from outside the browser, e.g., "Discard" clicked on Instagram, the promise never resolves, and the only way to get it to work is using an iframe.
+var sharingIframe     = document.createElement("iframe");
+var sharingIframeBlob = new Blob([`<!DOCTYPE html><html>`],{type:"text/html"});
+sharingIframe.src     = URL.createObjectURL(sharingIframeBlob);
+sharingIframe.setAttribute("allow", "web-share")
+
+sharingIframe.style.display = "none"; // make it so that it is hidden
+
+document.documentElement.appendChild(sharingIframe); // add it to the DOM
+
 function setupPuzzle() {
 	while (content.firstChild) {
 		content.removeChild(content.lastChild);
@@ -98,8 +108,8 @@ function share() {
 			];
 
 			// Attempt to share with the image
-			if (navigator.share && navigator.canShare(shareData)) {
-				navigator.share(shareData);
+			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
+				sharingIframe.contentWindow.navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
@@ -108,8 +118,8 @@ function share() {
 		.catch(error => {
 			console.error("Error fetching image:", error);
 			// Fallback to sharing without the image if fetching fails
-			if (navigator.share && navigator.canShare(shareData)) {
-				navigator.share(shareData);
+			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
+				sharingIframe.contentWindow.navigator.share(shareData);
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
