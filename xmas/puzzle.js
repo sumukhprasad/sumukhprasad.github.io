@@ -110,6 +110,7 @@ function share() {
 			// Attempt to share with the image
 			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
 				sharingIframe.contentWindow.navigator.share(shareData);
+				sharingIframe.contentWindow.location.reload();
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
@@ -120,6 +121,7 @@ function share() {
 			// Fallback to sharing without the image if fetching fails
 			if (sharingIframe.contentWindow.navigator.share && sharingIframe.contentWindow.navigator.canShare(shareData)) {
 				sharingIframe.contentWindow.navigator.share(shareData);
+				sharingIframe.contentWindow.location.reload();
 			} else {
 				navigator.clipboard.writeText(window.location.href);
 				alert("Copied to clipboard.");
