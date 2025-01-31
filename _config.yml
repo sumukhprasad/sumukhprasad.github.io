@@ -1,9 +1,26 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "sumukh prasad" # the name of your site, e.g. ACME Corp.
+author: "Sumukh Prasad"
+url: "https://sumukhprasad.github.io"
 
+
+plugins:
+  - jekyll-feed
 
 collections:
   writing:
     output: true
     future: true
+  blog:
+    output: true
+    future: true
+
+
+feed:
+  icon: assets/favicon.ico
+  collections:
+    writing:
+      path: "writing/feed/feed.xml"
+    blog:
+      path: "blog/feed/feed.xml"
