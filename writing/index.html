@@ -5,11 +5,17 @@ title: "writing"
 
 <div class="content" id="content">
 	
-	<h1>Writing
+	<img src="/assets/images/banner-writing.png" class="banner-image">
+	<div class="caption-smalltext">
+		<a href="https://commons.wikimedia.org/wiki/File:%22Under_the_Jacaranda%22_by_R_Godfrey_Rivers_-_Queensland_Art_Gallery_-_Joy_of_Museums_-_2.jpg">Joyofmuseums</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	</div>
+	
+	<h1>The Afternoon Repartee
 	<a class="rss-link" target="_blank" href="./feed/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/social-icons.svg#rss"></use></svg></a>
 	</h1>
 	
 	<p>Musings and things, maybe.</p>
+	
 	
 	<div class="large-list">
 		{% assign writing = site.writing | sort: 'date' | reverse %}
@@ -20,6 +26,7 @@ title: "writing"
 		<span class="description">{{piece.desc}}</span><br><br>
 		{% endfor %}
 	</div>
+
 
 	
 </div>
