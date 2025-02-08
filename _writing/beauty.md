@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: "Beauty persists."
-type: "story"
+type: "account"
 date: 2025-01-30
 desc: "\"I stare dramatically out of windows and feel things.\""
 ---
