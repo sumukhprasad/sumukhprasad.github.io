@@ -8,7 +8,7 @@ desc: "On escapism and mental retreat."
 
 > And the award for Most Abstract Writing Topic goes to...
 
-In front of me lies a vast expanse of green. Serene, peaceful. It feels like a fever dream, like a faraway place, untouched, idyllic. Somewhere along the edge of the universe, on a shore only my imagination can touch, I have found this place in all its iridescent beauty. But alas, I must come back to reality. Only for a very brief moment of time, I stood in some ephemera, where reality couldn't impose her constraints. Reality had loosened its grip on me, and so had I on her.
+In front of me lies a vast expanse of green. Serene, peaceful. It feels like a fever dream, like a faraway place, untouched, idyllic. Somewhere along the edge of the universe, on a shore only my imagination can touch, I have found this place in all its iridescent beauty. But alas, I must come back to reality. Only for a very brief moment of time, I stood in some ephemera, where reality couldn't impose her constraints. Reality had loosened her grip on me, and so had I on her.
 
 Now, having come back to my chair, I think to myself — was I escaping from reality, or was she escaping from me?
 
