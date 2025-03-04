@@ -15,6 +15,16 @@ title: "blog"
 	<a class="rss-link" target="_blank" href="./feed/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/social-icons.svg#rss"></use></svg></a>
 	</h1>
 	
-	<p>hmmm... nothing here yet, must be an undeflow.</p>
+	<p>hmmm... too much thinking...</p>
+	
+	<div class="large-list">
+		{% assign blog = site.blog | sort: 'date' | reverse %}
+		{% for post in blog %}
+		<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
+		<a href="{{post.url}}">{{post.title}}</a><br>
+
+		<span class="description">{{post.desc}}</span><br><br>
+		{% endfor %}
+	</div>
 	
 </div>

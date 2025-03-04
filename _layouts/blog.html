@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>{{ page.title }} - writing - {{ site.title }}</title>
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+		<link rel="icon" type="image/png" href="/assets/favicon.ico" />
+		<meta name="p:domain_verify" content="50a7521457c61b01cfee31c65ac32526"/>
+		<script src="{{ "/assets/f.js" | relative_url }}"></script>
+	</head>
+	<body>
+		{% include nav.html %}
+		
+		<div class="content writing-page" id="content">
+ 		
+			<h1>{{ page.title }}</h1>
+ 			<h3 class="date">{{ page.date | date: "%e %b %Y" }}</h1>
+				
+ 			<br>
+ 			<br>
+ 			<br>
+			<div class="writing-content">
+ 				{{ content }}
+			</div>
+ 			<br>
+ 			<br>
+ 			<center>···</center>
+ 			<br>
+ 			<br>
+ 			<br>
+      		
+			<hr />
+				
+			<h3>Read more —</h3>
+			<div class="small-list">
+				{% assign blog = site.blog | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
+				{% for post in blog limit: 3 %}
+				<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
+				<a href="{{piece.url}}">{{post.title}}</a><br>
+
+				<span class="description">{{post.desc}}</span><br><br>
+				{% endfor %}
+				
+ 		
+				<a href="/blog" style="opacity: 0.3;"><i>< all blog</i></a>
+			</div>
+ 		
+		
+		</div>
+		{% include footer.html %}
+	</body>
+</html>
