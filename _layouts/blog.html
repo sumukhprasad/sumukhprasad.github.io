@@ -39,7 +39,7 @@
 				{% assign blog = site.blog | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
 				{% for post in blog limit: 3 %}
 				<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
-				<a href="{{piece.url}}">{{post.title}}</a><br>
+				<a href="{{post.url}}">{{post.title}}</a><br>
 
 				<span class="description">{{post.desc}}</span><br><br>
 				{% endfor %}
