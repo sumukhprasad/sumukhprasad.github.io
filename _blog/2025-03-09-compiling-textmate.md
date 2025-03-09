@@ -82,6 +82,11 @@ _outlineView.backgroundColor = NSColor.clearColor;
 
 Changing `clearColor` to something like `redColor` showed up immediately, and using `windowBackgroundColor` fixed the issue. But I'm not sure if this is the fix -- I figure that it was set to `clearColor` to let the window background show through, but for some reason the window itself is stuck in this gray color. Although, I could be completely wrong here and the issue could be something else entirely.
 
+## Next Steps
+
+Well the first obvious next step is to fix the gutter and file browser. Beyond that, I don't think anything else is broken here -- which is one _**hell**_ of an ode to a _superb_ codebase.
+
+I’m not some seasoned macOS dev -- hell, I'm 18 and just figuring this out as I go. But I love TextMate, and I don’t want to see it die just because it's stuck in the past.
 
 ### Commits --
 
