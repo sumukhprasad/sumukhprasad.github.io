@@ -44,9 +44,12 @@ Next issue? Ruby. Specifically, system Ruby. Some of the files in `/bin` were st
 
 Apple started adding a deprecation notice to the system Ruby installation starting in 10.15 -- you'll see this when you open up `irb` if you're still using it:
 ```
-WARNING: This version of ruby is included in macOS for compatibility with legacy software.
-In future versions of macOS the ruby runtime will not be available by
-default, and may require you to install an additional package.
+WARNING: This version of ruby is included in macOS for
+compatibility with legacy software.
+
+In future versions of macOS the ruby runtime will not
+be available by default, and may require you to install
+an additional package.
 ```
 
 So, I swapped it out with `/usr/bin/env ruby` in the files that were still using it --
@@ -86,7 +89,7 @@ Changing `clearColor` to something like `redColor` showed up immediately, and us
 
 Well the first obvious next step is to fix the gutter and file browser. Beyond that, I don't think anything else is broken here -- which is one _**hell**_ of an ode to a _superb_ codebase.
 
-I’m not some seasoned macOS dev -- hell, I'm 18 and just figuring this out as I go. But I love TextMate, and I don’t want to see it die just because it's stuck in the past.
+I’m not some seasoned macOS developer -- hell, I'm 18 and just figuring this out as I go. But I love TextMate, and I don’t want to see it die just because it's stuck in the past.
 
 ### Commits --
 
