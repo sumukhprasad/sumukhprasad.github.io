@@ -70,7 +70,17 @@ With that change, TextMate *finally* compiles! 🎉
 
 ## Wait, where's the gutter?
 
-Right, so I've got TextMate to compile -- but notice how the gutter is completely missing? And how the file browser's background isn't quite right? I'm not sure what's causing that, but I want to assume it's some `NSColor` deprecation thing that's causing it to behave this way. Although, it's just a hunch, and I'm not sure what to think yet. We'll see how this pans out anyways.
+Right, so I've got TextMate to compile -- but notice how the gutter is completely missing? And how the file browser's background isn't quite right? I'm not sure what's causing that, but I want to assume it's some `NSColor` deprecation thing that's causing it to behave this way. Although, it's just a hunch, and I'm not sure what to think yet. Some... creative... debugging with Apple's _Quartz Debug_ tool and its "_Flash screen updates_" toggle tells me that the whatever's rendering the gutter, _is_, in fact, updating the right bits on screen at the right time -- it's just completely invisible for some reason. 
+
+Gutter aside, some more digging led me to line 72 in the FileBrowser framework:
+
+```
+Frameworks/FileBrowser/src/FileBrowserView.mm : 72
+
+_outlineView.backgroundColor = NSColor.clearColor;
+```
+
+Changing `clearColor` to something like `redColor` showed up immediately, and using `windowBackgroundColor` fixed the issue. But I'm not sure if this is the fix -- I figure that it was set to `clearColor` to let the window background show through, but for some reason the window itself is stuck in this gray color. Although, I could be completely wrong here and the issue could be something else entirely.
 
 
 ### Commits --
