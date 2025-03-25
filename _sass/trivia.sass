@@ -1,0 +1,197 @@
+body, html
+	margin: 0
+	padding: 0
+	background-color: #6236FF
+
+
+@font-face
+	font-family: "Pilowlava"
+	src: url("/assets/fonts/Pilowlava-Regular.otf")
+	font-weight: regular
+
+@font-face
+	font-family: "Pilowlava"
+	src: url("/assets/fonts/Pilowlava-Atome.otf")
+	font-weight: bold
+
+
+@font-face
+	font-family: "PicNic"
+	src: url("/assets/fonts/PicNic-Regular.otf")
+	font-weight: regular
+
+main
+	width: 100pc
+	max-width: 640px
+	margin: auto
+	padding: 50px
+	background-color: white
+	overflow: hidden
+	user-select: none
+	-webkit-user-select: none
+	
+	
+.hero
+	font-family: PicNic
+	transform: rotate(-10deg)
+	
+	.name
+		font-size: 42px
+		letter-spacing: -1.5px
+		color: #6236FF
+		
+		.line2
+			margin-left: 64px
+		
+	.title
+		font-size: 54px
+		letter-spacing: -2px
+		color: #B620E0
+		
+
+.hero-2
+	display: flex
+	align-items: end
+	flex-direction: column
+	margin-top: 40px
+	
+	.content
+		max-width: 400px
+	
+	.title
+		font-size: 42px
+		color: #FA6400
+		font-family: "Source Serif 4"
+		font-weight: 100
+		line-height: 46px
+		
+	.about
+		color: #44D7B6
+		font-size: 18px
+		margin-top: 10px
+		
+		.line1
+			font-family: "Pilowlava"
+			
+		.line2
+			font-family: "Open Sans"
+			font-variation-settings: "wdth" 87.5
+			
+		
+		
+.marquee-list-container
+	color: #6DD400
+	font-family: "Open Sans"
+	font-variation-settings: "wdth" 87.5
+	font-size: 32px
+	display: flex
+	flex-direction: column
+	transform: rotate(10deg)
+	margin-top: 30px
+
+	.marquee-list
+		white-space: nowrap
+		display: inline-block
+		position: relative
+		font-weight: 300
+		width: max-content
+		will-change: transform
+		
+		span
+			margin-right: 10px
+		
+	.marquee-list-left
+		animation: 15s marquee-left linear infinite
+	
+	.marquee-list-right
+		animation: 15s marquee-right linear infinite
+	
+@keyframes marquee-left
+	from 
+		transform: translateX(-10%)
+	to 
+		transform: translateX(-60%)
+
+@keyframes marquee-right 
+	from
+		transform: translateX(-60%)
+	to
+		transform: translateX(-10%)
+
+
+
+.questions
+	display: flex
+	transform: rotate(10deg)
+	column-gap: 10px
+	flex-wrap: wrap
+	row-gap: 40px
+	margin-top: 50px
+	
+	.question
+		transform: rotate(-10deg)
+		width: 140px
+		
+		.title
+			font-family: "Instrument Serif"
+			font-style: italic
+			font-size: 24px
+			color: #32C5FF
+			
+		.answer
+			font-family: "Open Sans"
+			font-variation-settings: "wdth" 87.5
+			font-size: 16px
+			color: #0091FF
+
+.facts-label
+	color: #E02020
+	font-family: "Instrument Serif"
+	font-size: 48px
+	font-style: italic
+	margin-top: 50px
+		
+.inverse
+	transform: rotate(-10deg)
+	
+	.question
+		transform: rotate(10deg)
+
+			
+.follow-me
+	margin-top: 50px
+	text-align: right
+	
+	.title
+		font-family: PicNic
+		color: #F7B500
+		font-size: 32px
+		
+	.links
+		font-family: "IBM Plex Mono"
+		font-size: 16px
+		font-weight: bold
+		
+		ul
+			list-style-type: none
+
+		a
+			font-style: italic
+			color: #B620E0
+			text-decoration-color: #B620E0
+			font-weight: 300
+			text-decoration-thickness: 2px
+			transition: all 0.2s
+			&:hover
+				background-color: #B620E0
+				text-decoration: none
+				color: white
+				
+				
+footer
+	text-align: center
+	opacity: 0.3
+	font-family: "Open Sans"
+	font-variation-settings: "wdth" 87.5
+	font-size: 12px
+	

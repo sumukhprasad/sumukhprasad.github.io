@@ -1,0 +1,205 @@
+---
+layout: trivia
+title: "trivia"
+---
+
+<script>
+	colors = ["#E02020", "#FA6400", "#F7B500", "#6DD400", "#44D7B6", "#32C5FF", "#0091FF", "#6236FF", "#B620E0"];
+	const randomColor = colors[Math.floor(Math.random() * colors.length)];
+	document.body.style.backgroundColor = randomColor;
+</script>
+
+
+<div class="hero">
+	<div class="name">
+		<div class="line1">
+			sumukh
+		</div>
+		<div class="line2">
+			prasad's
+		</div>
+	</div>
+	
+	<div class="title">
+		Internet Web Page!
+	</div>
+</div>
+
+
+<div class="hero-2">
+	<div class="content">
+		<img src="/assets/images/just-me.png" height="400px">
+		
+		<div class="title">
+			<b>Sumukh Prasad —</b><br>
+			person, developer,<br>
+			<i>vaguely paranoid :)</i>
+		</div>
+		
+		<div class="about">
+			<span class="line1">he/him</span><br>
+			<span class="line2">certified overkill. pretends to be <strong>(a)</strong> student, <strong>(b)</strong> developer, and <strong>(c)</strong> photographer. got so busy pretending he went and started pretending to be asleep.</span>
+		</div>
+	</div>
+</div>
+
+
+<div class="marquee-list-container">
+	<div class="marquee-list marquee-list-left"></div>
+	<div class="marquee-list marquee-list-right"></div>
+	<div class="marquee-list marquee-list-left"></div>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		    const interests = [
+		        "carnatic music", "photography", "computers", "bicycles", "writing", "visual arts", "classical music",
+		        "90's hip-hop", "late night comedy", "architechture", "cats", "industrial+product design", "flowers", "fountain pens",
+		        "calvin & hobbes", "peanuts", "jazz", "sherlock holmes", "nature", "typography", "documentaries", "animation", "blender",
+			   "vintage tech"
+		    ];
+
+		    const lists = document.querySelectorAll(".marquee-list");
+    
+		    for (var i = 0; i < 2; i++) {
+			    interests.forEach((interest, index) => {
+					const item = document.createElement("span");
+					if (index % 2 === 0) item.innerHTML = `<b>${interest}</b>`; // bold every alternate one
+					else item.textContent = interest;
+
+					lists[index % 3].appendChild(item);
+					
+					separator = document.createElement("span");
+					separator.innerHTML = "•";
+					lists[index % 3].appendChild(separator);
+			    });
+		    }
+		});
+	</script>
+</div>
+
+
+
+<div class="questions">
+	<div class="question">
+		<div class="title">
+			birthday
+		</div>
+	
+		<div class="answer">
+			<strong>26th February.</strong><br>People hate Mondays. I was born on one.
+		</div>
+	</div>
+	
+	
+	<div class="question">
+		<div class="title">
+			mbti
+		</div>
+	
+		<div class="answer">
+			<strong>INFJ-T.</strong><br>Do what you want with this, but it seems to be accurate.
+		</div>
+	</div>
+
+
+
+	<div class="question">
+		<div class="title">
+			interests?
+		</div>
+	
+		<div class="answer">
+			Well, look at the marquees above.
+		</div>
+	</div>
+
+
+
+	<div class="question">
+		<div class="title">
+			favourite song
+		</div>
+	
+		<div class="answer">
+			<strong>Thank U</strong>, by Alanis Morissette
+		</div>
+	</div>
+</div>
+
+<div class="facts-label">
+	Facts about Me
+</div>
+
+<div class="questions inverse">
+	<div class="question">
+		<div class="title">
+			hill i shall die on
+		</div>
+	
+		<div class="answer">
+			Physical media is way better than streaming. Bite me.
+		</div>
+	</div>
+
+
+
+	<div class="question">
+		<div class="title">
+			quote I live by
+		</div>
+	
+		<div class="answer">
+			<i>"It can't be about how much they screwed us up anymore."</i>
+		</div>
+	</div>
+
+
+
+	<div class="question">
+		<div class="title">
+			favourite dev tool
+		</div>
+	
+		<div class="answer">
+			<strong>TextMate</strong>, without a doubt.
+		</div>
+	</div>
+
+
+
+	<div class="question">
+		<div class="title">
+			favourite show
+		</div>
+	
+		<div class="answer">
+			<strong>Shameless</strong>. I relate a lot to Fiona. Make of that what you will.
+		</div>
+	</div>
+</div>
+
+
+<div class="follow-me">
+	<div class="title">
+		Follow me along the interwebs!
+	</div>
+	
+	<div class="links">
+		<ul>
+			<li>Flickr <a href="https://flickr.com/photos/sumukh_prasad/" target="_blank">@sumukh_prasad</a></li>
+			<li>Pinterest <a href="https://pinterest.com/sumukh_prasad" target="_blank">@sumukh_prasad</a></li>
+			<li>Github <a href="https://github.com/sumukhprasad" target="_blank">@sumukhprasad</a></li>
+			<li>Spotify <a href="https://open.spotify.com/user/f3jv3piyvsckf0ol5wnk98xhx" target="_blank">Sumukh Prasad</a></li>
+			<div style="opacity: 0.3">
+				<li>Twitter <a href="https://twitter.com/sumukhprasad" target="_blank">@sumukhprasad</a></li>
+				<li>Instagram <a href="https://www.instagram.com/sumukhprsd/" target="_blank">@sumukhprsd</a></li>
+			</div>
+		</ul>
+	</div>
+</div>
+
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/10oXCb0OlY7gas1PJ1uoxF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+<footer>open sans, picnic, source serif, pilowlava, ibm plex mono licensed under SIL OFL.</footer>
