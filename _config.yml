@@ -3,7 +3,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "sumukh prasad" # the name of your site, e.g. ACME Corp.
 author: "Sumukh Prasad"
 url: "https://sumukhprasad.github.io"
-
+future: true
 
 plugins:
   - jekyll-feed
