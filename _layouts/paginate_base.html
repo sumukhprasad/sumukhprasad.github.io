@@ -26,7 +26,25 @@
 	  		
 	  			<p>{{ page.page_subtitle }}</p>
 				
-	  			{{ content }}
+				{% if page.list_type == "writing" %}
+					<div class="large-list">
+						{% for piece in paginator.posts %}
+							<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}{% if piece.type != "poetry" %} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read {% endif %}</span><br>
+							<a href="{{piece.url}}">{{piece.title}}</a><br>
+                    	
+							<span class="description">{{piece.desc}}</span><br><br>
+						{% endfor %}
+					</div>
+	  			{% else %}
+					<div class="large-list">
+						{% for post in paginator.posts %}
+							<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
+							<a href="{{post.url}}">{{post.title}}</a><br>
+					
+							<span class="description">{{post.desc}}</span><br><br>
+						{% endfor %}
+					</div>
+				{% endif %}
 				
 				<div class="pagination">
 					{% if paginator.first_page_path and paginator.page != 1 %}

@@ -13,12 +13,3 @@ pagination:
   per_page: 5
   permalink: /page/:num/
 ---
-
-<div class="large-list">
-	{% for post in paginator.posts %}
-		<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
-		<a href="{{post.url}}">{{post.title}}</a><br>
-
-		<span class="description">{{post.desc}}</span><br><br>
-	{% endfor %}
-</div>
