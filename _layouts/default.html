@@ -5,17 +5,18 @@
 		<meta charset="utf-8">
 		<title>{{ page.title }} - {{ site.title }}</title>
 		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-		<meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
-		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+		<meta name="theme-color" content="#008080" />
 		<link rel="icon" type="image/png" href="/assets/favicon.ico" />
 		<meta name="p:domain_verify" content="50a7521457c61b01cfee31c65ac32526"/>
 		<script src="{{ "/assets/f.js" | relative_url }}"></script>
 	</head>
 	<body>
-		{% include nav.html %}
+		<div class="page">
+			{% include nav.html %}
 	  
-		{{ content }}
+			{{ content }}
 		
-		{% include footer.html %}
+			{% include footer.html %}
+		</div>
 	</body>
 </html>

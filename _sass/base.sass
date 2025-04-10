@@ -24,15 +24,22 @@ hr
 	border-radius: 3px
 
 body
-	background: $backgroundColor
+	background: $bodyBackgroundColor
 	color: $bodyColor
 	font-family: $sansFont
 	margin: 0
+	font-size: 12px
 
 .content, nav
 	max-width: 640px
 	margin: auto
 	padding: 20px
+	
+.page
+	max-width: 720px
+	margin: auto
+	background: $backgroundColor
+
 
 .index-section-flex
 	display: flex
@@ -40,7 +47,7 @@ body
 	align-items: start
 	column-gap: 20px
 	
-@media screen and (max-width: 600px)
+@media screen and (max-width: 720px)
 	.index-section-flex
 		flex-direction: column
 		align-items: center
@@ -88,7 +95,7 @@ footer
 	max-width: 640px
 	padding: 20px
 	opacity: $standardHalfOpacity
-	font-size: 12px
+	font-size: 0.75em
 	margin: auto
 	display: flex
 	justify-content: space-between
@@ -112,7 +119,7 @@ footer
 	&:hover
 		fill: rgba(0, 0, 0, 1)
 	
-@media screen and (max-width: 600px)
+@media screen and (max-width: 720px)
 	nav
 		flex-direction: column
 		row-gap: 20px

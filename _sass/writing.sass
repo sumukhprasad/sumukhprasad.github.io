@@ -5,20 +5,28 @@
 		font-style: italic
 		opacity: 0.3
 		font-weight: bold
-		font-size: 12px
+		font-size: 0.75em
+		
+	a
+		font-family: $serifFont
+		font-size: 1.25em
 		
 	.description
 		font-style: italic
 		opacity: 0.3
 		
 .writing-page
+	
+	h1
+		font-size: 3em
+		font-weight: normal
+		font-style: italic
+
 	.date
 		opacity: 0.3
 		font-style: italic
 
 	.writing-content
-		font-family: $serifFont
-		font-size: 18px
 		text-align: justify
 		
 		code
@@ -29,14 +37,28 @@
 			margin: auto
 			max-width: 640px
 			width: 100%
-		
 	
 	.small-list
 		.date
 			font-style: italic
 			opacity: 0.3
 			font-weight: bold
-			font-size: 12px
+			font-size: 0.75em
+			
+		a
+			font-family: $serifFont
+			font-size: 1.25em
+
 		.description
 			font-style: italic
 			opacity: 0.3
+			
+
+	
+.writing-serif .writing-content
+	font-size: 1.5em
+	font-family: $serifFont
+
+.writing-sans .writing-content
+	font-size: 1.125em
+	font-family: $sansFont
