@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>{{ page.title }} - {{ site.title }}</title>
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		<meta name="theme-color" content="#008080" />
+		<link rel="icon" type="image/png" href="/assets/favicon.ico" />
+		<meta name="p:domain_verify" content="50a7521457c61b01cfee31c65ac32526"/>
+		<script src="{{ "/assets/f.js" | relative_url }}"></script>
+	</head>
+	<body>
+		<div class="page">
+			{% include nav.html %}
+	  
+	  		<div class="content">
+	  			<img src="{{ page.banner }}" class="banner-image">
+	  			<div class="caption-smalltext">
+					{{ page.banner_license }}
+	  			</div>
+	  		
+	  			<h1>{{ page.page_title }}
+	  			<a class="rss-link" target="_blank" href="./feed/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/social-icons.svg#rss"></use></svg></a>
+	  			</h1>
+	  		
+	  			<p>{{ page.page_subtitle }}</p>
+				
+	  			{{ content }}
+				
+				<div class="pagination">
+					{% if paginator.first_page_path and paginator.page != 1 %}
+						<a href="{{ paginator.first_page_path }}"><< first</a>
+					{% endif %}
+
+					{% if paginator.previous_page %}
+						<a href="{{ paginator.previous_page_path }}">< prev</a>
+					{% endif %}
+
+					<span>page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+					{% if paginator.next_page %}
+						<a href="{{ paginator.next_page_path }}">></a>
+					{% endif %}
+
+					{% if paginator.page != paginator.total_pages %}
+						<a href="{{ paginator.last_page_path }}">last >></a>
+					{% endif %}
+				</div>
+			</div>
+		
+			{% include footer.html %}
+		</div>
+	</body>
+</html>

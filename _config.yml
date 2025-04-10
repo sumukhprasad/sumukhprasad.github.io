@@ -1,12 +1,12 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "sumukh prasad" # the name of your site, e.g. ACME Corp.
+baseurl: ""
+title: "sumukh prasad"
 author: "Sumukh Prasad"
 url: "https://sumukhprasad.github.io"
 future: true
 
 plugins:
   - jekyll-feed
+  - jekyll-paginate-v2
 
 collections:
   writing:
@@ -24,3 +24,15 @@ feed:
       path: "writing/feed/feed.xml"
     blog:
       path: "blog/feed/feed.xml"
+
+
+pagination:
+  enabled: true
+  per_page: 5
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2

@@ -1,32 +1,26 @@
 ---
-layout: default
+layout: paginate_base
 title: "writing"
+
+banner: /assets/images/banner-writing.png
+banner_license: "Joyofmuseums, CC BY-SA 4.0, via Wikimedia Commons"
+page_title: "The Afternoon Repartee"
+page_subtitle: "Musings and things, maybe."
+
+pagination: 
+  enabled: true
+  collection: writing
+  per_page: 5
+  permalink: /page/:num/
+  first_page_url: /writing/
 ---
 
-<div class="content" id="content">
-	
-	<img src="/assets/images/banner-writing.png" class="banner-image">
-	<div class="caption-smalltext">
-		<a href="https://commons.wikimedia.org/wiki/File:%22Under_the_Jacaranda%22_by_R_Godfrey_Rivers_-_Queensland_Art_Gallery_-_Joy_of_Museums_-_2.jpg">Joyofmuseums</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
-	</div>
-	
-	<h1>The Afternoon Repartee
-	<a class="rss-link" target="_blank" href="./feed/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/social-icons.svg#rss"></use></svg></a>
-	</h1>
-	
-	<p>Musings and things, maybe.</p>
-	
-	
-	<div class="large-list">
-		{% assign writing = site.writing | sort: 'date' | reverse %}
-		{% for piece in writing %}
+
+<div class="large-list">
+	{% for piece in paginator.posts %}
 		<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}{% if piece.type != "poetry" %} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read {% endif %}</span><br>
 		<a href="{{piece.url}}">{{piece.title}}</a><br>
 
 		<span class="description">{{piece.desc}}</span><br><br>
-		{% endfor %}
-	</div>
-
-
-	
+	{% endfor %}
 </div>

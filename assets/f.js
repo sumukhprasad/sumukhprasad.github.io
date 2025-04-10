@@ -26,8 +26,6 @@ function handleKeyPress(event) {
         }
     }
 
-    console.log(sequenceProgress)
-
     lastKeyTime = currentTime;
 }
 
