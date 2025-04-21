@@ -1,11 +1,11 @@
-@import 'variables'
+@use 'variables'
 
-@import 'work.sass'
-@import 'typography.sass'
-@import 'writing.sass'
+@use 'work.sass'
+@use 'typography.sass'
+@use 'writing.sass'
 
 
-@import 'banana-slip.sass'
+@use 'banana-slip.sass'
 
 
 .p5Canvas
@@ -20,13 +20,13 @@
 	padding: 4px
 
 hr
-	border: 3px $themeColorTranslucent solid
+	border: 3px variables.$themeColorTranslucent solid
 	border-radius: 3px
 
 body
-	background: $bodyBackgroundColor
-	color: $bodyColor
-	font-family: $sansFont
+	background: variables.$bodyBackgroundColor
+	color: variables.$bodyColor
+	font-family: variables.$sansFont
 	margin: 0
 	font-size: 12px
 
@@ -38,7 +38,7 @@ body
 .page
 	max-width: 720px
 	margin: auto
-	background: $backgroundColor
+	background: variables.$backgroundColor
 
 
 .index-section-flex
@@ -79,22 +79,22 @@ nav
 			background-color: transparent
 
 a
-	color: $themeColor
+	color: variables.$themeColor
 	font-weight: bold
 	text-decoration: underline
-	text-decoration-color: $themeColorHalf
-	-webkit-text-decoration-color: $themeColorHalf
+	text-decoration-color: variables.$themeColorHalf
+	-webkit-text-decoration-color: variables.$themeColorHalf
 	text-decoration-thickness: 2px
 	transition: all 0.2s
 	&:hover
-		background-color: $themeColor
+		background-color: variables.$themeColor
 		text-decoration: none
 		color: white
 
 footer
 	max-width: 640px
 	padding: 20px
-	opacity: $standardHalfOpacity
+	opacity: variables.$standardHalfOpacity
 	font-size: 0.75em
 	margin: auto
 	display: flex
@@ -103,7 +103,7 @@ footer
 	text-transform: lowercase
 
 .translucent
-	opacity: $standardHalfOpacity
+	opacity: variables.$standardHalfOpacity
 
 .unselectable
 	user-select: none

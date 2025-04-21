@@ -1,34 +1,36 @@
+@use "variables"
+
 .monospace-text, code
-	font-family: $monoFont
+	font-family: variables.$monoFont
 	
 	
 ::selection
-	background-color: $themeColorTranslucent !important
+	background-color: variables.$themeColorTranslucent !important
 	text-shadow: 0px 1px #fff
 	
 .caption
-	opacity: $standardHalfOpacity
+	opacity: variables.$standardHalfOpacity
 	margin: 0
-	font-family: $serifFont
+	font-family: variables.$serifFont
 	font-style: italic
 	font-weight: 300
 	text-align: center
 	
 .caption-smalltext
-	opacity: $standardHalfOpacity
+	opacity: variables.$standardHalfOpacity
 	margin: 0
-	font-family: $serifFont
+	font-family: variables.$serifFont
 	font-style: italic
 	font-weight: 300
 	text-align: center
 	font-size: 0.5em
 	
 h1, h2, h3, h4, h5, h6
-	font-family: $serifFont
+	font-family: variables.$serifFont
 	
 	
 blockquote
-	border-left: 10px solid $themeColorTranslucent
+	border-left: 10px solid variables.$themeColorTranslucent
 	padding-left: 10px
 	margin: 0
 	font-style: italic

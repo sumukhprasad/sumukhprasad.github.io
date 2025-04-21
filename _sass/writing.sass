@@ -1,4 +1,4 @@
-@import 'variables'
+@use 'variables'
 
 .large-list
 	.date
@@ -8,7 +8,7 @@
 		font-size: 0.75em
 		
 	a
-		font-family: $serifFont
+		font-family: variables.$serifFont
 		font-size: 1.25em
 		
 	.description
@@ -46,7 +46,7 @@
 			font-size: 0.75em
 			
 		a
-			font-family: $serifFont
+			font-family: variables.$serifFont
 			font-size: 1.25em
 
 		.description
@@ -57,8 +57,8 @@
 	
 .writing-serif .writing-content
 	font-size: 1.5em
-	font-family: $serifFont
+	font-family: variables.$serifFont
 
 .writing-sans .writing-content
 	font-size: 1.125em
-	font-family: $sansFont
+	font-family: variables.$sansFont
