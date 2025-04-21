@@ -9,7 +9,7 @@ desc: "Barcodes are a godsend."
 
 Over the years I've added many books to my arsenal -- but never kept track of them. I fully blame child-me for lack of foresight. :/
 
-In any case, I wanted to have a list of what books I had. But cataloging 4 shelves worth of book wouldn't be easy.
+In any case, I wanted to have a list of what books I had. But cataloging 4 shelves worth of books wouldn't be easy.
 
 
 <br>
