@@ -7,7 +7,7 @@ desc: "\"Reaching for something in the distance...\""
 ---
 
 
-What is it about the future that makes us question the present? _Where do we come from? What are we? Where are we going?<sup class="unselectable"><a href="#2">1</a></sup>_
+What is it about the future that makes us question the present? _Where do we come from? What are we? Where are we going?<sup class="unselectable"><a href="#1">1</a></sup>_
 
 It seems we think of the future as a place, a destination to get to and stop, an end to something. To me, though, it isn't a place -- it's more a feeling. A question without punctuation, a blank page on which to write with tomorrow's ink, a door with no handle.
 
