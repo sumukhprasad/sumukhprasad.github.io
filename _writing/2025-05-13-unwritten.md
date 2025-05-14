@@ -11,7 +11,7 @@ What is it about the future that makes us question the present? _Where do we com
 
 It seems we think of the future as a place, a destination to get to and stop, an end to something. To me, though, it isn't a place -- it's more a feeling. A question without punctuation, a blank page on which to write with tomorrow's ink, a door with no handle.
 
-It's quite strange how something so abstract, that doesn't exist yet, can feel so heavy. So present. It manages to sit on our shoulders like an invisible valise of sorts -- a valise the size of a pea and the weight of an elephant. A white elephant, perhaps. Indisposable, unavoidable, yet an inescapable burden.
+It's quite strange how something so abstract, that doesn't exist yet, can feel so heavy. So present. It manages to sit on our shoulders like an invisible valise of sorts -- a valise with the size of a pea and the weight of an elephant. A white elephant, perhaps. Indisposable, unavoidable, yet an inescapable burden.
 
 Still, we carry it willingly. We obsess over it. We let go of the past because we know it's unchangeable -- and we hold tight the future we know is unwritten. Why do we place hope in the unwritten? Why do we use the unwritten to measure the present? Measuring by not what it is, but what it is not yet?
 
