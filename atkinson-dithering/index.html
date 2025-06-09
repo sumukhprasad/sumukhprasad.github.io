@@ -1,0 +1,49 @@
+---
+layout: default
+title: atkinson dithering demo
+---
+
+<div class="content">
+	<h1>Atkinson Dithering</h1>
+	
+	<hr>
+	
+	<form id="config" onsubmit="return false;">
+		<h2>Image</h3>
+		<input type="file" id="upload" accept="image/*" />
+		
+		<h2>Options</h3>
+		<label>
+			grayscale using 
+			<select id="grayscale">
+				<optgroup label="aggregate methods">
+					<option value="average">average RGB</option>
+					<option value="luminance" selected>luminance RGB</option>
+				</optgroup>
+
+				<optgroup label="color isolation">
+					<option value="isor">isolate R</option>
+					<option value="isog">isolate G</option>
+					<option value="isob">isolate B</option>
+				</optgroup>
+			</select>
+		</label>
+		<br><br>
+		<label>
+			threshold (<strong><span id="threshold-val">128</span></strong>)<br>
+			0 <input type="range" id="threshold" min="0" max="255" value="128" /> 255
+		</label>
+		<br><br>
+		<label>
+			chunk blocks of size <input type="number" id="scale" min="1" value="1" /> pixel(s)
+		</label>
+	</form>
+	
+	<hr>
+	
+	<canvas id="canvas" style="display:block;margin:auto;"></canvas>
+	
+	<button id="download">save image</button>
+	
+	<script src="dither.js"></script>
+</div>
