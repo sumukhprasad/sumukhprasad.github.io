@@ -40,7 +40,7 @@ function assembleDataBox(entry) {
 	const yearInfo = entry.startYear == entry.endYear ? `${entry.startYear}` : `${entry.startYear} - ${entry.endYear}`;
 	
 	var content = `
-	<span class="entry-year">${yearInfo}</span> <a href="${entry.link}" target="_blank"><span class="entry-title">${entry.title}</span></a><br><span class="entry-description">${entry.description}</span>
+	<span class="entry-year">${yearInfo}</span> <a href="${entry.link}"><span class="entry-title">${entry.title}</span></a><br><span class="entry-description">${entry.description}</span>
 	`;
 	
 	d.innerHTML = content;
@@ -105,7 +105,7 @@ const workTreeContent = [
 		endYear: 2025,
 		title: "Boink Kernel Project",
 		description: "abstracting every single layer of computer software, from metal to user",
-		link: "#"
+		link: "../projects/boink-kernel-project"
 	},
 	
 	{
@@ -114,7 +114,7 @@ const workTreeContent = [
 		endYear: 2025,
 		title: "Boink Kernel Project -- GLFS",
 		description: "a fully custom filesystem implementation for boinkOS",
-		link: "#"
+		link: "../projects/boink-kernel-project#glfs"
 	},
 	
 	{
