@@ -159,7 +159,7 @@ const workTreeContent = [
 		endYear: 2022,
 		title: "2D Equation Graphing",
 		description: "web-based grapher for equations in 2 variables",
-		link: "#"
+		link: "../projects/grapher"
 	},
 	
 ]
