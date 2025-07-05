@@ -136,20 +136,20 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["graphics", "tooling"],
+		categories: ["competitive programming"],
 		startYear: 2022,
-		endYear: 2022,
-		title: "2D Equation Graphing",
-		description: "web-based grapher for equations in 2 variables",
-		link: "../projects/grapher"
+		endYear: 2024,
+		title: "CodeJam Question Sets",
+		description: "",
+		link: "../projects/codejam-question-sets"
 	},
 	
 	{
-		categories: ["education", "competetive programming"],
+		categories: ["education", "competitive programming"],
 		startYear: 2023,
 		endYear: 2023,
 		title: "BlockJam",
-		description: "learn-as-you-go competetive programming for grade 5 at DPS Bangalore South",
+		description: "learn-as-you-go competitive programming for grade 5 at DPS Bangalore South",
 		link: "../projects/blockjam"
 	},
 	
