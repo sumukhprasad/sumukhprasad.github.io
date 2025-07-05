@@ -5,4 +5,192 @@ title: Boink Kernel Project
 
 <div class="content">
 	<h1>Boink Kernel Project</h1>
+	
+	<p>The Boink Kernel Project aims to provide a fairly usable abstraction for every layer between bare metal and user. It provides the following:</p>
+	
+	<ul>
+		<li>filesystem (GLFS)</li>
+		<li>bootloader (Boink Interactive Bootloader)</li>
+		<li>kernel (BoinkOS)</li>
+		<li>syscall interface</li>
+		<li>custom libc</li>
+	</ul>
+	
+	
+	<p>Two novel ideas have been implemented as part of this kernel --</p>
+	<ul>
+		<li>
+			<b>Kernel Scratchpad</b><br>provides 16kb of "scratchpad" space for the kernel to use -- avoids page management where it may not be needed
+		</li>
+		<li>
+			<b>Panic Diagnostic Shell</b><br>provides a way to easily debug programs when a panic state is entered
+		</li>
+	</ul>
+	
+	<p>Several OSDev milestones were accomplished in this project --</p>
+	<ul>
+		<li>custom 32-bit protected mode bootloader with VESA graphics</li>
+		<li>paging and frame allocation</li>
+		<li>syscalls + userland mode (ring3) context switching</li>
+		<li>ELF binary loading and execution</li>
+		<li>basic shell with file viewing, image viewing, and app execution</li>
+		<li>interrupt handling with IRQs, ISRs, PIT, and keyboard input</li>
+		<li>simple framebuffer-based graphics output</li>
+		<li>GLFS - a simple loadable filesystem baked into the boot process</li>
+	</ul>
+	
+	<p>Other milestones were also achieved --</p>
+	<ul>
+		<li>less-inspired terminal pager with search function</li>
+		<li>bitmap image viewer</li>
+	</ul>
+	
+	
+	
+	<h2>Screenshots from development</h2>
+	
+	<b>First Steps -- printing to the screen in VGA text mode</b><br>
+	<img src="/assets/projects/boink-kernel-project/1.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>GLFS disk reads</b><br>
+	<img src="/assets/projects/boink-kernel-project/2.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>VGA framebuffer graphics</b><br>
+	<img src="/assets/projects/boink-kernel-project/3.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>Less-inspired Text Pager</b><br>
+	<img src="/assets/projects/boink-kernel-project/4.png" style="width: 49.5%">
+	<img src="/assets/projects/boink-kernel-project/5.png" style="width: 49.5%">
+	<br><br><br>
+	
+	<b>Panic diagnostic shell</b><br>
+	<img src="/assets/projects/boink-kernel-project/6.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>Boink Interactive Bootloader</b><br>
+	<img src="/assets/projects/boink-kernel-project/7.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>Bitmap Imag Viewer</b><br>
+	<img src="/assets/projects/boink-kernel-project/8.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>ring3 context switching</b><br>
+	<img src="/assets/projects/boink-kernel-project/9.png" style="width: 50%">
+	<br><br><br>
+	
+	<b>Custom libc with basic I/O support</b><br>
+	<img src="/assets/projects/boink-kernel-project/10.png" style="width: 50%">
+	<br><br><br>
+	
+	
+	<img src="/assets/projects/boink-kernel-project/cover.png" style="width: 100%">
+	
+
+	<hr>
+	<h1 id="glfs">GLFS Project</h1>
+	<i>good little file system (affectionately good luck file system)</i>
+	
+	<p>GLFS intends to be an insanely simple filesystem for use in hobby projects. GLFS is used by the Boink Interactive Bootloader to load the system into memory.</p>
+	
+	<h3>GLFS Structure Overview</h3>
+	<pre>
+	[sector 0] GLFS SUPERBLOCK
+	----------
+	- magic GLFS+version identifier
+
+	[sector 1+] DIRECTORY TABLE
+	-----------
+	     [entry 0] filename: string
+	               start sector: int
+		       size: int (bytes)
+
+	     [entry 1] filename: string
+	               start sector: int
+		       size: int (bytes)
+	     (...)
+     
+	[end of table marker]
+	----------
+	[file data]
+	(...)
+	</pre>
+
+	<h3><code>[0]</code> Superblock Overview</h3>
+	<ul>
+		<li>size: 512b</li>
+		<li>contents:
+			<ul>
+				<li>bytes 0..7: <code>GLFSv0\n</code> (7 bytes+newline)</li>
+				<li>bytes 7..511: reserved</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<h3><code>[sector 1+]</code> Directory Table Overview</h3>
+	<ul>
+		<li>each 40-byte directory entry contains:
+		<ul>
+			<li>32 byte filename</li>
+			<li>4 byte (uint32) start sector (offset from sector 0)</li>
+			<li>4 byte (uint32) file size in bytes</li>
+		</ul>
+		</li>
+		<li>end of table is marked with <code>b'__END__'</code> (8 bytes)</li>
+	</ul>
+	<i>from <a target="_blank" href="https://github.com/BoinkOS/glfs_spec">GLFSv0 Spec</a></i>
+		
+	<p>A full suite of GLFS tools is available <a target="_blank" href="https://github.com/BoinkOS/glfs_tools">here</a>.</p>
+	
+	
+	<hr>
+	<h1>Available Code</h1>
+	<ul>
+		<li>
+			<b>BoinkOS</b>
+			<br>
+			main kernel code
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/boink_os">get the code></a>
+		</li>
+		<li>
+			<b>Boink Interactive Bootloader</b>
+			<br>
+			bootloader
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/boink_boot">get the code></a>
+		</li>
+		<li>
+			<b>Kernel Template</b>
+			<br>
+			sample kernel template, loadable by Boink Interactive Bootloader
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/boink_boot_sampe_kernel">get the code></a>
+		</li>
+		<li>
+			<b>Boink C Standard Library</b>
+			<br>
+			minimal C Standard Library implemntation for BoinkOS.
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/boink_libc">get the code></a><br> or <a href="libcref.html">get the reference></a>
+		</li>
+		<li>
+			<b>BoinkOS Userland Template</b>
+			<br>
+			userland program template for BoinkOS -- compiles both .elf and .bin files
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/boink-userland-template">get the code></a>
+		</li>
+		<li>
+			<b>GLFS Tools</b>
+			<br>
+			tools for creation and editing of GLFS formatted disk images
+			<br>
+			<a target="_blank" href="https://github.com/BoinkOS/glfs_tools">get the code></a>
+		</li>
+	</ul>
+	
 </div>

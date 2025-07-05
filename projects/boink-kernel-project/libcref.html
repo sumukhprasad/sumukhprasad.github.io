@@ -1,0 +1,144 @@
+---
+layout: default
+title: Boink Kernel Project -- libc Reference
+---
+
+<div class="content">
+<pre><code>
+
+Boink C Standard Library Reference
+----------------------------------
+
+<b>&#60;stdio.h&#62;</b>
+void putchar(char c);
+    <span style="font-style: italic; opacity: 0.4;">// Writes a single character to the standard output (screen).</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: c - character to print</span>
+
+void puts(const char* str);
+    <span style="font-style: italic; opacity: 0.4;">// Writes a null-terminated string followed by a newline.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - string to print</span>
+
+int input(char *buf, int len);
+    <span style="font-style: italic; opacity: 0.4;">// Reads up to 'len' characters into 'buf' from user input.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Blocks until Enter is pressed.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: buf - buffer to store input</span>
+    <span style="font-style: italic; opacity: 0.4;">//         len - max number of characters to read</span>
+
+void clear();
+    <span style="font-style: italic; opacity: 0.4;">// Clears text on scren</span>
+
+char getchar();
+    <span style="font-style: italic; opacity: 0.4;">// Reads a keypress</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns 1 character</span>
+
+
+<b>&#60;stdlib.h&#62;</b>
+void exit(int status);
+    <span style="font-style: italic; opacity: 0.4;">// Standard exit function</span>
+
+void sleep(int ms);
+    <span style="font-style: italic; opacity: 0.4;">// Standard sleep function</span>
+
+<b>&#60;util.h&#62;</b>
+char* itoa(int val, int base);
+    <span style="font-style: italic; opacity: 0.4;">// Converts an integer to a string with the given base (e.g. base 10, base 16).</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: val - integer value to convert</span>
+    <span style="font-style: italic; opacity: 0.4;">//         base - number base (between 2 and 16)</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: pointer to static buffer with result (not thread-safe)</span>
+
+int strlen(const char *str);
+    <span style="font-style: italic; opacity: 0.4;">// Returns the length of a null-terminated string (not including '\0').</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - input string</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: number of characters</span>
+
+int strcmp(const char* s1, const char* s2);
+    <span style="font-style: italic; opacity: 0.4;">// Compares two strings lexicographically.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: 0 if equal, negative if s1 < s2, positive if s1 > s2</span>
+
+int strncmp(const char* s1, const char* s2, int n);
+    <span style="font-style: italic; opacity: 0.4;">// Like strcmp, but compares at most 'n' characters.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: same as strcmp</span>
+
+int atoi(const char* str);
+    <span style="font-style: italic; opacity: 0.4;">// Converts a numeric string to an integer.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - string representation of a number (e.g. "42")</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: integer value</span>
+
+long strtol(const char *str, char **endptr, int base);
+    <span style="font-style: italic; opacity: 0.4;">// Converts a string to a long, respecting base (e.g. base 10, 16).</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - input string</span>
+    <span style="font-style: italic; opacity: 0.4;">//         endptr - out param: pointer to char after last parsed digit</span>
+    <span style="font-style: italic; opacity: 0.4;">//         base - base to interpret number in</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: converted long value</span>
+
+char* strtok(char* str, const char* delim);
+    <span style="font-style: italic; opacity: 0.4;">// Tokenizes a string, splitting it into pieces using delimiters.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - input string on first call, NULL on subsequent calls</span>
+    <span style="font-style: italic; opacity: 0.4;">//         delim - characters to split on</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: pointer to next token, or NULL when no more tokens</span>
+
+char* strchr(const char* str, int c);
+    <span style="font-style: italic; opacity: 0.4;">// Finds the first occurrence of character c in string str.</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: str - input string</span>
+    <span style="font-style: italic; opacity: 0.4;">//         c - character to find</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: pointer to the character in str, or NULL if not found</span>
+
+char* strcat(char* dest, const char* src);
+    <span style="font-style: italic; opacity: 0.4;">// Appends src to the end of dest (assumes dest is large enough).</span>
+    <span style="font-style: italic; opacity: 0.4;">// Params: dest - destination string (modified)</span>
+    <span style="font-style: italic; opacity: 0.4;">//         src - source string</span>
+    <span style="font-style: italic; opacity: 0.4;">// Returns: pointer to dest</span>
+    
+
+
+
+
+Sample Program
+--------------
+
+
+#include &#60;stdio.h&#62;
+#include &#60;stdlib.h&#62;
+#include &#60;util.h&#62;
+
+int main(int argc, char** argv) {
+    clear(); <span style="font-style: italic; opacity: 0.4;">// clear the screen</span>
+    puts("hi from userland!\nargs:\n"); <span style="font-style: italic; opacity: 0.4;">// print</span>
+    puts("\n");
+
+    <span style="font-style: italic; opacity: 0.4;">// loop pver arguments and print</span>
+    for (int i = 0; i < argc; i++) {
+        puts(argv[i]);
+        puts("\n");
+    }
+
+    <span style="font-style: italic; opacity: 0.4;">// classic first program -- input age, print age+10</span>
+    puts("What is your age? ");
+    char buf[4];
+    input(buf, 4);
+
+    int age = atoi(buf);
+
+    puts("In 10 years you will be: ");
+    puts(itoa(age+10, 10));
+    putchar('\n');
+
+    <span style="font-style: italic; opacity: 0.4;">// sleep 100 ticks (PIT is timed at 100Hz -- 100 ticks is 1s)</span>
+    sleep(100);
+    putchar('\n');
+    
+    <span style="font-style: italic; opacity: 0.4;">// exit with status code</span>
+    exit(0);
+    
+    <span style="font-style: italic; opacity: 0.4;">// crt0 ensures safe exit with code 0 IF not properly exited</span>
+    <span style="font-style: italic; opacity: 0.4;">// return 0 will trigger this functionality</span>
+    return 0;
+}
+
+
+
+
+
+
+</code></pre>
+</div>
