@@ -40,7 +40,7 @@ function assembleDataBox(entry) {
 	const yearInfo = entry.startYear == entry.endYear ? `${entry.startYear}` : `${entry.startYear} - ${entry.endYear}`;
 	
 	var content = `
-	<span class="entry-year">${yearInfo}</span> <a href="${entry.link}"><span class="entry-title">${entry.title}</span></a><br><span class="entry-description">${entry.description}</span>
+	<span class="entry-year">${yearInfo}</span> <a href="${entry.link}" target="_blank"><span class="entry-title">${entry.title}</span></a><br><span class="entry-description">${entry.description}</span>
 	`;
 	
 	d.innerHTML = content;
@@ -76,6 +76,7 @@ function assembleTableHeader(categories) {
 	return th;
 }
 
+
 function retrieveCatList(entries) {
 	var cats = [];
 	
@@ -97,7 +98,70 @@ function retrieveCatList(entries) {
 document.getElementById("work-tree").innerHTML = "";
 
 const workTreeContent = [
-		
+	
+	{
+		categories: ["systems programming", "experiments"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Boink Kernel Project",
+		description: "abstracting every single layer of computer software, from metal to user",
+		link: "#"
+	},
+	
+	{
+		categories: ["experiments"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Boink Kernel Project -- GLFS",
+		description: "a fully custom filesystem implementation for boinkOS",
+		link: "#"
+	},
+	
+	{
+		categories: ["art", "experiments", "image processing", "graphics"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Atkinson Dithering Demo",
+		description: "",
+		link: "../projects/atkinson-dithering"
+	},
+	
+	{
+		categories: ["tooling", "automation"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "ISBN Cataloging",
+		description: "using python and opencv to catalog my books",
+		link: "../blog/2025-04-21-isbn-cataloging.html"
+	},
+	
+	{
+		categories: ["competitive programming"],
+		startYear: 2022,
+		endYear: 2024,
+		title: "CodeJam Question Sets",
+		description: "",
+		link: "#"
+	},
+	
+	{
+		categories: ["linguistics", "tooling"],
+		startYear: 2023,
+		endYear: 2023,
+		title: "Indic Language Transliteration",
+		description: "transliteration engine for Indian Classical languages",
+		link: "#"
+	},
+	
+	{
+		categories: ["graphics", "tooling"],
+		startYear: 2022,
+		endYear: 2022,
+		title: "2D Equation Graphing",
+		description: "web-based grapher for equations in 2 variables",
+		link: "#"
+	},
+	
 ]
 
 assemble(workTreeContent, "work-tree");
