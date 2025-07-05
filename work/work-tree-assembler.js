@@ -150,7 +150,7 @@ const workTreeContent = [
 		endYear: 2023,
 		title: "Indic Language Transliteration",
 		description: "transliteration engine for Indian Classical languages",
-		link: "#"
+		link: "../projects/indic-language-transliteration"
 	},
 	
 	{
