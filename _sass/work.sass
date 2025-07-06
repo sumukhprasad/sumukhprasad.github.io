@@ -1,14 +1,23 @@
-.work-section-flex
-	display: flex
-	justify-content: space-between
-	align-items: center
-	column-gap: 20px
+@use "variables"
+
+.work-section
+	margin-top: 50px
 	
-@media screen and (max-width: 600px)
-	.work-section-flex
-		flex-direction: column-reverse
-		align-items: center
-		row-gap: 20px
+	h2
+		border-bottom: 1px dashed variables.$themeColorHalf
+		font-size: 16px
+		
+	table
+		.year
+			width: 7em
+			opacity: variables.$standardHalfOpacity
+
+		td
+			vertical-align: top
+			padding-bottom: 8px
+			
+			ul
+				margin-bottom: 0
 		
 .work-tree
 	table
