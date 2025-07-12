@@ -100,6 +100,15 @@ document.getElementById("work-tree").innerHTML = "";
 const workTreeContent = [
 	
 	{
+		categories: ["art", "experiments", "image processing", "graphics"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Collatz Corals",
+		description: "",
+		link: "../projects/collatz-coral"
+	},
+	
+	{
 		categories: ["systems programming", "experiments"],
 		startYear: 2025,
 		endYear: 2025,
