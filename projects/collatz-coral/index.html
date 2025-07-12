@@ -1,0 +1,61 @@
+---
+layout: default
+title: collatz coral
+---
+
+<style>
+	canvas {
+		display: block;
+		margin: auto;
+		height: 640px; 
+		width: 640px;
+		cursor: move;
+	}
+	
+	input[type=number], input[type=text] {
+		appearance: textfield;
+		border: 0px;
+		display: inline-block;
+		border-radius: 0;
+		border-bottom: 1px dashed black;
+		font-weight: bold;
+		font-family: monospace;
+	}
+	
+	input[type=number]:focus, input[type=text]:focus {
+		outline: none;
+		border-bottom: 1px solid #008888;
+	}
+</style>
+
+<div class="content">
+	<h1>Collatz Coral</h1>
+	
+	
+	<form id="config" onsubmit="return false;">
+		compute collatz arrays from <input required="true" type="number" name="start" value="1" min="1"> to <input required="true" type="number" name="end" value="100" min="1">, then draw lines <input required="true" type="number" name="length" value="10">pt long and <input required="true" type="number" name="stwidth" value="2">pt wide.<br>
+		
+		<br><br><br>
+		
+		at each operation, turn <input required="true" type="number" name="op1" value="-8"> degrees if the operation is 3x+1, or turn <input required="true" type="number" name="op2" value="+8"> if the operation is x/2.<br>
+		
+		<br><br><br>
+
+		color each line with the values<br>
+		hue <input required="true" type="text" value="%step*0.5" name="hue"><br>
+		saturation <input required="true" type="text" value="100" name="saturation"><br>
+		value <input required="true" type="text" value="100" name="value"><br><br>
+	</form>
+
+	<div style="opacity: 0.4; font-style: italic">available variables for HSV --<br> %step: current step<br>%value: current numerical value<br>%op: current operation (1: 3x+1, 2: x/2)</div>
+	
+	<button onclick="run();">Go</button>
+	
+	<hr>
+	
+	<canvas id="canvas"></canvas>
+	
+	<div id="status" style="font-style: italic;color: white;background: rgba(0, 0, 0, 0.2);display: inline-block;width: auto;padding: 2px 10px;text-transform: lowercase;font-weight: bold;border-radius: 10px;margin-top: 10px;">ready</div>
+	
+	<script src="coral.js"></script>
+</div>
