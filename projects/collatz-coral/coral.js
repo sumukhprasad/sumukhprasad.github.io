@@ -146,7 +146,7 @@ function drawCollatzTree(canvas, n, branchL, turnOp1, turnOp2, hExp, sExp, vExp,
 		varObj = {
 			step: i+1,
 			value: value,
-			operation: op
+			op: op
 		}
 		
 		color = HSVtoRGB(

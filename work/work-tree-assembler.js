@@ -104,7 +104,7 @@ const workTreeContent = [
 		startYear: 2025,
 		endYear: 2025,
 		title: "Collatz Corals",
-		description: "",
+		description: "the Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern",
 		link: "../projects/collatz-coral"
 	},
 	
