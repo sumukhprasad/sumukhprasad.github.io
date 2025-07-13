@@ -18,7 +18,19 @@
 			
 			ul
 				margin-bottom: 0
-		
+
+.work-section-flex
+	display: flex
+	justify-content: space-between
+	align-items: center
+	column-gap: 20px
+
+@media screen and (max-width: 600px)
+	.work-section-flex
+		flex-direction: column-reverse
+		align-items: center
+		row-gap: 20px
+	
 .work-tree
 	table
 		border-collapse: collapse
