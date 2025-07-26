@@ -1,0 +1,87 @@
+---
+layout: default
+title: markov chain predictor
+---
+<style>
+	canvas {
+		display: block;
+		margin: auto;
+		height: 640px; 
+		width: 640px;
+		cursor: move;
+	}
+	
+	input[type=number], input[type=text], input[type=link] {
+		appearance: textfield;
+		border: 0px;
+		display: inline-block;
+		border-radius: 0;
+		border-bottom: 1px dashed black;
+		font-family: monospace;
+	}
+	
+	input[type=number]:focus, input[type=text]:focus, input[type=link]:focus {
+		outline: none;
+		border-bottom: 1px solid #008888;
+	}
+</style>
+
+
+
+<div class="content">
+	<h1>Markov Chain Predictor</h1>
+	
+	<form onsubmit="return false;">
+		predict <input type="number" name="npredictions" value="4" min="1"> words in chain<br><br><br>
+		
+		<select name="corpus-select" onchange="showCorrectCorpusInput();">
+			<option value="url">fetch a text file</option>
+			<option value="userinput">use my input</option>
+		</select>
+		as corpus to compute model.
+		
+		<div id="corpus-input-wrapper">
+			<textarea id="corpus-input" name="corpus-input" style="width: 100%; resize: none; height: 250px;" placeholder="corpus"></textarea>
+		</div>
+		
+		<span id="corpus-link-wrapper">
+			fetch text from <input type="link" name="corpus-link" id="corpus-link" style="width: 100%;" placeholder="link" value="https://raw.githubusercontent.com/dariusk/harpooneers/refs/heads/master/corpus-original.txt">
+		</span>
+		
+		<br><br><br>
+		use a <select name="ngram-select">
+			<option value="1">last-word</option>
+			<option value="2" selected>bigram (use last 2 words to compute prediction)</option>
+			<option value="3">trigram (use last 3 words to compute prediction)</option>
+		</select>	context.
+		<br><br><br>
+		<button onclick="recomputeModel()">Compute Model</button>
+		<div style="opacity: 0.4; font-style: italic;" id="status">
+			
+		</div>
+	</form>
+	
+	
+	<hr>
+	<textarea id="markov-input" style="width: 100%; resize: none; height: 250px;font-size: 20px;"></textarea>
+	
+	<div id="markov-prediction" style="font-size: 20px;">
+		
+	</div>
+	
+	
+	
+	<script src="markov.js"></script>
+	<script>
+		function showCorrectCorpusInput() {
+			var value = document.forms[0]["corpus-select"].value;
+			if (value == "url") {
+				document.getElementById("corpus-input-wrapper").style.visibility = "hidden";document.getElementById("corpus-input-wrapper").style.display = "none";document.getElementById("corpus-link-wrapper").style.visibility = "visible";document.getElementById("corpus-link-wrapper").style.display = "inline";
+			} else {
+				document.getElementById("corpus-link-wrapper").style.visibility = "hidden";document.getElementById("corpus-link-wrapper").style.display = "none";document.getElementById("corpus-input-wrapper").style.visibility = "visible";document.getElementById("corpus-input-wrapper").style.display = "block";
+			}
+		}
+		
+		showCorrectCorpusInput();
+	</script>
+</div>
