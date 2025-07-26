@@ -100,6 +100,15 @@ document.getElementById("work-tree").innerHTML = "";
 const workTreeContent = [
 	
 	{
+		categories: ["experiments", "linguistics"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Markov Chain Predictor",
+		description: "text prediction using markov chains",
+		link: "../projects/markov-chain-predictor"
+	},
+	
+	{
 		categories: ["art", "experiments", "image processing", "graphics"],
 		startYear: 2025,
 		endYear: 2025,
