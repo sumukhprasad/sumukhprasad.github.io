@@ -15,8 +15,6 @@ collections:
   blog:
     output: true
     future: true
-  apps:
-    output: true
 
 
 feed:
