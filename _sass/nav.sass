@@ -1,20 +1,16 @@
 @use "variables"
 
 nav
-	display: flex
-	justify-content: space-between
-	align-items: center
 	text-transform: lowercase
 	max-width: 640px
 	margin: auto
 	padding: 20px
-
-	div
-		display: flex
-		column-gap: 20px
-		align-items: center
-
+	
+	.right
+		float: right
+	
 	a
+		margin-left: 20px
 		color: rgba(0, 0, 0, 0.5)
 		text-decoration: none
 		font-weight: normal
@@ -26,10 +22,20 @@ nav
 			background-color: transparent
 	
 	.nav-separator
+		margin-left: 20px
 		color: rgba(0, 0, 0, 0.5)
 
 @media screen and (max-width: 720px)
 	nav
-		flex-direction: column
-		row-gap: 20px
-		align-items: start
+		a
+			margin-left: 0px
+			margin-right: 20px
+			
+		.nav-separator
+			display: none
+		
+		div
+			margin-bottom: 10px
+			
+		.right
+			float: none
