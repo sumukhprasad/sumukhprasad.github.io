@@ -29,6 +29,9 @@
 	.date
 		opacity: 0.3
 		font-style: italic
+		
+	.top-info
+		display: none
 
 	.writing-content
 		text-align: justify
@@ -41,7 +44,7 @@
 			margin: auto
 			max-width: 640px
 			width: 100%
-	
+			
 	.small-list
 		.date
 			font-style: italic
@@ -64,13 +67,29 @@
 	font-family: variables.$serifFont
 
 .writing-sans .writing-content
-	font-size: 1.125em
 	font-family: variables.$sansFont
+	margin-left: 180px
+	
+	.left-info
+		float: left
+		margin-left: -180px
+		width: 160px
+		text-align: right
+		border-top: 1px dashed variables.$themeColor
 	
 @media screen and (max-width: 720px)
 	.writing-page
 		h1
 			font-size: 2.5em
+			
+		.top-info
+			display: block
+
+	.writing-sans .writing-content
+		margin-left: 0px
+	
+		.left-info
+			display: none
 			
 	.writing-serif .writing-content
 		font-size: 1.125em
