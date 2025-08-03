@@ -3,6 +3,7 @@
 @use 'work.sass'
 @use 'typography.sass'
 @use 'writing.sass'
+@use 'nav.sass'
 
 
 @use 'banana-slip.sass'
@@ -30,7 +31,7 @@ body
 	margin: 0
 	font-size: 12px
 
-.content, nav
+.content
 	max-width: 640px
 	margin: auto
 	padding: 20px
@@ -62,30 +63,6 @@ body
 .banner-image
 	width: 640px
 	max-width: 100%
-
-nav
-	display: flex
-	justify-content: space-between
-	align-items: center
-	text-transform: lowercase
-	div
-		display: flex
-		column-gap: 20px
-		align-items: center
-	
-	a
-		color: rgba(0, 0, 0, 0.5)
-		text-decoration: none
-		font-weight: normal
-		text-decoration-color: black
-		-webkit-text-decoration-color: black
-		&:hover
-			color: rgba(0, 0, 0, 1)
-			text-decoration: underline
-			background-color: transparent
-			
-	.nav-separator
-		color: rgba(0, 0, 0, 0.5)
 
 a
 	color: variables.$themeColor
@@ -128,12 +105,6 @@ footer
 	margin-bottom: -4px
 	&:hover
 		fill: rgba(0, 0, 0, 1)
-	
-@media screen and (max-width: 720px)
-	nav
-		flex-direction: column
-		row-gap: 20px
-		align-items: start
 
 .rss-link
 	.svg-icon
