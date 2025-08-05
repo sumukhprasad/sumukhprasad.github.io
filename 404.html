@@ -5,12 +5,21 @@ title: "page not found"
 
 
 <div class="content">
-	<h1 style="font-size: 4em">Oops, you broke the internet.<br>¯\(ツ)/¯</h1>
-	The requested URL does not exist on this site: 
+	<h1 class="notfound-textbubble">Oops, you broke the internet!
+	</h1>
 	
-	<pre id="url" class="monospace-text grey-background">
-	</pre>
-	<script>document.getElementById('url').innerText = window.location.pathname;</script>
+	<div class="notfound-arrow"></div>
+
 	
-	Sorry about that.
+	<h1 style="font-size: 4em; text-align:right;">¯\(ツ)/¯</h1>
+	
+	<div class="notfound-content">
+		The requested URL does not exist on this site: 
+	
+		<pre id="url" class="monospace-text grey-background">
+		</pre>
+		<script>document.getElementById('url').innerText = window.location.pathname;</script>
+	
+		Sorry about that.
+	</div>
 </div>
