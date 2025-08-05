@@ -14,8 +14,11 @@
 	</div>
 	
 	<!-- L -->
-	<div style="line-height: 16px">
-		<a style="margin:0;" href="/"><b>Sumukh Prasad</b><br><i>developer by default</i></a>
+	<div style="line-height: 16px;max-width:220px">
+		<a style="margin:0;" href="/"><b>Sumukh Prasad</a></b><br><span id="randomized-tagline" style="font-style: italic;">developer by default</span>
 	</div>
 	
+	<script>
+		if (Math.random()>0.7) {var navtaglines = ["throwin' stuff at the web since 2017", "computers be computerin'", "poetic prose...", "information superhighway + potholes", "ctrl+alt+uh oh...", "definitely overkill", "silicon <del>valley</del> steep cliff", "born in the year of the smartphone"];document.getElementById("randomized-tagline").innerHTML = navtaglines[Math.floor(Math.random()*navtaglines.length)];}
+	</script>
 </nav>
