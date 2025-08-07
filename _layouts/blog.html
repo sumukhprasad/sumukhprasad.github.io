@@ -17,7 +17,13 @@
 			<div class="content writing-page writing-sans" id="content">
 				
  				<div class="top-info">
- 					<h3 class="date">posted on {{ page.date | date: "%e %b %Y" }}</h3>
+ 					<h3 class="date">
+						posted on {{ page.date | date: "%e %b %Y" }}
+						{% assign time_string = page.date | date: "%l:%M %P" %}
+						{% unless time_string == "12:00 am" %}
+							at {{ time_string }}
+						{% endunless %}
+					</h3>
  				</div>
 				<h1 class="title">{{ page.title }}</h1>
 				<h2 class="subtitle">{{ page.desc }}</h2>
@@ -27,7 +33,13 @@
  				<br>
 				<div class="writing-content">
 	 				<div class="left-info">
-	 					<h3 class="date">posted on {{ page.date | date: "%e %b %Y" }}</h3>
+	 					<h3 class="date">
+							posted on {{ page.date | date: "%e %b %Y" }}
+							{% assign time_string = page.date | date: "%l:%M %P" %}
+							{% unless time_string == "12:00 am" %}
+								at {{ time_string }}
+							{% endunless %}
+						</h3>
 	 				</div>
  					{{ content }}
 				</div>
