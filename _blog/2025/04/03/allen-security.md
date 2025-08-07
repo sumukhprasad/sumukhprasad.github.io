@@ -82,4 +82,4 @@ _To the best of my knowledge, Allen has not taken action to remediate this issue
 
 [Read the full report (PDF) (redacted)](/assets/blog/allen-security-report.pdf)<br>
 <i>or</i><br>
-[Read my personal opinion on this](/blog/2025-04-03-allen-security-coda.html)<br>
+[Read my personal opinion on this](/blog/2025/04/03/allen-security-coda.html)<br>
