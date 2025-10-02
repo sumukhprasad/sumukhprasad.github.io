@@ -150,7 +150,7 @@ const workTreeContent = [
 		endYear: 2025,
 		title: "ISBN Cataloging",
 		description: "using python and opencv to catalog my books",
-		link: "../blog/2025-04-21-isbn-cataloging.html"
+		link: "../blog/2025/04/21/isbn-cataloging.html"
 	},
 	
 	{
