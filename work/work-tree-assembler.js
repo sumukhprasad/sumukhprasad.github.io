@@ -96,8 +96,17 @@ function retrieveCatList(entries) {
 // --------
 
 document.getElementById("work-tree").innerHTML = "";
-
+					
 const workTreeContent = [
+	
+	{
+		categories: ["automation", "tooling"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "LaTeXMLserv",
+		description: "extremeley simple PHP file server with LaTeXML integration",
+		link: "../../projects/latexmlserv"
+	},
 	
 	{
 		categories: ["experiments", "linguistics"],
