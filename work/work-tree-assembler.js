@@ -104,7 +104,7 @@ const workTreeContent = [
 		startYear: 2025,
 		endYear: 2025,
 		title: "LaTeXMLserv",
-		description: "extremeley simple PHP file server with LaTeXML integration",
+		description: "extremely simple PHP file server with LaTeXML integration",
 		link: "../../projects/latexmlserv"
 	},
 	
