@@ -50,7 +50,7 @@ function forwardEliminateInMat(A) {
 		for (let k = i + 1; k < n; k++) {
 			const c = -A[k][i] / A[i][i];
 			if (c === 0) continue;
-			const sign = c < 0 ? '+' : '-';
+			const sign = c < 0 ? '-' : '+';
 			const absC = Math.abs(c.toFixed(3));
 			document.getElementById("output").innerHTML +=
 				`<br><br>\\(R_{${k+1}} \\to R_{${k+1}} ${sign} ${absC}R_{${i+1}}\\)`;
