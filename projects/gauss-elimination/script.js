@@ -28,7 +28,7 @@ function prepareAugmentedMat(A, B) {
 }
 
 
-function forwardEliminateInMat(A, canSwapMax = false) {
+function forwardEliminateInMat(A) {
 	const n = A.length;
 	for (let i = 0; i < n; i++) {
 		let maxEl = Math.abs(A[i][i]);
@@ -40,7 +40,7 @@ function forwardEliminateInMat(A, canSwapMax = false) {
 			}
 		}
 
-		if (canSwapMax && maxRow !== i) {
+		if (document.forms[0].canSwap.checked && maxRow !== i) {
 			[A[maxRow], A[i]] = [A[i], A[maxRow]];
 			document.getElementById("output").innerHTML +=
 				`<br><br>\\(\\text{swap } R_{${i+1}} \\leftrightarrow R_{${maxRow+1}}\\)`;
