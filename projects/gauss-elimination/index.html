@@ -1,0 +1,88 @@
+---
+layout: default
+title: gauss-elimination simulator
+---
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+<style>
+	input[type="number"] {
+		max-width: 50px;
+		appearance: textfield;
+		border: 0px;
+		display: inline-block;
+		border-radius: 0;
+		border-bottom: 1px dashed black;
+		font-family: monospace;
+		text-align: right;
+	}
+	
+	input[type=number]:focus, input[type=text]:focus, input[type=link]:focus {
+		outline: none;
+		border-bottom: 1px solid #008888;
+	}
+</style>
+
+<div class="content">
+	<h1>Gauss-Elimination Simulator</h1>
+	
+	<label>number of equations (n): </label>
+	<input type="number" id="num" min="1" value="3">
+	<button onclick="generateForm()">generate</button>
+
+	<form id="eqForm" onsubmit="return handleSubmit(event)">
+		<div id="matrixInputs" style="margin-bottom: 20px;"></div>
+		<button type="submit">submit</button>
+	</form>
+	<script>
+		function generateForm() {
+			const n = parseInt(document.getElementById('num').value);
+			const container = document.getElementById('matrixInputs');
+			container.innerHTML = '';
+			for (let i = 0; i < n; i++) {
+				const rowDiv = document.createElement('div');
+				rowDiv.className = 'matrix-row';
+				for (let j = 0; j < n; j++) {
+					rowDiv.innerHTML += `
+			<input type="number" step="any" name="a_${i}_${j}" placeholder="a${i+1}${j+1}">`;
+					rowDiv.innerHTML += "zyxwvutsrqponmlkjihgfedcba".substring(n-j-1, n-j);
+					if (j != n - 1) {
+						rowDiv.innerHTML += " + ";
+					}
+				}
+				rowDiv.innerHTML += ` = 
+				<input type="number" step="any" name="b_${i}" placeholder="b${i+1}">`;
+				container.appendChild(rowDiv);
+			}
+		}
+
+		function handleSubmit(event) {
+			event.preventDefault();
+			const n = parseInt(document.getElementById('num').value);
+			const form = new FormData(event.target);
+			const A = [];
+			const B = [];
+			for (let i = 0; i < n; i++) {
+				const row = [];
+				for (let j = 0; j < n; j++) {
+					row.push(parseFloat(form.get(`a_${i}_${j}`)) || 0);
+				}
+				A.push(row);
+				B.push(parseFloat(form.get(`b_${i}`)) || 0);
+			}
+			solve(A, B)
+		}
+	</script>
+	  
+	<hr>
+	
+	<div id="output">
+		
+	</div>
+	
+	
+</div>
+
+
+
+<script src="./script.js"></script>

@@ -96,8 +96,20 @@ function retrieveCatList(entries) {
 // --------
 
 document.getElementById("work-tree").innerHTML = "";
-					
+
+
+// TODO move math stuff to second tree
+		
 const workTreeContent = [
+	
+	{
+		categories: ["experiments", "math-elementary"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Gauss-Elimination Simulator",
+		description: "visualise solving a system of equations using Gauss-elimination",
+		link: "../../projects/gauss-elimination"
+	},
 	
 	{
 		categories: ["automation", "tooling"],
@@ -118,7 +130,7 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["art", "experiments", "image processing", "graphics"],
+		categories: ["art", "experiments", "image processing", "graphics", "math-intermediate"],
 		startYear: 2025,
 		endYear: 2025,
 		title: "Collatz Corals",
@@ -199,7 +211,7 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["graphics", "tooling"],
+		categories: ["graphics", "tooling", "math-advanced"],
 		startYear: 2022,
 		endYear: 2022,
 		title: "2D Equation Graphing",
