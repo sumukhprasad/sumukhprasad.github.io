@@ -1,0 +1,99 @@
+---
+layout: default
+title: indic language transliteration
+---
+
+<div class="content">
+	<i>from README.md:</i><br>
+	
+	<h1>Tiny Stack Language</h1>
+
+
+	<p>Tiny Stack Language or TSL is a small, esoteric, Turing-complete language that lets you interact with a stack in memory.</p>
+
+	<p>More documentation on the grammar is in grammar.md.</p>
+
+	<pre>
+<strong>while</strong> (vssize < 10) {
+	<strong>push</strong> vssize;
+}
+
+<strong>peek</strong>;
+
+<strong>for</strong> (vssize-1) {
+	<strong>pop</strong>;
+	<strong>peek</strong>;
+}
+	</pre>
+
+	produces, as output,
+
+	<pre>
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+	</pre>
+	
+	<hr>
+	
+	<h1>TSL Grammar Definition</h1>
+
+
+	<pre>
+<strong>program</strong>           -> <strong>statement</strong>* EOF
+
+<strong>statement</strong>         -> <strong>stack_statement</strong> ";"
+                     | <strong>if_statement</strong>
+                     | <strong>for_statement</strong>
+                     | <strong>while_statement</strong>
+                     | <strong>expression</strong> ";"
+
+<strong>stack_statement</strong>   -> "push" <strong>expression</strong> ";"
+                     | "pop" ";"
+                     | "peek" ";"
+                     | "sanitize" ";"
+
+<strong>if_statement</strong>      -> "if" "(" <strong>expression</strong> ")" <strong>block</strong>
+<strong>for_statement</strong>     -> "for" "(" <strong>expression</strong> ")" <strong>block</strong>
+<strong>while_statement</strong>   -> "while" "(" <strong>expression</strong> ")" <strong>block</strong>
+
+<strong>block</strong>             -> "{" statement* "}"
+
+<strong>expression</strong>        -> <strong>implication</strong>
+<strong>implication</strong>       -> <strong>logic_or</strong> (("imply" | "nimply") <strong>logic_or</strong>)*
+<strong>logic_or</strong>          -> <strong>logic_and</strong> ("or" <strong>logic_and</strong>)*
+<strong>logic_and</strong>         -> <strong>equality</strong> ("and" <strong>equality</strong>)*
+<strong>equality</strong>          -> <strong>relational</strong> (("==" | "<>" ) <strong>relational</strong>)*
+<strong>relational</strong>        -> <strong>add</strong> (("<" | ">" | "<=" | ">=") <strong>add</strong>)*
+<strong>add</strong>               -> <strong>mul</strong> (("+" | "-") <strong>mul</strong>)*
+<strong>mul</strong>               -> <strong>unary</strong> (("*" | "/") <strong>unary</strong>)*
+<strong>unary</strong>             -> ("not" | "-") <strong>unary</strong>
+                     | <strong>primary</strong>
+
+<strong>primary</strong>           -> <em><strong>NUMBER</strong></em>
+                     | "(" <strong>expression</strong> ")"
+	</pre>
+
+
+	Literals available for use in expressions --
+
+	<pre>
+<strong>vpeek</strong>             -> value if peek is evaluated then
+<strong>vssize</strong>            -> current size of stack
+<strong>vempty</strong>            -> boolean, is the stack empty
+	</pre>
+	
+	<br>
+	<br>
+	<br>
+	
+	<a href="https://github.com/sumukhprasad/tiny-stack-language/">Get the code ></a><br>
+	
+</div>

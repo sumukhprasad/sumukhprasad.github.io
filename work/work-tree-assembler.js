@@ -103,7 +103,16 @@ document.getElementById("work-tree").innerHTML = "";
 const workTreeContent = [
 	
 	{
-		categories: ["experiments", "math-elementary"],
+		categories: ["experiments", "linguistics"],
+		startYear: 2025,
+		endYear: 2025,
+		title: "Tiny Stack Language",
+		description: "turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with",
+		link: "../../projects/tsl"
+	},
+	
+	{
+		categories: ["experiments", "math"],
 		startYear: 2025,
 		endYear: 2025,
 		title: "Gauss-Elimination Simulator",
@@ -130,7 +139,7 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["art", "experiments", "image processing", "graphics", "math-intermediate"],
+		categories: ["art", "experiments", "image processing", "graphics", "math"],
 		startYear: 2025,
 		endYear: 2025,
 		title: "Collatz Corals",
@@ -211,7 +220,7 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["graphics", "tooling", "math-advanced"],
+		categories: ["graphics", "tooling", "math"],
 		startYear: 2022,
 		endYear: 2022,
 		title: "2D Equation Graphing",
