@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Starfall</title>
+	<meta name="theme-color" content="#001010" />
+	<link rel="icon" type="image/png" href="/assets/favicon.ico" />
+	<script src="./p5.min.js"></script>
+	<script src="./stars.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<style>
+		* {
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-o-user-select: none;
+		}
+		
+		body {
+			color: white;
+			margin: 0;
+			padding: 0;
+			font-family: 'Inter';
+			overflow: hidden;
+		}
+
+		/*.scene {
+			position: absolute;
+			z-index: 999;
+			width: 100vw;
+			height: 100%;
+			background-image: url("./scene.png");
+			background-size: contain;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			opacity: 0.5;
+		}*/
+
+		main {
+			position: absolute;
+			z-index: 9999;
+			width: 100vw;
+			height: 100%;
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+		main h1 {
+			font-family: "Uncial Antiqua";
+			font-weight: 100;
+			font-size: 75px;
+			color: #ffb600;
+		}
+		
+		h2 {
+			font-family: "Marcellus SC";
+			font-size: 28px;
+			background-color: rgb(220, 0, 0);
+			border-top: 1px rgba(255, 255, 255, 1) dashed;
+			border-bottom: 1px rgba(255, 255, 255, 1) dashed;
+			color: rgb(255, 255, 255);
+			padding: 2px 16px;
+			box-shadow: 0 4px 8px #000, 0 4px 8px rgba(255, 255, 255, 0.3) inset;
+		}
+		
+		h3 {
+			font-family: "Marcellus SC";
+			font-size: 24px; 
+		}
+
+		@media screen and (max-width: 80rem) {
+			main h1 {
+				font-weight: 100;
+				font-size: 50px;
+			}
+			
+			h2 {
+				font-family: "Marcellus SC";
+				font-size: 24px;
+				box-shadow: 0 2px 4px #000, 0 2px 4px rgba(255, 255, 255, 0.3) inset;
+			}
+		
+			h3 {
+				font-size: 18px; 
+			}
+		}
+
+		button {
+			border-radius: 16px;
+			background-color: rgba(255, 255, 255, 0.3);
+			color: white;
+			font-family: 'Inter';
+			font-weight: 300;
+			font-size: 18px;
+			border: 0;
+			padding: 5px 20px;
+			animation: breathEffect 3s infinite ease-in-out;
+			filter: brightness(1);
+			transition: all 1s;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+
+		@keyframes breathEffect {
+			0% {
+				background-color: rgba(255, 255, 255, 0.3);
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+			}
+
+			50% {
+				background-color: rgba(255, 255, 255, 0.5);
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+			}
+
+			100% {
+				background-color: rgba(255, 255, 255, 0.3);
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+			}
+		}
+
+		button:hover {
+			filter: brightness(0.8);
+		}
+
+		button:active {
+			filter: brightness(0.5);
+		}
+		
+		button:disabled {
+			animation: none;
+			filter: brightness(0.3);
+		}
+		
+		.buttonrow {
+			margin-top: 40px;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.buttonrow button {
+			display: box;
+		}
+
+		.content {
+			opacity: 1;
+			text-align: center;
+			transition: opacity 1s;
+		}
+		
+		.title {
+			opacity: 1;
+			transition: opacity 1s;
+		}
+
+		.hidden {
+			opacity: 0;
+			display: none;
+		}
+		
+		footer {
+			position: absolute;
+			bottom: 10px;
+			width: 100vw;
+			text-align: center;
+			font-size: 12px;
+			z-index: 99999;
+		}
+		
+		footer a {
+			color: white !important;
+		}
+		
+	</style>
+	
+	
+	
+	
+	<style>
+	:root{
+		--slate-height: 80vh;
+		--duration: 700ms;
+		--easing: cubic-bezier(.2,.9,.3,1);
+		--paper-bg: #191d21;
+		--paper-ink: #cccccc;
+		--paper-edge: rgba(0,0,0,0.08);
+		--paper-padding: 28px;
+	}
+	
+	.slate{
+		width: min(900px, 92vw);
+		height: 0;
+		overflow: hidden;
+		box-shadow:
+			0 10px 30px rgba(2,6,23,0.6),
+			inset 0 2px 0 rgba(255,255,255,0.6),
+			inset 0 -6px 18px rgba(0,0,0,0.05);
+		border: 1px solid rgba(0,0,0,0.08);
+		transform-origin: top center;
+		animation: slate-grow var(--duration) var(--easing) forwards;
+		background: var(--paper-bg);
+		position: relative;
+	}
+	
+	.slate__inner{
+		height: var(--slate-height);
+		box-sizing: border-box;
+		color: var(--paper-ink) !important;
+		display:flex;
+		flex-direction:column;
+		justify-content:flex-start;
+		align-items:center;
+		text-align:center;
+		background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%);
+	}
+	
+	@keyframes slate-grow{
+		from { height: 0; }
+		to	 { height: var(--slate-height); }
+	}
+	
+	@media (prefers-reduced-motion: reduce){
+		.slate{
+			animation: none !important;
+			height: var(--slate-height) !important;
+			transition: none !important;
+		}
+	}
+	
+	@media (max-width:420px){
+		:root{ --paper-padding: 18px; --slate-height: 70vh; }
+		.slate__inner{ gap:8px; }
+	}
+	
+	canvas {
+		transition: opacity 1s;
+		opacity: 1;
+	}
+	
+	.faded {
+		opacity: 0.2;
+	}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="scene"></div>
+	<main>
+		
+
+		<div id="start" class="content">
+			<h1 style="text-shadow: 0px 0px 5px #ffb600, 0px -1px 1px white, 0px 2px 1px black">Starfall</h1>
+			<h2>A Twinkling Christmas Game!</h2>
+			<br><br><br>
+			<button id="play" onclick="changeActiveView('tutorial')" style="border-radius: 100px;padding: 16px;line-height: 0;">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16.2891 16.416" style="width: 32px; aspect-ratio: 1;">
+				 <g>
+					<rect height="16.416" opacity="0" width="16.2891" x="0" y="0"/>
+					<path d="M1.70898 14.9805C1.70898 15.9473 2.26562 16.4062 2.92969 16.4062C3.22266 16.4062 3.52539 16.3086 3.82812 16.1523L15.2051 9.50195C16.0156 9.0332 16.2891 8.71094 16.2891 8.20312C16.2891 7.68555 16.0156 7.37305 15.2051 6.9043L3.82812 0.253906C3.52539 0.0878906 3.22266 0 2.92969 0C2.26562 0 1.70898 0.458984 1.70898 1.42578Z" fill="white" fill-opacity="0.85"/>
+				 </g>
+				</svg>
+			</button>
+		</div>
+		
+		
+		<div id="tutorial" class="content hidden" style="max-width: 400px; font-weight: lighter;">
+			<h2>Tutorial</h2>
+			
+			Stars begin to fall out of the sky. Tap a falling star to anchor it to a point. Place all six to rekindle the forgotten constellation. Markers will appear to guide you.<br><br><br>
+			
+			But beware! Six must be placed, but ten fall!
+			
+			<div class="buttonrow">
+				<button onclick="changeActiveView('start')" style="border-radius: 100px;padding: 8px;line-height: 0;">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16.2891 16.416" style="width: 16px; aspect-ratio: 1;" transform="scale(-1, 1)">
+					 <g>
+						<rect height="16.416" opacity="0" width="16.2891" x="0" y="0"/>
+						<path d="M1.70898 14.9805C1.70898 15.9473 2.26562 16.4062 2.92969 16.4062C3.22266 16.4062 3.52539 16.3086 3.82812 16.1523L15.2051 9.50195C16.0156 9.0332 16.2891 8.71094 16.2891 8.20312C16.2891 7.68555 16.0156 7.37305 15.2051 6.9043L3.82812 0.253906C3.52539 0.0878906 3.22266 0 2.92969 0C2.26562 0 1.70898 0.458984 1.70898 1.42578Z" fill="white" fill-opacity="0.85"/>
+					 </g>
+					</svg>
+				</button>
+				<button onclick="changeActiveView('gameplay');startGame();">
+					play!
+				</button>
+			</div>
+		</div>
+		
+		
+		<div id="gameplay" class="content hidden">
+			Gameplay is not initialized. If the issue persists, please refresh the page.
+		</div>
+		
+		
+		<div id="end" class="content hidden">
+			Closure is not initialized. If the issue persists, please refresh the page.
+		</div>
+
+	</main>
+	
+	<footer><a href="./licensing.html">legal</a> | <a href="/">sumukh prasad</a></footer>
+	
+	<script src="viewHandler.js"></script>
+	<script src="game.js"></script>
+</body>
+</html>
