@@ -40,7 +40,7 @@ function forwardEliminateInMat(A) {
 			}
 		}
 
-		if (document.forms[0].canSwap.checked && maxRow !== i) {
+		if (maxRow !== i) {
 			[A[maxRow], A[i]] = [A[i], A[maxRow]];
 			document.getElementById("output").innerHTML +=
 				`<br><br>\\(\\text{swap } R_{${i+1}} \\leftrightarrow R_{${maxRow+1}}\\)`;
@@ -59,6 +59,42 @@ function forwardEliminateInMat(A) {
 				else A[k][j] += c * A[i][j];
 			}
 			document.getElementById("output").innerHTML += matrixToLatex(A, A[0].length - 1);
+		}
+	}
+}
+
+function reduceToRREF(A) {
+	const rows = A.length;
+	const cols = A[0].length;
+
+	for (let i = rows - 1; i >= 0; i--) {
+		// find pivot
+		let pivotCol = A[i].findIndex(v => Math.abs(v) > 1e-12);
+		if (pivotCol === -1) continue;
+
+		// normalize pivot row
+		let pivotVal = A[i][pivotCol];
+		if (Math.abs(pivotVal - 1) > 1e-12) {
+			document.getElementById("output").innerHTML +=
+				`<br><br>\\(R_{${i+1}} \\to \\frac{1}{${pivotVal.toFixed(3)}} R_{${i+1}}\\)`;
+			for (let j = pivotCol; j < cols; j++) {
+				A[i][j] /= pivotVal;
+			}
+			document.getElementById("output").innerHTML += matrixToLatex(A, cols - 1);
+		}
+
+		// clear above pivot
+		for (let r = i - 1; r >= 0; r--) {
+			let factor = A[r][pivotCol];
+			if (Math.abs(factor) < 1e-12) continue;
+			const sign = factor < 0 ? '+' : '-';
+			const mag = Math.abs(factor).toFixed(3);
+			document.getElementById("output").innerHTML +=
+				`<br><br>\\(R_{${r+1}} \\to R_{${r+1}} ${sign} ${mag}R_{${i+1}}\\)`;
+			for (let c = pivotCol; c < cols; c++) {
+				A[r][c] -= factor * A[i][c];
+			}
+			document.getElementById("output").innerHTML += matrixToLatex(A, cols - 1);
 		}
 	}
 }
@@ -110,6 +146,13 @@ function solve(A, B) {
 
 	document.getElementById("output").innerHTML+="<br><br>Forward-eliminating...<br>";
 	forwardEliminateInMat(A);
+	
+	 if (document.forms[0].mustComputeRREF.checked) {
+		 document.getElementById("output").innerHTML += "<br><br>reducing to RREF...<br>";
+		 reduceToRREF(A);
+	 }
+	
 	console.log(backSubstituteFromMat(A));
+	
 	triggerTypeset();
 }
