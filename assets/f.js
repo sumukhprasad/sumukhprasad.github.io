@@ -121,6 +121,6 @@ addSequence(['KeyS', 'KeyA', 'KeyT', 'KeyY', 'KeyA', 'KeyM', 'KeyO', 'KeyD', 'Ke
 
 
 function xmas() {
-	window.location.href = "/xmas/index.html";
+	window.location.href = "/xmas/xmas-web-25/index.html";
 }
 addSequence(['KeyX', 'KeyM', 'KeyA', 'KeyS'], () => {xmas()});
