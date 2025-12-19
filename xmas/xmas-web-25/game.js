@@ -306,7 +306,9 @@ function compileEndScreen() {
 													 0px 2px 1px black; 
 							 margin-top: 50px;">Starfall</h1>
 
-		<button onclick="share(${score}, '${title}');">share</button>
+		<button onclick="share(${score}, '${title}');">share</button><br><br>
+
+		<button onclick="window.location.reload();">play again</button>
 	`;
 }
 
