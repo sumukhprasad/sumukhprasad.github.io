@@ -385,7 +385,7 @@ async function share(score, title) {
 			await navigator.share({
 		 	    files: [file],
 		 	    title: "my starfall constellation",
-		 	    text: `${title}: ${score} / 150`
+		 	    text: `${title}: ${score} / 150 (https://sumukhprasad.github.io/xmas/xmas-web-25/)`
 			});
 		} catch (err) {
 			console.error("share canceled or failed:", err);
