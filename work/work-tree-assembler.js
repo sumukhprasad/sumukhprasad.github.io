@@ -220,6 +220,15 @@ const workTreeContent = [
 	},
 	
 	{
+		categories: ["experiments", "graphics"],
+		startYear: 2022,
+		endYear: 2025,
+		title: "C for Christmas",
+		description: "interesting C code in the shape of Christmas trees",
+		link: "../../projects/xmas"
+	},
+	
+	{
 		categories: ["graphics", "tooling", "math"],
 		startYear: 2022,
 		endYear: 2022,
