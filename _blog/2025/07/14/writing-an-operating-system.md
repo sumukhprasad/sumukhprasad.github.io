@@ -5,7 +5,7 @@ date: 2025-07-14
 desc: "Abstracting every single layer of computer software, from metal to user."
 ---
 
-> *This is a blog-ified version of [this technical document](../projects/boink-kernel-project).*
+> *This is a blog-ified version of [this technical document](/projects/boink-kernel-project).*
 
 You have to be all kinds of crazy to build a kernel from scratch. Much less build a kernel, a bootloader, a filesystem, a libc implementation, and a text pager and an image viewer for that kernel, from scratch. 
 
