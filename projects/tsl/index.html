@@ -94,6 +94,49 @@ title: tiny stack language
 	<br>
 	<br>
 	
+	There also exists a REPL interface that is accessible through the --repl flag.
+<pre>
+<i>$ tsl --repl</i>
+Tiny Stack Language, REPL Shell
+-------------------------------
+>>> while (vssize < 10) {
+>>> push vssize;
+>>> }
+>>> peek;
+>>> for  (vssize-1) {
+>>> pop;
+>>> peek;
+>>> }
+>>>
+>>> run
+progam:
+while (vssize < 10) {
+push vssize;
+}
+peek;
+for  (vssize-1) {
+pop;
+peek;
+}
+
+
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+>>>
+</pre>
+	
+	
+	
+	
+	
 	<a href="https://github.com/sumukhprasad/tiny-stack-language/">Get the code ></a><br>
 	
 </div>

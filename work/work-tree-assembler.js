@@ -107,7 +107,7 @@ const workTreeContent = [
 		startYear: 2025,
 		endYear: 2025,
 		title: "Tiny Stack Language",
-		description: "turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with",
+		description: "turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface",
 		link: "../../projects/tsl"
 	},
 	
