@@ -124,3 +124,9 @@ function xmas() {
 	window.location.href = "/xmas/xmas-web-25/index.html";
 }
 addSequence(['KeyX', 'KeyM', 'KeyA', 'KeyS'], () => {xmas()});
+
+
+function trivia() {
+	window.location.href = "/trivia.html";
+}
+addSequence(['KeyT', 'KeyR', 'KeyI', 'KeyV', 'KeyI', 'KeyA'], () => {trivia()});
