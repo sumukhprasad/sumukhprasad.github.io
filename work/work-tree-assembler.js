@@ -112,15 +112,6 @@ const workTreeContent = [
 	},
 	
 	{
-		categories: ["experiments", "math"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Gauss-Elimination Simulator",
-		description: "visualise solving a system of equations using Gauss-elimination",
-		link: "../../projects/gauss-elimination"
-	},
-	
-	{
 		categories: ["automation", "tooling"],
 		startYear: 2025,
 		endYear: 2025,
