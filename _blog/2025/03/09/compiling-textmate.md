@@ -89,8 +89,6 @@ Changing `clearColor` to something like `redColor` showed up immediately, and us
 
 Well the first obvious next step is to fix the gutter and file browser. Beyond that, I don't think anything else is broken here -- which is one _**hell**_ of an ode to a _superb_ codebase.
 
-I’m not some seasoned macOS developer -- hell, I'm 18 and just figuring this out as I go. But I love TextMate, and I don’t want to see it die just because it's stuck in the past.
-
 ### Commits --
 
 - _[`340efec`](https://github.com/sumukhprasad/textmate/commit/340efec9399151ebd1aef08a32b8f9139a131314)_ Modified configure to add homebrew, fixed library search.
