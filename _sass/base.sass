@@ -33,7 +33,9 @@ body
 	font-family: variables.$sansFont
 	margin: 0
 	font-size: 12px
-
+@media screen and (max-width: 720px)
+	body
+		font-size: 10px
 .content
 	max-width: 640px
 	margin: auto
@@ -43,6 +45,17 @@ body
 	max-width: 720px
 	margin: auto
 	background: variables.$backgroundColor
+	border-left: 64px solid
+	border-image-source: url("/assets/border.png")
+	border-image-slice: 0 256
+	border-image-repeat: repeat
+	position: relative
+	left: -32px
+	
+@media screen and (max-width: 850px)
+	.page
+		border-left: 32px solid
+		left: 0px
 
 .page-precursor
 	max-width: 720px
