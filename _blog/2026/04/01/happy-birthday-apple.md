@@ -12,9 +12,9 @@ Apple turns 50!
 
 I've always been really into computers, and I've loved writing code and making computers do things since I was a kid. This infatuation started off innocently enough, with MSWLOGO.
 
-When I was 9 I discovered BASIC, and a few years later, I discovered Scratch. The computer I had at the time, an old Lenovo, wasn't really equipped to run Scratch, with its whole three gigabytes of RAM and a spinning hard disk. This was still a time when Scratch relied on Flash to work -- but I pressed on.
+When I was 9 I taught myself BASIC, and a few years later moved on to Scratch. The computer I had at the time, an old Lenovo, wasn't really equipped to run Scratch, with its whole three gigabytes of RAM and a spinning hard disk. This was still a time when Scratch relied on Flash to work -- but I pressed on.
 
-Still, pushing onwards, a couple years later I got my first Mac.
+A couple years later I got my first Mac.
 
 ## My 2017 MacBook Air
 
@@ -24,7 +24,7 @@ Sure, I started with Scratch, but the amount of things I've done on this little 
 
 I should know this, because on this computer, in no particular order, I: ran Blender, edited videos with Final Cut Pro, made music with GarageBand, ran a whole bunch of VMs with VirtualBox, made a bunch of software with a whole catalog's worth of tools and frameworks and languages, designed useless things with Fusion 360, made schematics with EAGLE, wrote silly apps with Xcode... basically whatever I could get my hands on. I even wrote software to teach kids how to code.[^1] I've probably forgotten a lot of what I did, really, but you get the idea.
 
-I think it's worth noting that on multiple occasions this machine was cooled by ice packs placed underneath it. I've also probably used it as a space heater on cold winter days.[^2] My friends and I joked often about "Flying Laptop-shaped UFO Sighted: Local Residents Worried".
+I think it's worth noting that on multiple occasions this machine was cooled by ice packs placed underneath it. I've also probably used it as a space heater on cold winter days.[^2] A friend and I joked often about "Flying Laptop-shaped UFO Sighted: Local Residents Worried".
 
 Granted, I still think it's a great laptop. Probably more than it had any right to be.
 
