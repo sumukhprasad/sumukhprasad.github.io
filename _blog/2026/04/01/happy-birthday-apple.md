@@ -35,7 +35,7 @@ Granted, I still think it's a great laptop. Probably more than it had any right 
 
 This was my first "real" Apple device, after the iPod Nano 3G. It was the first time I'd ever interacted with a touch screen, and I still love how iOS 5 looks today.
 
-But arguably what's more important to me than what I did on these devices is what I learnt from pushing them beyond their limits. Even today, my sense of design, my preference of simple technology, my interest in human-computer interaction, my love for the UNIX philosophy, and rather more important my love for computer science -- all stem at least in some way from my using these devices.
+But arguably what's more important to me than what I did on these devices is what I learnt from pushing them beyond their limits. Even today, my sense of design, my preference for simple technology, my interest in human-computer interaction, my love for the UNIX philosophy, and rather more important my love for computer science -- all stem at least in some way from my using these devices.
 
 It's hard to understate how much Apple devices have impacted me. I've had the privilege to enjoy using a whole bunch of Apple devices: the iPod Nano I slung around as a kid, the first-generation iPad, the iPad Air I used through school (and still do today), the woefully underpowered late-2017 13-inch MacBook Air, its M2 successor (coincidentally the one this post is being written on), my iPhone... certainly more than my fair share of them, to be honest.
 
