@@ -3,7 +3,7 @@ title: "sumukh prasad"
 author: "Sumukh Prasad"
 url: "https://sumukhprasad.github.io"
 future: true
-
+timezone: Asia/Kolkata
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
