@@ -70,7 +70,7 @@ function handleTouchEnd(ev) {
 
 			lastTouchTime = currentTime;
 			if (consecutiveTouches >= REQUIRED_TOUCHES) {
-				xmas();
+				window.location.href = "/banana-slip/index.html";
 			}
 		}
 	}
