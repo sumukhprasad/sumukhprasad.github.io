@@ -15,7 +15,7 @@ title: "curriculum vitae"
 		<h2>At a Glance</h2>
 		
 		<b>Research/Professional Interests</b><br>
-		On the pure research side, I'm interested in human-computer interaction, distributed systems, electoral and electronic voting systems, and adjacent fields. Or, generalising a bit,
+		On the pure research side, I'm interested in distributed systems, programming languages, and human-computer interaction. Or, generalising a bit,
 		<ul>
 			<li>If computer science can be thought of as a field of abstractions,</li>
 			<ul>
@@ -53,58 +53,61 @@ title: "curriculum vitae"
 	
 	<div class="work-section">
 		<h2>Projects</h2>
-		<!-- TODO move math stuff to separate section-->
 		<table>
 			<tr>
+				<td></td>
 				<td colspan="2" class="year"><span style="font-weight: bold;letter-spacing: 5pt;text-transform: uppercase;">Hiatus</span> (Jan - May '26) </td>
-			</tr>
-			<tr>
-				<td colspan="2" class="year">Unfortunately I cannot work on any projects during this time due to prior commitments. Please excuse the gap.</td>
 			</tr>
 			
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2025</td>
 				<td>
-					<strong>Tiny Stack Language</strong><br>turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface
+					<strong>Tiny Stack Language</strong><br>Turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface
 					 (<a href="../../projects/tsl">view</a>)
 				</td>
 			</tr>
 			
 			<tr>
+				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
-					<strong>LaTeXMLserv</strong><br>extremely simple PHP file server with LaTeXML integration
+					<strong>LaTeXMLserv</strong><br>Extremely simple PHP file server with LaTeXML integration
 					 (<a href="../../projects/latexmlserv">view</a>)
 				</td>
 			</tr>
 			
 			<tr>
+				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
-					<strong>Markov Chain Predictor</strong><br>text prediction using markov chains
+					<strong>Markov Chain Predictor</strong><br>Text prediction using markov chains
 					 (<a href="../../projects/markov-chain-predictor">view</a>)
 				</td>
 			</tr>
 			
 			
 			<tr>
+				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
-					<strong>Collatz Corals</strong><br>the Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern
+					<strong>Collatz Corals</strong><br>The Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern
 					 (<a href="../../projects/collatz-coral">view</a>)
 				</td>
 			</tr>
 			
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Boink Kernel Project, GLFS (Good Little File System)</strong><br>
-					abstracting every single layer of computer software, from metal to user, plus a fully custom filesystem spec and implementation for Boink Kernel Project
+					Complete end-to-end kernel and custom filesystem implementation.
 					 (<a href="../../projects/boink-kernel-project">view</a>)
 				</td>
 			</tr>
 			
 			<tr>
+				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Atkinson Dithering Demo</strong>
@@ -113,6 +116,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
+				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
 					<strong>ISBN Cataloging</strong><br>
@@ -122,6 +126,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2023</td>
 				<td>
 					<strong>BlockJam</strong><br>
@@ -131,6 +136,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2023</td>
 				<td>
 					<strong>Indic Language Transliteration</strong><br>
@@ -140,6 +146,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2022-present</td>
 				<td>
 					<strong>C for Christmas</strong><br>
@@ -148,6 +155,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
+				<td class="star">\(\bigstar\)</td>
 				<td class="year">2022</td>
 				<td>
 					<strong>2D Equation Graphing</strong><br>
@@ -262,7 +270,7 @@ title: "curriculum vitae"
 		
 		<table>
 			<tr>
-				<td class="year">2025-2029</td>
+				<td class="year">2029</td>
 				<td><strong>BE Computer Science and Engineering</strong> — BNM Institute of Technology, Bangalore</td>
 			</tr>
 			<tr>
@@ -274,6 +282,100 @@ title: "curriculum vitae"
 				<td><strong>10th Grade (CBSE)</strong> — DPS Bangalore South</td>
 			</tr>
 		</table>
+		
+		
+		<h3>Additional Coursework <span class="expand-link" id="add-cw-b">[expand]</span></h3>
+		<div id="add-cw" class="collapsed">
+		{% if site.data.courses %}
+		<table>
+			{% for group in site.data.courses %}
+				<tr>
+					<td class="year">{{ group.platform }}</td>
+					<td>
+						<ul style="list-style-type:none;margin:0;">
+							{% for course in group.courses %}
+								<li>
+									{{ course.code }}: <strong>{{ course.title }}</strong>{% if course.webpage %} <a href="{{ course.webpage }}" target="_blank">↗</a>{% endif %}<br>
+									<span class="smalltext">
+									( {{ course.date }} ) ( see 
+									<a href="{{ course.notes }}">notes</a>
+				
+									{% if course.assignments %}
+										/ <a href="{{ course.assignments }}">assignments</a>
+									{% endif %}
+				
+									{% if course.exams %}
+										/ <a href="{{ course.exams }}">exams</a>
+									{% endif %}
+									)</span>
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+			<i><span class="smalltext">None.</i></span>
+		{% endif %}
+		</div>
+		<script>
+			document.getElementById("add-cw-b").onclick = function () {
+				if (document.getElementById("add-cw-b").innerText=="[expand]") {
+					document.getElementById("add-cw").classList.remove("collapsed");
+					document.getElementById("add-cw-b").innerText="[collapse]";
+				} else {
+					document.getElementById("add-cw").classList.add("collapsed");
+					document.getElementById("add-cw-b").innerText="[expand]";
+				}
+			}
+		</script>
+		
+		
+		<h3>Talks & Lectures <span class="expand-link" id="t&l-b">[expand]</span></h3>
+		<div id="t&l" class="collapsed">
+		{% if site.data.lecdems %}
+		<table>
+			{% for group in site.data.lecdems %}
+				<tr>
+					<td class="year">{{ group.year }}</td>
+					<td>
+						<ul style="list-style-type:none;margin:0;">
+							{% for lecdem in group.lecdems %}
+								<li reversed>
+									<strong>{{ lecdem.title }}</strong>
+									<br>
+									<span class="smalltext">
+									( {{ lecdem.date }} ) ( see 
+									{% if lecdem.notes %}
+										<a href="{{ lecdem.slides }}">slides</a>
+									{% endif %}
+									{% if lecdem.pictures %}
+										/ <a href="{{ lecdem.pictures }}">pictures</a>
+									{% endif %}
+									)</span><br><br>
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+			<i><span class="smalltext">None.</i></span>
+		{% endif %}
+		</div>
+		<script>
+			document.getElementById("t&l-b").onclick = function () {
+				if (document.getElementById("t&l-b").innerText=="[expand]") {
+					document.getElementById("t&l").classList.remove("collapsed");
+					document.getElementById("t&l-b").innerText="[collapse]";
+				} else {
+					document.getElementById("t&l").classList.add("collapsed");
+					document.getElementById("t&l-b").innerText="[expand]";
+				}
+			}
+		</script>
 	</div>
 	
 	
@@ -281,8 +383,8 @@ title: "curriculum vitae"
 	
 	
 	<div class="work-section">
-			<h2>Odds and Ends and Other Things</h2>
-			I'm also a senior-grade Carnatic vocalist, having pursued the art under the excellent and unparalleled tutelage of <a href="https://www.instagram.com/gayathrikestur/" target="_blank">Vid. Smt. Gayathri Ravindra</a> from 2013 to 2023, and on my own after that.<br>
+			<h2>Odds addddnd Ends and Other Things</h2>
+			I'm also a senior-grade Carnatic vocalist, having pursued the art under the excellent and unparalleled tutelage of <a href="https://www.instagram.com/gayathrikestur/" target="_blank">Vid. Smt. Gayathri Ravindra</a> from 2013 to 2023, and on my own after that. I also play the veena, under the guidance of <a href="https://www.instagram.com/rakshitaramesh/" target="_blank">Vid. Rakshita Ramesh</a>.<br>
 	
 			<br>
 	
