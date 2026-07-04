@@ -320,15 +320,7 @@ title: "curriculum vitae"
 		{% endif %}
 		</div>
 		<script>
-			document.getElementById("add-cw-b").onclick = function () {
-				if (document.getElementById("add-cw-b").innerText=="[expand]") {
-					document.getElementById("add-cw").classList.remove("collapsed");
-					document.getElementById("add-cw-b").innerText="[collapse]";
-				} else {
-					document.getElementById("add-cw").classList.add("collapsed");
-					document.getElementById("add-cw-b").innerText="[expand]";
-				}
-			}
+			convertToCollapsable("add-cw");
 		</script>
 		
 		
@@ -371,15 +363,7 @@ title: "curriculum vitae"
 		{% endif %}
 		</div>
 		<script>
-			document.getElementById("t&l-b").onclick = function () {
-				if (document.getElementById("t&l-b").innerText=="[expand]") {
-					document.getElementById("t&l").classList.remove("collapsed");
-					document.getElementById("t&l-b").innerText="[collapse]";
-				} else {
-					document.getElementById("t&l").classList.add("collapsed");
-					document.getElementById("t&l-b").innerText="[expand]";
-				}
-			}
+			convertToCollapsable("t&l");
 		</script>
 	</div>
 	
