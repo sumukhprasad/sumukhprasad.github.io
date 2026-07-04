@@ -346,9 +346,14 @@ title: "curriculum vitae"
 									<strong>{{ lecdem.title }}</strong>
 									<br>
 									<span class="smalltext">
+									<i>{{ lecdem.description }}</i>
+									<br>
 									( {{ lecdem.date }} ) ( see 
-									{% if lecdem.notes %}
-										<a href="{{ lecdem.slides }}">slides</a>
+									{% if lecdem.page %}
+										<a href="{{ lecdem.page }}">details</a>
+									{% endif %}
+									{% if lecdem.slides %}
+										/ <a href="{{ lecdem.slides }}">slides</a>
 									{% endif %}
 									{% if lecdem.pictures %}
 										/ <a href="{{ lecdem.pictures }}">pictures</a>
