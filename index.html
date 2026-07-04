@@ -18,28 +18,35 @@ title: "Hey there!"
 
 <div class="content index-section-flex" style="margin-top: 100px">
 	<div>
+		<img src="/assets/images/just-me.png" width="200px">
+	</div>
+	
+	<div>
 		<h1>Hey! I'm Sumukh Prasad.</h1>
 		<span class="translucent">sʊmʊk prəsɑːð</span>
 		<br>
-		<span class="translucent">People hate Mondays; I was <span title="I was born in 2007. I have since acquired height and trauma.">born on one.</span></span>
 		
-		<p>This is, somehow, my quaint little corner of the web. I'm a self-taught hobbyist developer who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.
-     	
-		<p>I'm constantly learning how I can change user experience by making boring things fun to do.
-     	
-		<p><span style="font-size: 0.5em">And maybe making hilariously overkill solutions to problems that probably don't exist.</span>
-		<br><br>
-		<p><i>🎶 and the darkness that you fear, will disappear...</i>
-	</div>
-	
-
-	<div>
-		<img src="/assets/images/just-me.png" height="400px">
+		<p>This is, somehow, my quaint little corner of the web. I'm a computer science research aspirant with a focus on PL and distributed systems, who's questionably attracted to the <a href="https://en.wikipedia.org/wiki/Information_superhighway" target="_blank">Information Superhighway</a>.</p>
+		
+		<br><br><br>
+		<p style="font-size: 0.83em"><i>🎶 and the darkness that you fear, will disappear...</i>
 	</div>
 </div>
 
+<div class="content">
+	<b style="margin-right: 10px;">Research Mission.</b> To understand how abstractions and languages can be made inspectable and explorable, how to make decions abiut optimal abstractions, and how to design systems that are legible to a broad spectrum of people. (<a href="/work/cv">read my CV ></a>)
+</div>
+
+<div class="content">
+	<b style="margin-right: 10px;">Projects.</b> For details about past and ongoing projects, please visit my <a href="/work">work page</a>, or, alternatively, <a href="/work/cv">read my CV</a>.
+</div>
+
+
+
+
+
 <div class="content" id="canvas-container">
-	<p><span style="font-style: italic;" class="translucent">Something cool with p5.<br>On a touchscreen but want to fiddle? Tap to lock the screen.</span>
+	<p><span style="font-style: italic;font-size: 0.83em;" class="translucent">Something cool with p5.<br>On a touchscreen but want to fiddle? Tap to lock the screen.</span>
 </div>
 
 
@@ -48,13 +55,13 @@ title: "Hey there!"
 	let mods = [];
 
 	function windowResized() {
-		resizeCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
+		resizeCanvas((windowWidth > 720 ? 720 : windowWidth - 40), 128);
 		renderDots();
 	}
 
 	function renderDots() {
-		let highCount = height / 20;
-		let wideCount = width / 20;
+		let highCount = height / 4;
+		let wideCount = width / 28;
 		count = int(highCount * wideCount);
 		let i = 0;
 		for (let xc = 0; xc < wideCount; xc++) {
@@ -80,7 +87,7 @@ title: "Hey there!"
 	}
 
 	function setup() {
-		canvas = createCanvas((windowWidth > 641 ? 641 : windowWidth - 40), 641);
+		canvas = createCanvas((windowWidth > 720 ? 720 : windowWidth - 40), 128);
 		canvas.parent("canvas-container")
 		canvas.position(0, 0);
 		
