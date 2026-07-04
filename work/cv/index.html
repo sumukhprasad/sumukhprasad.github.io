@@ -8,14 +8,14 @@ title: "curriculum vitae"
 	<h1>Sumukh Prasad — Curriculum Vitae</h1>
 	
 	
-	<i>This is by no means a "professional" CV. This is more of an exhaustive-list CV.<br>Want something more professional? See the <a href="/assets/cv.pdf">PDF version</a>.</i>
+	<i>This is by no means a "professional" CV.<br>Want something more professional? See the <a href="/assets/cv.pdf">PDF version</a>.</i>
 	
 	
 	<div class="work-section">
 		<h2>At a Glance</h2>
 		
 		<b>Research/Professional Interests</b><br>
-		On the pure research side, I'm interested in distributed systems, programming languages, and human-computer interaction. Or, generalising a bit,
+		On the pure research side, I'm interested primarily in programming languages, distributed systems, and human-computer interaction. Or, generalising a bit,
 		<ul>
 			<li>If computer science can be thought of as a field of abstractions,</li>
 			<ul>
@@ -38,29 +38,133 @@ title: "curriculum vitae"
 		Indian classical languages, topical linguistics, Indian classical music, mathematical visualisations, etc.
 	</div>
 	
+	
+	
 	<div class="work-section">
-		<h2>Languages, Frameworks, and Tools</h2>
+		<h2>Education</h2>
 		
-		I have a working proficiency in several programming paradigms, including systems-level languages (C/C++, minimal x86 assembly), high-level scripting (Python, Processing, Julia), web development (JavaScript, Perl, Ruby, PHP), object-oriented languages (Java, Swift), and document preparation systems (LaTeX). I have some experience working with popular technologies like p5.js, node.js, D3, OpenCV, postgres, and Unix- and Linux-based environments.
+		<table>
+			<tr>
+				<td class="year">2029</td>
+				<td><strong>BE Computer Science and Engineering</strong> — BNM Institute of Technology, Bangalore</td>
+			</tr>
+			<tr>
+				<td class="year">2023, 2025</td>
+				<td><strong>10th, 12th Grade (CBSE) (Science + CS Elective)</strong> — DPS Bangalore South</td>
+			</tr>
+		</table>
 		
 		
-		<br><br>
-		While I know how to use many technologies, over time I have come to value simplicity and information density over pomp and show, which is why I usually roll my own mini-frameworks for my projects. Often, I find that the most simple solutions are most likely to be the most elegant ones, and those are the kinds of solutions I gravitate toward.
+		<h3>Additional Coursework <span class="expand-link unselectable" id="add-cw-b">[expand]</span></h3>
+		<div id="add-cw" class="collapsed">
+		{% if site.data.courses %}
+		<table>
+			{% for group in site.data.courses %}
+				<tr>
+					<td class="year">{{ group.platform }}</td>
+					<td>
+						<ul style="list-style-type:none;margin:0;">
+							{% for course in group.courses %}
+								<li>
+									{{ course.code }}: <strong>{{ course.title }}</strong>{% if course.webpage %} <a href="{{ course.webpage }}" target="_blank">↗</a>{% endif %}<br>
+									<span class="smalltext">
+									( {{ course.date }} ) ( see 
+									<a href="{{ course.notes }}">notes</a>
+				
+									{% if course.assignments %}
+										/ <a href="{{ course.assignments }}">assignments</a>
+									{% endif %}
+				
+									{% if course.exams %}
+										/ <a href="{{ course.exams }}">exams</a>
+									{% endif %}
+									)</span>
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+			<i><span class="smalltext">None.</i></span>
+		{% endif %}
+		</div>
+		<script>
+			convertToCollapsable("add-cw");
+		</script>
 		
-		<br><br>
+		
+		<h3>Talks & Lectures <span class="expand-link unselectable" id="t&l-b">[expand]</span></h3>
+		<div id="t&l" class="collapsed">
+		{% if site.data.lecdems %}
+		<table>
+			{% for group in site.data.lecdems %}
+				<tr>
+					<td class="year">{{ group.year }}</td>
+					<td>
+						<ul style="list-style-type:none;margin:0;">
+							{% for lecdem in group.lecdems %}
+								<li reversed>
+									<strong>{{ lecdem.title }}</strong>
+									<br>
+									<span class="smalltext">
+									<i>{{ lecdem.description }}</i>
+									<br>
+									( {{ lecdem.date }} ) ( see 
+									{% if lecdem.page %}
+										<a href="{{ lecdem.page }}">details</a>
+									{% endif %}
+									{% if lecdem.slides %}
+										/ <a href="{{ lecdem.slides }}">slides</a>
+									{% endif %}
+									{% if lecdem.pictures %}
+										/ <a href="{{ lecdem.pictures }}">pictures</a>
+									{% endif %}
+									)</span><br><br>
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+			<i><span class="smalltext">None.</i></span>
+		{% endif %}
+		</div>
+		<script>
+			convertToCollapsable("t&l");
+		</script>
 	</div>
 	
 	
 	<div class="work-section">
-		<h2>Projects</h2>
+		<h2>Languages, Frameworks, and Tools</h2>
+		
+		<ul>
+			<li>Proficient in the following languages:</li>
+			<ul>
+				<li>C/C++</li>
+				<li>JavaScript</li>
+				<li>Java</li>
+				<li>Swift</li>
+				<li>Python</li>
+				<li>Ruby</li>
+				<li>PHP</li>
+				<!--<li>Scheme/Racket</li>-->
+				<!--<li>Haskell</li>-->
+			</ul>
+			<li>Comfortable with using \(\LaTeX\), UNIX- and Linux-based environments</li>
+			<li>Working proficiency in industry-standard tools like p5, D3, OpenCV, postgres, etc.</li>
+		</ul>
+	</div>
+	
+	<div class="work-section">
+		<h2>Projects (Selected)</h2>
 		<table>
-			<tr>
-				<td></td>
-				<td colspan="2" class="year"><span style="font-weight: bold;letter-spacing: 5pt;text-transform: uppercase;">Hiatus</span> (Jan - May '26) </td>
-			</tr>
 			
 			<tr>
-				<td class="star">\(\bigstar\)</td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Tiny Stack Language</strong><br>Turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface
@@ -68,8 +172,7 @@ title: "curriculum vitae"
 				</td>
 			</tr>
 			
-			<tr>
-				<td class="star"></td>
+			<!--<tr>
 				<td class="year">2025</td>
 				<td>
 					<strong>LaTeXMLserv</strong><br>Extremely simple PHP file server with LaTeXML integration
@@ -78,7 +181,6 @@ title: "curriculum vitae"
 			</tr>
 			
 			<tr>
-				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Markov Chain Predictor</strong><br>Text prediction using markov chains
@@ -88,26 +190,23 @@ title: "curriculum vitae"
 			
 			
 			<tr>
-				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Collatz Corals</strong><br>The Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern
 					 (<a href="../../projects/collatz-coral">view</a>)
 				</td>
-			</tr>
+			</tr>-->
 			
 			<tr>
-				<td class="star">\(\bigstar\)</td>
 				<td class="year">2025</td>
 				<td>
 					<strong>Boink Kernel Project, GLFS (Good Little File System)</strong><br>
-					Complete end-to-end kernel and custom filesystem implementation.
+					Complete end-to-end kernel (bootloader, filesystem, kernel, pseudo-libc) and custom filesystem implementation
 					 (<a href="../../projects/boink-kernel-project">view</a>)
 				</td>
 			</tr>
 			
-			<tr>
-				<td class="star"></td>
+			<!--<tr>
 				<td class="year">2025</td>
 				<td>
 					<strong>Atkinson Dithering Demo</strong>
@@ -116,17 +215,15 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
-				<td class="star"></td>
 				<td class="year">2025</td>
 				<td>
 					<strong>ISBN Cataloging</strong><br>
 					using python and opencv to catalog my books
 					 (<a href="../../blog/2025/04/21/isbn-cataloging.html">view</a>)
 				</td>
-			</tr>
+			</tr>-->
 
 			<tr>
-				<td class="star">\(\bigstar\)</td>
 				<td class="year">2023</td>
 				<td>
 					<strong>BlockJam</strong><br>
@@ -136,7 +233,6 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
-				<td class="star">\(\bigstar\)</td>
 				<td class="year">2023</td>
 				<td>
 					<strong>Indic Language Transliteration</strong><br>
@@ -146,7 +242,7 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
-				<td class="star">\(\bigstar\)</td>
+				
 				<td class="year">2022-present</td>
 				<td>
 					<strong>C for Christmas</strong><br>
@@ -155,7 +251,6 @@ title: "curriculum vitae"
 			</tr>
 
 			<tr>
-				<td class="star">\(\bigstar\)</td>
 				<td class="year">2022</td>
 				<td>
 					<strong>2D Equation Graphing</strong><br>
@@ -165,6 +260,11 @@ title: "curriculum vitae"
 			</tr>
 			
 		</table>
+		
+		
+		<div style="text-align: right;font-style: italic;">
+			<span class="smalltext unselectable"><a href="/work">see all projects ></a></span></span>
+		</div>
 	</div>
 	
 	
@@ -263,116 +363,8 @@ title: "curriculum vitae"
 	
 	
 	
-	
-	
 	<div class="work-section">
-		<h2>Education</h2>
-		
-		<table>
-			<tr>
-				<td class="year">2029</td>
-				<td><strong>BE Computer Science and Engineering</strong> — BNM Institute of Technology, Bangalore</td>
-			</tr>
-			<tr>
-				<td class="year">2025</td>
-				<td><strong>12th Grade (CBSE) (Science + CS Elective)</strong> — DPS Bangalore South</td>
-			</tr>
-			<tr>
-				<td class="year">2023</td>
-				<td><strong>10th Grade (CBSE)</strong> — DPS Bangalore South</td>
-			</tr>
-		</table>
-		
-		
-		<h3>Additional Coursework <span class="expand-link" id="add-cw-b">[expand]</span></h3>
-		<div id="add-cw" class="collapsed">
-		{% if site.data.courses %}
-		<table>
-			{% for group in site.data.courses %}
-				<tr>
-					<td class="year">{{ group.platform }}</td>
-					<td>
-						<ul style="list-style-type:none;margin:0;">
-							{% for course in group.courses %}
-								<li>
-									{{ course.code }}: <strong>{{ course.title }}</strong>{% if course.webpage %} <a href="{{ course.webpage }}" target="_blank">↗</a>{% endif %}<br>
-									<span class="smalltext">
-									( {{ course.date }} ) ( see 
-									<a href="{{ course.notes }}">notes</a>
-				
-									{% if course.assignments %}
-										/ <a href="{{ course.assignments }}">assignments</a>
-									{% endif %}
-				
-									{% if course.exams %}
-										/ <a href="{{ course.exams }}">exams</a>
-									{% endif %}
-									)</span>
-								</li>
-							{% endfor %}
-						</ul>
-					</td>
-				</tr>
-			{% endfor %}
-		</table>
-		{% else %}
-			<i><span class="smalltext">None.</i></span>
-		{% endif %}
-		</div>
-		<script>
-			convertToCollapsable("add-cw");
-		</script>
-		
-		
-		<h3>Talks & Lectures <span class="expand-link" id="t&l-b">[expand]</span></h3>
-		<div id="t&l" class="collapsed">
-		{% if site.data.lecdems %}
-		<table>
-			{% for group in site.data.lecdems %}
-				<tr>
-					<td class="year">{{ group.year }}</td>
-					<td>
-						<ul style="list-style-type:none;margin:0;">
-							{% for lecdem in group.lecdems %}
-								<li reversed>
-									<strong>{{ lecdem.title }}</strong>
-									<br>
-									<span class="smalltext">
-									<i>{{ lecdem.description }}</i>
-									<br>
-									( {{ lecdem.date }} ) ( see 
-									{% if lecdem.page %}
-										<a href="{{ lecdem.page }}">details</a>
-									{% endif %}
-									{% if lecdem.slides %}
-										/ <a href="{{ lecdem.slides }}">slides</a>
-									{% endif %}
-									{% if lecdem.pictures %}
-										/ <a href="{{ lecdem.pictures }}">pictures</a>
-									{% endif %}
-									)</span><br><br>
-								</li>
-							{% endfor %}
-						</ul>
-					</td>
-				</tr>
-			{% endfor %}
-		</table>
-		{% else %}
-			<i><span class="smalltext">None.</i></span>
-		{% endif %}
-		</div>
-		<script>
-			convertToCollapsable("t&l");
-		</script>
-	</div>
-	
-	
-	
-	
-	
-	<div class="work-section">
-			<h2>Odds addddnd Ends and Other Things</h2>
+			<h2>Odds and Ends and Other Things</h2>
 			I'm also a senior-grade Carnatic vocalist, having pursued the art under the excellent and unparalleled tutelage of <a href="https://www.instagram.com/gayathrikestur/" target="_blank">Vid. Smt. Gayathri Ravindra</a> from 2013 to 2023, and on my own after that. I also play the veena, under the guidance of <a href="https://www.instagram.com/rakshitaramesh/" target="_blank">Vid. Rakshita Ramesh</a>.<br>
 	
 			<br>
