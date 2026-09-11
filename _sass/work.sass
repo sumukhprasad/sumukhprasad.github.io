@@ -54,6 +54,14 @@
 		row-gap: 20px
 	
 .work-tree
+	.options
+		opacity: variables.$standardHalfOpacity
+		text-align: right
+		font-size: 0.8em
+		
+		input[type=checkbox]
+			height: 0.8em
+			
 	table
 		border-collapse: collapse
 
@@ -67,6 +75,7 @@
 		
 		.flag
 			font-weight: bold
+			cursor: pointer
 			
 		a
 			font-weight: normal
@@ -90,4 +99,5 @@
 				a:hover
 					color: white
 					text-shadow: none
-			
+	.highlight
+		background-color: yellow

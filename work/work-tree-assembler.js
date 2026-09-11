@@ -7,11 +7,12 @@ function assemble(entries, id) {
 	
 	for (entry of entries) {
 		entryRow = document.createElement("tr");
+		
 		for (cat of cats) {
 			var flag = document.createElement("td");
-			
+			flag.dataset.category = cat;
 			if (entry.categories.includes(cat)) {
-				flag.innerHTML = `<span class="flag">${cat[0]}</span>`;
+				flag.innerHTML = `<span class="flag" title="${cat}">${cat[0]}</span>`;
 			}
 			
 			entryRow.appendChild(flag);
@@ -22,6 +23,9 @@ function assemble(entries, id) {
 		entryData.append(assembleDataBox(entry));
 		
 		entryRow.appendChild(entryData);
+		entryRow.classList.add("entry-row");
+		entryRow.dataset.categories = JSON.stringify(entry.categories);
+		
 		tbody.appendChild(entryRow);
 	}
 	
@@ -29,12 +33,35 @@ function assemble(entries, id) {
 	table.appendChild(assembleTableHeader(cats));
 	table.appendChild(tbody);
 	
+	var optionsDiv = document.createElement("div");
+	optionsDiv.classList.add("options");
+	var hasBorders = document.createElement("input");
+	hasBorders.setAttribute('type', 'checkbox');
+	hasBorders.setAttribute('name', 'hasBorders');
+	var hasBordersLabel = document.createElement("label");
+	hasBordersLabel.setAttribute('name', 'hasBorders');
+	hasBordersLabel.innerText = "Show borders";
+	
+	hasBorders.onchange = (function () {
+		if (hasBorders.checked) {
+			table.style.borderCollapse = "separate";
+			table.setAttribute('border', '1');
+		} else {
+			table.style.borderCollapse = "collapse";
+			table.setAttribute('border', '0');
+		}
+	});
+	
+	optionsDiv.appendChild(hasBordersLabel);
+	optionsDiv.appendChild(hasBorders);
+	treeDiv.appendChild(optionsDiv);
 	treeDiv.appendChild(table);
 }
 
 
 function assembleDataBox(entry) {
 	var d = document.createElement("div");
+	
 	d.classList.add("entry");
 	
 	const yearInfo = entry.startYear == entry.endYear ? `${entry.startYear}` : `${entry.startYear} - ${entry.endYear}`;
@@ -56,16 +83,18 @@ function assembleTableHeader(categories) {
 		const cat = categories[i];
 		var row = document.createElement("tr");
 		var d = document.createElement("td");
-		d.setAttribute("colspan", len);
+		d.setAttribute("colspan", len-i+1);
 		
 		var flag = document.createElement("span");
 		flag.classList.add("flag");
 		flag.innerText = cat[0];
 		d.append(flag, cat.substr(1));
+		d.dataset.category = cat;
 		
 		if (i>0) {
 			var down = document.createElement("td");
 			down.setAttribute("rowspan", len-i);
+			down.dataset.category = categories[i-1];
 			row.appendChild(down);
 		}
 		
@@ -75,7 +104,6 @@ function assembleTableHeader(categories) {
 	
 	return th;
 }
-
 
 function retrieveCatList(entries) {
 	var cats = [];
@@ -92,146 +120,34 @@ function retrieveCatList(entries) {
 	return cats;
 }
 
+function setHoverCharacteristics() {
+	document.querySelectorAll("#work-tree .entry-row").forEach(entry => {
+	    entry.addEventListener("mouseenter", () => {
+	        const categories = JSON.parse(entry.dataset.categories);
+
+	        categories.forEach(category => {
+	            document
+	                .querySelectorAll(
+	                    `#work-tree [data-category="${CSS.escape(category)}"]`
+	                )
+	                .forEach(el => el.classList.add("highlight"));
+	        });
+	    });
+
+	    entry.addEventListener("mouseleave", () => {
+	        document
+	            .querySelectorAll("#work-tree .highlight")
+	            .forEach(el => el.classList.remove("highlight"));
+	    });
+	});
+}
+
 
 // --------
 
 document.getElementById("work-tree").innerHTML = "";
-
-
-// TODO move math stuff to second tree
-		
-const workTreeContent = [
-	
-	{
-		categories: ["experiments", "linguistics"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Tiny Stack Language",
-		description: "turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface",
-		link: "../../projects/tsl"
-	},
-	
-	{
-		categories: ["automation", "tooling"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "LaTeXMLserv",
-		description: "extremely simple PHP file server with LaTeXML integration",
-		link: "../../projects/latexmlserv"
-	},
-	
-	{
-		categories: ["experiments", "linguistics"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Markov Chain Predictor",
-		description: "text prediction using markov chains",
-		link: "../projects/markov-chain-predictor"
-	},
-	
-	{
-		categories: ["art", "experiments", "image processing", "graphics", "math"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Collatz Corals",
-		description: "the Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern",
-		link: "../projects/collatz-coral"
-	},
-	
-	{
-		categories: ["systems programming", "experiments"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Boink Kernel Project",
-		description: "abstracting every single layer of computer software, from metal to user",
-		link: "../projects/boink-kernel-project"
-	},
-	
-	{
-		categories: ["experiments"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Boink Kernel Project -- GLFS",
-		description: "a fully custom filesystem implementation for boinkOS",
-		link: "../projects/boink-kernel-project#glfs"
-	},
-	
-	{
-		categories: ["art", "experiments", "image processing", "graphics"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "Atkinson Dithering Demo",
-		description: "",
-		link: "../projects/atkinson-dithering"
-	},
-	
-	{
-		categories: ["tooling", "automation"],
-		startYear: 2025,
-		endYear: 2025,
-		title: "ISBN Cataloging",
-		description: "using python and opencv to catalog my books",
-		link: "../blog/2025/04/21/isbn-cataloging.html"
-	},
-	
-	{
-		categories: ["competitive programming"],
-		startYear: 2022,
-		endYear: 2024,
-		title: "CodeJam Question Sets",
-		description: "",
-		link: "../projects/codejam-question-sets"
-	},
-	
-	{
-		categories: ["education", "competitive programming"],
-		startYear: 2023,
-		endYear: 2023,
-		title: "BlockJam",
-		description: "learn-as-you-go competitive programming for grade 5 at DPS Bangalore South",
-		link: "../projects/blockjam"
-	},
-	
-	{
-		categories: ["education"],
-		startYear: 2023,
-		endYear: 2023,
-		title: "Create with Computers",
-		description: "talk by Mr. Prasanth Nori (www.prasanthnori.com) for grade 4 at DPS Bangalore South",
-		link: "../projects/create-with-computers-talk"
-	},
-	
-	{
-		categories: ["linguistics", "tooling"],
-		startYear: 2023,
-		endYear: 2023,
-		title: "Indic Language Transliteration",
-		description: "transliteration engine for Indian Classical languages",
-		link: "../projects/indic-language-transliteration"
-	},
-	
-	{
-		categories: ["experiments", "graphics"],
-		startYear: 2022,
-		endYear: 2025,
-		title: "C for Christmas",
-		description: "interesting C code in the shape of Christmas trees",
-		link: "../../projects/xmas"
-	},
-	
-	{
-		categories: ["graphics", "tooling", "math"],
-		startYear: 2022,
-		endYear: 2022,
-		title: "2D Equation Graphing",
-		description: "web-based grapher for equations in 2 variables",
-		link: "../projects/grapher"
-	},
-	
-]
-
 assemble(workTreeContent, "work-tree");
-
+setHoverCharacteristics();
 
 /*
 
@@ -250,8 +166,6 @@ schema:
 	...
 ]
 
-
-
-	
+Now provided through work_tree.yml!
 
 */

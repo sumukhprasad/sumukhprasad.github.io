@@ -1,0 +1,146 @@
+- categories:
+    - experiments
+    - linguistics
+  startYear: 2025
+  endYear: 2025
+  title: Tiny Stack Language
+  description: turing-complete interpreted esoteric language built in C that provides a basic stack machine to work with, with REPL interface
+  link: ../../projects/tsl
+
+- categories:
+    - automation
+    - tooling
+  startYear: 2025
+  endYear: 2025
+  title: LaTeXMLserv
+  description: extremely simple PHP file server with LaTeXML integration
+  link: ../../projects/latexmlserv
+
+- categories:
+    - experiments
+    - linguistics
+  startYear: 2025
+  endYear: 2025
+  title: Markov Chain Predictor
+  description: text prediction using markov chains
+  link: ../projects/markov-chain-predictor
+
+- categories:
+    - art
+    - experiments
+    - image processing
+    - graphics
+    - math
+  startYear: 2025
+  endYear: 2025
+  title: Collatz Corals
+  description: the Collatz (3x+1) conjecture, when plotted as a tree with angular offsets, reveals an interesting pattern
+  link: ../projects/collatz-coral
+
+- categories:
+    - systems programming
+    - experiments
+  startYear: 2025
+  endYear: 2025
+  title: Boink Kernel Project
+  description: abstracting every single layer of computer software, from metal to user
+  link: ../projects/boink-kernel-project
+
+- categories:
+    - experiments
+  startYear: 2025
+  endYear: 2025
+  title: Boink Kernel Project -- GLFS
+  description: a fully custom filesystem implementation for boinkOS
+  link: ../projects/boink-kernel-project#glfs
+
+- categories:
+    - art
+    - experiments
+    - image processing
+    - graphics
+  startYear: 2025
+  endYear: 2025
+  title: Atkinson Dithering Demo
+  description: ""
+  link: ../projects/atkinson-dithering
+
+- categories:
+    - tooling
+    - automation
+  startYear: 2025
+  endYear: 2025
+  title: ISBN Cataloging
+  description: using python and opencv to catalog my books
+  link: ../blog/2025/04/21/isbn-cataloging.html
+
+- categories:
+    - competitive programming
+  startYear: 2022
+  endYear: 2024
+  title: CodeJam Question Sets
+  description: ""
+  link: ../projects/codejam-question-sets
+
+- categories:
+    - education
+    - competitive programming
+  startYear: 2023
+  endYear: 2023
+  title: BlockJam
+  description: learn-as-you-go competitive programming for grade 5 at DPS Bangalore South
+  link: ../projects/blockjam
+
+- categories:
+    - education
+  startYear: 2023
+  endYear: 2023
+  title: Create with Computers
+  description: talk by Mr. Prasanth Nori (www.prasanthnori.com) for grade 4 at DPS Bangalore South
+  link: ../projects/create-with-computers-talk
+
+- categories:
+    - linguistics
+    - tooling
+  startYear: 2023
+  endYear: 2023
+  title: Indic Language Transliteration
+  description: transliteration engine for Indian Classical languages
+  link: ../projects/indic-language-transliteration
+
+- categories:
+    - experiments
+    - graphics
+  startYear: 2022
+  endYear: 2025
+  title: C for Christmas
+  description: interesting C code in the shape of Christmas trees
+  link: ../../projects/xmas
+
+- categories:
+    - graphics
+    - tooling
+    - math
+  startYear: 2022
+  endYear: 2022
+  title: 2D Equation Graphing
+  description: web-based grapher for equations in 2 variables
+  link: ../projects/grapher
+
+- categories:
+    - automation
+    - tooling
+  startYear: 2026
+  endYear: 2026
+  title: Blogulator
+  description: a service that exposes an AtomPub endpoint for use with jekyll and other SSG-based blogs
+  link: ""
+
+- categories:
+    - automation
+    - tooling
+  startYear: 2026
+  endYear: 2026
+  title: Colourtaculous!
+  description: program that allows you to define CSS variables in YML files, and automatically compiles them together into one file.
+  link: ""

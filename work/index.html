@@ -16,9 +16,16 @@ title: "work"
 		For a more complete list of my work and experience, please see my <a href="/work/cv">CV</a>.
 	</p>
 	
+	<p>
+		<i>This is what I want to call a "category piano." The idea is the same as this <a href="http://zesty.ca/" target="blank">this work tree</a>, but it's augmented on hover to highlight the categories, both labels and markers: sort of like  pressing keys on a piano.</i>
+	</p>
+	
 	<div class="work-tree" id="work-tree">
-		<i>Waiting for script...</i>
+		<i>Waiting for script... (this bit REQUIRES JavaScript, I promise this is not malicious. Unconvinced? Open the inspector and find out!)</i>
 	</div>
+	<script>
+		const workTreeContent = {{ site.data.work_tree  | sort: 'startYear' | reverse | jsonify }};
+	</script>
 	<script src="./work-tree-assembler.js"></script>
 	
 	<!--  -->
