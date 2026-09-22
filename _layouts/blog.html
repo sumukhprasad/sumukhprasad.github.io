@@ -1,9 +1,16 @@
+{% if page.title and page.title != "" %}
+	{% assign display_title = page.title %}
+{% else %}
+	{% capture display_title %}Micropost on {{ page.date | date: "%e %b %Y at %l:%M %P" }}{% endcapture %}
+{% endif %}
+
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
-		<title>{{ page.title }} - blog - {{ site.title }}</title>
+		<title>{{ display_title }} - blog - {{ site.title }}</title>
 		{% include header.html %}
 	</head>
 	<body>
@@ -14,26 +21,60 @@
 				
  				<div class="top-info">
  					<h3 class="date">
+						{% assign date_seconds = page.date | date: "%s" %}
+						{% assign updated_seconds = page.updated_at | date: "%s" %}
+                              
+						{% if page.updated_at and updated_seconds != date_seconds %}
+						    updated on {{ page.updated_at | date: "%e %b %Y" }}
+						    {% assign updated_time_string = page.updated_at | date: "%l:%M %P" %}
+						    {% unless updated_time_string == "12:00 am" %}
+						        at {{ updated_time_string }}
+						    {% endunless %}
+
+						    <br><br> originally
+						{% endif %}
+						
 						posted on {{ page.date | date: "%e %b %Y" }}
 						{% assign time_string = page.date | date: "%l:%M %P" %}
 						{% unless time_string == "12:00 am" %}
-							at {{ time_string }}
+						    at {{ time_string }}
 						{% endunless %}
 					</h3>
  				</div>
-				<h1 class="title">{{ page.title }}</h1>
-				<h2 class="subtitle">{{ page.desc }}</h2>
-					
+				
+				{% if page.title and page.title != "" %}
+					<h1 class="title">{{ page.title }}</h1>
+					<h2 class="subtitle">{{ page.summary }}</h2>
+				{% else %}
+					<h1 class="subtitle">{{ display_title }}</h1>
+				{% endif %}
+
+				{% for cat in page.categories %}
+					<span class="category-marker">{{cat}}</span>
+				{% endfor %}
  				<br>
  				<br>
  				<br>
 				<div class="writing-content">
 	 				<div class="left-info">
 	 					<h3 class="date">
+							{% assign date_seconds = page.date | date: "%s" %}
+							{% assign updated_seconds = page.updated_at | date: "%s" %}
+                              	
+							{% if page.updated_at and updated_seconds != date_seconds %}
+							    updated on {{ page.updated_at | date: "%e %b %Y" }}
+							    {% assign updated_time_string = page.updated_at | date: "%l:%M %P" %}
+							    {% unless updated_time_string == "12:00 am" %}
+							        at {{ updated_time_string }}
+							    {% endunless %}
+
+							    <br><br> originally
+							{% endif %}
+							
 							posted on {{ page.date | date: "%e %b %Y" }}
 							{% assign time_string = page.date | date: "%l:%M %P" %}
 							{% unless time_string == "12:00 am" %}
-								at {{ time_string }}
+							    at {{ time_string }}
 							{% endunless %}
 						</h3>
 	 				</div>
@@ -50,15 +91,26 @@
 					
 				<h3>Read more —</h3>
 				<div class="small-list">
-					{% assign blog = site.blog | sort: 'date' | reverse | where_exp: "item", "item.title != page.title"  %}
+					{% assign blog = site.blog | sort: 'date' | reverse | where_exp: "item", "item.url != page.url" %}
+
 					{% for post in blog limit: 3 %}
-					<span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
-					<a href="{{post.url}}">{{post.title}}</a><br>
-          	
-					<span class="description">{{post.desc}}</span><br><br>
+						<span class="date">{{ post.date | date: "%e %b %Y" }}</span><br>
+
+						<a href="{{ post.url }}">
+							{% if post.title and post.title != "" %}
+								{{ post.title }}
+							{% else %}
+								{{ post.content | strip_html | truncatewords: 5, "..." }}</a> <span class="date">(micropost)</span>
+							{% endif %}
+						</a><br>
+
+						{% if post.summary and post.summary != "" %}
+							<span class="description">{{ post.summary }}</span><br>
+						{% endif %}
+
+						<br>
 					{% endfor %}
 					
- 			
 					<a href="/blog" style="opacity: 0.3;"><i>< all blog</i></a>
 				</div>
  			

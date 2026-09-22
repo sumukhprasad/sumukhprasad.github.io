@@ -7,13 +7,33 @@
 		font-weight: bold
 		font-size: 0.75em
 		
-	a
+	.postblock
+		margin-top: 25px
+		padding-bottom: 25px
+		border-bottom: 1px dashed variables.$themeColorHalf
+		
+	h3
 		font-family: variables.$serifFont
+		margin: 0
+		display: inline-block
 		font-size: 1.25em
+
+	img
+		margin: auto
+		max-width: 100%
+		height: auto
+	
+	.titleblock
+		margin-bottom: 12px
 		
 	.description
 		font-style: italic
 		opacity: 0.3
+
+
+.pagination
+	margin-top: 50px
+		
 		
 .writing-page
 	.title
@@ -47,8 +67,8 @@
 		
 		img
 			margin: auto
-			max-width: 640px
-			width: 100%
+			max-width: 100%
+			height: auto
 			
 	.small-list
 		.date
@@ -70,17 +90,46 @@
 .writing-serif .writing-content
 	font-size: 1.33em
 	font-family: variables.$serifFont
-
-.writing-sans .writing-content
-	font-family: variables.$sansFont
-	margin-left: 180px
 	
-	.left-info
+	.first-paragraph::first-letter
+		color: white
+		background-color: #903
+		font-family: variables.$serifFont
 		float: left
-		margin-left: -180px
-		width: 160px
-		text-align: right
-		border-top: 1px dashed variables.$themeColor
+		margin: 0 5px 5px 0
+		padding: 15px 10px
+		display: block
+		font-size: 50px
+		line-height: 40px
+
+.writing-sans
+	.category-marker
+		background-color: rgba(0,0,0,0.3)
+		color: white
+		border-radius: 50px
+		padding: 2px 5px
+		font-weight: bold;
+	
+	.writing-content
+		font-family: variables.$sansFont
+		margin-left: 180px
+		
+		.first-paragraph::first-letter
+			color: #903
+			font-family: variables.$serifFont
+			float: left
+			margin: 0 5px 5px 0
+			padding: 15px 10px
+			display: block
+			font-size: 50px
+			line-height: 40px
+		
+		.left-info
+			float: left
+			margin-left: -180px
+			width: 160px
+			text-align: right
+			border-top: 1px dashed variables.$themeColor
 	
 @media screen and (max-width: 720px)
 	.writing-page

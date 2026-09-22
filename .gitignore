@@ -2,3 +2,12 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+
+_blog
+_writing
+blog-blogulator.yml
+writing-blogulator.yml
+blog-blogulator.db
+writing-blogulator.db
+assets/blog
+assets/writing

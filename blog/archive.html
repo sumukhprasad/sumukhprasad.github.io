@@ -16,7 +16,11 @@ title: "blog archive"
 			{% endif %}
 		
 			<div class="list-item">
-				<a href="{{post.url}}">{{post.title}}</a> <span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
+				{% if post.title!="" %}
+					<a href="{{post.url}}">{{post.title}}</a> <span class="date">{{post.date | date: "%e %b %Y" }}</span><br>
+				{% else %}
+					<a href="{{post.url}}">{{ post.content | strip_html | truncatewords: 5, "..." }}</a> <span class="date">(micropost) {{post.date | date: "%e %b %Y" }}</span><br>
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>

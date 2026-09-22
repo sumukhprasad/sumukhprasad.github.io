@@ -24,10 +24,10 @@
 				
 				<div class="large-list">
 					{% for piece in paginator.posts %}
-						<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.type}}{% if piece.type != "poetry" %} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read {% endif %}</span><br>
+						<span class="date">{{piece.date | date: "%e %b %Y" }} · {{piece.categories.first}}{% if piece.categories.first != "poetry" %} · ~{{ piece.content | strip_html | split: ' ' | size | divided_by: 200 }}-minute read {% endif %}</span><br>
 						<a href="{{piece.url}}">{{piece.title}}</a><br>
                 	
-						<span class="description">{{piece.desc}}</span><br><br>
+						<span class="description">{{piece.summary}}</span><br><br>
 					{% endfor %}
 				</div>
 				
