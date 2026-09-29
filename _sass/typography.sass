@@ -35,3 +35,24 @@ blockquote
 	padding-left: 10px
 	margin: 0
 	font-style: italic
+	
+	
+a
+	color: variables.$themeColor
+	font-weight: bold
+	text-decoration: underline
+	text-decoration-color: variables.$themeColorHalf
+	-webkit-text-decoration-color: variables.$themeColorHalf
+	text-decoration-thickness: 2px
+	text-underline-offset: 1px
+	transition: all 0.2s
+	&:hover
+		background-color: variables.$themeColor
+		text-decoration: none
+		color: white
+
+.unselectable
+	user-select: none
+	-webkit-user-select: none
+	-moz-user-select: none
+	
