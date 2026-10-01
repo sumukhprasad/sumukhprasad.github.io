@@ -9,8 +9,22 @@ nav
 	
 	.right
 		float: right
-	
-	a
+
+		.appear-on-hover
+			position: absolute
+			display: none
+			visibility: hidden
+			padding: 5px
+			background-color: white
+			list-style-type: none
+			indent: 0
+			border: 1px solid gray
+			z-index: 1000
+			margin-top: -10px
+			
+			a
+				margin-left: 0px
+	a, .link
 		margin-left: 20px
 		color: rgba(0, 0, 0, 0.5)
 		text-decoration: none
@@ -18,10 +32,18 @@ nav
 		text-decoration-color: white
 		-webkit-text-decoration-color: white
 		white-space: nowrap
+		display: inline-block
+			
 		&:hover
 			color: rgba(0, 0, 0, 1)
 			text-decoration: underline
 			background-color: transparent
+			
+			.appear-on-hover
+				display: block
+				visibility: visible
+			
+		
 	
 	.nav-separator
 		margin-left: 20px
