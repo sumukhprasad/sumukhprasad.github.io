@@ -69,14 +69,21 @@ title: "curriculum vitae"
 									{{ course.code }}: <strong>{{ course.title }}</strong>{% if course.webpage %} <a href="{{ course.webpage }}" target="_blank">↗</a>{% endif %}<br>
 									<span class="smalltext">
 									( {{ course.date }} ) ( see 
-									<a href="{{ course.notes }}">notes</a>
+				
+									{% if course.certificate %}
+										<a href="{{ course.certificate }}">certificate</a>
+									{% endif %}
+				
+									{% if course.notes %}
+										<a href="{{ course.notes }}">notes</a>
+									{% endif %}
 				
 									{% if course.assignments %}
-										/ <a href="{{ course.assignments }}">assignments</a>
+										<a href="{{ course.assignments }}">assignments</a>
 									{% endif %}
 				
 									{% if course.exams %}
-										/ <a href="{{ course.exams }}">exams</a>
+										<a href="{{ course.exams }}">exams</a>
 									{% endif %}
 									)</span>
 								</li>
@@ -116,10 +123,10 @@ title: "curriculum vitae"
 										<a href="{{ lecdem.page }}">details</a>
 									{% endif %}
 									{% if lecdem.slides %}
-										/ <a href="{{ lecdem.slides }}">slides</a>
+										<a href="{{ lecdem.slides }}">slides</a>
 									{% endif %}
 									{% if lecdem.pictures %}
-										/ <a href="{{ lecdem.pictures }}">pictures</a>
+										<a href="{{ lecdem.pictures }}">pictures</a>
 									{% endif %}
 									)</span><br><br>
 								</li>
@@ -163,6 +170,14 @@ title: "curriculum vitae"
 	<div class="work-section">
 		<h2>Projects (Selected)</h2>
 		<table>
+			
+			<tr>
+				<td class="year">2026</td>
+				<td>
+					<strong>Gandalf</strong><br>community-based group claim verification platform
+					 (<a href="../projects/gandalf">view</a>)
+				</td>
+			</tr>
 			
 			<tr>
 				<td class="year">2025</td>

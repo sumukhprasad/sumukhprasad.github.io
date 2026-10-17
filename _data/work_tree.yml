@@ -1,4 +1,31 @@
 - categories:
+    - education
+    - experiments
+  startYear: 2026
+  endYear: 2026
+  title: Gandalf
+  description: a platform for community claim verification, with users, automatic verifier assignment, email notifications, comprehensive verification creation, etc.
+  link: projects/gandalf
+
+- categories:
+    - automation
+    - tooling
+  startYear: 2026
+  endYear: 2026
+  title: Blogulator
+  description: a service that exposes an AtomPub endpoint for use with jekyll and other SSG-based blogs
+  link: "https://blogulator.sumukhprasad.com"
+
+- categories:
+    - automation
+    - tooling
+  startYear: 2026
+  endYear: 2026
+  title: Colourtaculous!
+  description: program that allows you to define CSS variables in YML files, and automatically compiles them together into one file.
+  link: "https://colourtaculous.sumukhprasad.com"
+
+- categories:
     - experiments
     - linguistics
   startYear: 2025
@@ -126,21 +153,3 @@
   title: 2D Equation Graphing
   description: web-based grapher for equations in 2 variables
   link: projects/grapher
-
-- categories:
-    - automation
-    - tooling
-  startYear: 2026
-  endYear: 2026
-  title: Blogulator
-  description: a service that exposes an AtomPub endpoint for use with jekyll and other SSG-based blogs
-  link: ""
-
-- categories:
-    - automation
-    - tooling
-  startYear: 2026
-  endYear: 2026
-  title: Colourtaculous!
-  description: program that allows you to define CSS variables in YML files, and automatically compiles them together into one file.
-  link: ""
