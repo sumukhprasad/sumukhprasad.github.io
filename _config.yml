@@ -1,7 +1,8 @@
 baseurl: ""
 title: "sumukh prasad"
 author: "Sumukh Prasad"
-url: "https://sumukhprasad.github.io"
+url: "https://sumukhprasad.com"
+exclude: ["blog-blogulator.yml", "writing-blogulator.yml"]
 future: true
 timezone: Asia/Kolkata
 plugins:

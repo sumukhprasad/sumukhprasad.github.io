@@ -1,18 +1,5 @@
 - year: 2026
   lecdems:
-    - date: "16 June 2026"
-      title: "Talk: Designing a System for Wearable Gesture Recognition"
-      description: >
-        It is often assumed that computer interfaces are 
-        purely driven by surface-based input methods. 
-        This talk & demo explored how a gesture-based input
-        device might be constructed economically, and what
-        uses it may have.
-      page: "/work/lecdems/2026-06-16-designing-a-system-for-wearable-gesture-recognition/index.html"
-      slides: "/assets/lecdems/2026-06-16-designing-a-system-for-wearable-gesture-recognition/slides.pdf"
-
-- year: 2026
-  lecdems:
     - date: "9-15 September 2026"
       title: "Talk: Computer Science Bootcamp (TechIT@BNMIT Induction Programme)"
       description: >
@@ -23,3 +10,16 @@
         just entering the institution, focusing on how to
         approach computer science concepts and programming.
       page: "/work/lecdems/2026-09-09-cs-induction/index.html"
+
+- year: 2026
+  lecdems:
+    - date: "16 June 2026"
+      title: "Talk: Designing a System for Wearable Gesture Recognition"
+      description: >
+        It is often assumed that computer interfaces are 
+        purely driven by surface-based input methods. 
+        This talk & demo explored how a gesture-based input
+        device might be constructed economically, and what
+        uses it may have.
+      page: "/work/lecdems/2026-06-16-designing-a-system-for-wearable-gesture-recognition/index.html"
+      slides: "/assets/lecdems/2026-06-16-designing-a-system-for-wearable-gesture-recognition/slides.pdf"

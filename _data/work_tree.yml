@@ -1,4 +1,13 @@
 - categories:
+    - automation
+    - tooling
+  startYear: 2026
+  endYear: 2026
+  title: RASCue
+  description: Remote AppleScript Cue for keynotes, nifty little program that exposes a web interface through which a team backstage can trigger AppleScript actions on your Mac during a presentation.
+  link: "https://github.com/sumukhprasad/rascue"
+
+- categories:
     - education
     - experiments
   startYear: 2026
